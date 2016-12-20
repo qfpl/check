@@ -4,7 +4,7 @@ synopsis:            Combinators for Arrow based data validation
 description:
   "Check" aims to abstract common patterns in data validation. It uses Arrow
   combinators to create powerful, flexible and composable validation pipelines.
-homepage:            https://github.com/lightandlight/check#readme
+homepage:            https://github.com/lightandlight/haskell-arrow-vaidation#readme
 license:             BSD3
 license-file:        LICENSE
 author:              Isaac Elliott
@@ -36,4 +36,4 @@ test-suite check-test
 
 source-repository head
   type:     git
-  location: https://github.com/lightandlight/haskell-arrow-validators
+  location: https://github.com/lightandlight/haskell-arrow-validation
