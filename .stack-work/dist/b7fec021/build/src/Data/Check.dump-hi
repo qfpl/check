@@ -1,0 +1,2085 @@
+
+==================== FINAL INTERFACE ====================
+2016-12-20 11:10:19.4315924 UTC
+
+interface check-0.1.0.0-4tu45YB2z1Y8P1saycWUPF:Data.Check 8001
+  interface hash: 58263941351b3ae8233ff178ce1d0c9f
+  ABI hash: 9f8a933e7f7ab56ebdcb3917fdd7857b
+  export-list hash: b89e30ca0f69a1e13206ffdd0e53a638
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: e81cb4fcb81dfa494412129437155f78
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Data.Check.check
+  Data.Check.checkT
+  Data.Check.expect
+  Data.Check.expectAll
+  Data.Check.expectM
+  Data.Check.failure
+  Data.Check.liftEffect
+  Data.Check.suppose
+  Data.Check.supposeM
+  Data.Check.whenFalse
+  Data.Check.Check
+  Data.Check.CheckT
+module dependencies:
+package dependencies: StateVar-1.1.0.4@StateVar-1.1.0.4-CJpWsiXJdd89SnV9dZtTwc
+                      array-0.5.1.1@array-0.5.1.1 base-4.9.0.0*
+                      base-orphans-0.5.4@base-orphans-0.5.4-5IQvrjd7gNP548VkOOyIq6
+                      bifunctors-5.4.1@bifunctors-5.4.1-8Xk5Wsnk1fr6rBLkW9MO8p
+                      comonad-5@comonad-5-2RMxpSOQ5MCHLHIelJrHD4
+                      containers-0.5.7.1@containers-0.5.7.1
+                      contravariant-1.4@contravariant-1.4-KSQE31a7FruKHDlp90hIUT
+                      deepseq-1.4.2.0@deepseq-1.4.2.0
+                      distributive-0.5.0.2@distributive-0.5.0.2-Cdz2vLOk85j1doGXLcictT
+                      ghc-prim-0.5.0.0 integer-gmp-1.0.0.1
+                      profunctors-5.2@profunctors-5.2-2ZZOz6u59T2H8y7z3NgZkY*
+                      stm-2.4.4.1@stm-2.4.4.1-4z2NRWnB0NIIUvSJsHW0kF
+                      tagged-0.8.5@tagged-0.8.5-CtgV6EcN0do8F92i1S6iYx
+                      transformers-0.5.2.0@transformers-0.5.2.0
+                      transformers-compat-0.5.1.4@transformers-compat-0.5.1.4-81lZyuOJOvsD0zyCv2TKld
+orphans: base-4.9.0.0:GHC.Base base-4.9.0.0:GHC.Float
+         stm-2.4.4.1@stm-2.4.4.1-4z2NRWnB0NIIUvSJsHW0kF:Control.Monad.STM
+         transformers-0.5.2.0@transformers-0.5.2.0:Control.Monad.Trans.Error
+family instance modules: base-4.9.0.0:Control.Applicative
+                         base-4.9.0.0:Data.Complex base-4.9.0.0:Data.Either
+                         base-4.9.0.0:Data.Functor.Compose base-4.9.0.0:Data.Functor.Const
+                         base-4.9.0.0:Data.Functor.Identity
+                         base-4.9.0.0:Data.Functor.Product base-4.9.0.0:Data.Functor.Sum
+                         base-4.9.0.0:Data.List.NonEmpty base-4.9.0.0:Data.Monoid
+                         base-4.9.0.0:Data.Semigroup base-4.9.0.0:Data.Type.Equality
+                         base-4.9.0.0:Data.Version base-4.9.0.0:Data.Void
+                         base-4.9.0.0:GHC.Exts base-4.9.0.0:GHC.Generics
+                         base-4.9.0.0:GHC.IO.Exception base-4.9.0.0:GHC.TypeLits
+                         bifunctors-5.4.1@bifunctors-5.4.1-8Xk5Wsnk1fr6rBLkW9MO8p:Data.Bifunctor.Biff
+                         bifunctors-5.4.1@bifunctors-5.4.1-8Xk5Wsnk1fr6rBLkW9MO8p:Data.Bifunctor.Clown
+                         bifunctors-5.4.1@bifunctors-5.4.1-8Xk5Wsnk1fr6rBLkW9MO8p:Data.Bifunctor.Joker
+                         bifunctors-5.4.1@bifunctors-5.4.1-8Xk5Wsnk1fr6rBLkW9MO8p:Data.Bifunctor.Product
+                         bifunctors-5.4.1@bifunctors-5.4.1-8Xk5Wsnk1fr6rBLkW9MO8p:Data.Bifunctor.Sum
+                         bifunctors-5.4.1@bifunctors-5.4.1-8Xk5Wsnk1fr6rBLkW9MO8p:Data.Bifunctor.Tannen
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Sequence
+                         tagged-0.8.5@tagged-0.8.5-CtgV6EcN0do8F92i1S6iYx:Data.Tagged
+import  -/  base-4.9.0.0:Control.Arrow 1ad0e235ca96a02d05ff19477912bb7e
+import  -/  base-4.9.0.0:Control.Category 5135ef4d8065443ce101ac83efec3175
+import  -/  base-4.9.0.0:Control.Monad.IO.Class 6093ce5ace985d5ea81901bb51e28805
+import  -/  base-4.9.0.0:Data.Either 4cef602ce360a0155ac0dd580a5b4863
+import  -/  base-4.9.0.0:Data.Foldable 3cbed01c922be29649c33015287c82ca
+import  -/  base-4.9.0.0:Data.Functor 67cebb006c069ea73adcd2d468cdb0dc
+import  -/  base-4.9.0.0:Data.Functor.Identity 7dfca64497900ab559eec24d051e061e
+import  -/  base-4.9.0.0:Data.Maybe 086a84053ef7f7810663b5f03b7ec3f7
+import  -/  base-4.9.0.0:Data.Semigroup 4aef0ef9e6e6826b7d625ca18dc999aa
+import  -/  base-4.9.0.0:Data.Tuple 84c2bcc75b7a239341ae2f88cce9d8d7
+import  -/  base-4.9.0.0:GHC.Base dd8044a8d640eee51828c17c476a6ba7
+import  -/  base-4.9.0.0:GHC.Err 20faef8829fd13c027d0ee2213637534
+import  -/  base-4.9.0.0:Prelude 2d9cd8b0ec3d728f62b734df888d2e34
+import  -/  profunctors-5.2@profunctors-5.2-2ZZOz6u59T2H8y7z3NgZkY:Data.Profunctor 09a3a0d43570ee84ff448b261fb6d066
+import  -/  profunctors-5.2@profunctors-5.2-2ZZOz6u59T2H8y7z3NgZkY:Data.Profunctor.Unsafe 71a547d8769b262ed8bea49957e1ea35
+8534ffd37d07ef94328259d099f678b3
+  $fApplicativeCheckT ::
+    (GHC.Base.Applicative m, Data.Semigroup.Semigroup e) =>
+    GHC.Base.Applicative (Data.Check.CheckT m e a)
+  DFunId
+  {- Arity: 2, HasNoCafRefs,
+     Strictness: <L,U(U(C(U),A),C(U),C(C1(U)),A,A)><L,U(C(C1(U)),A,A)>m,
+     Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun: @ (m :: * -> *)
+                      @ e
+                      @ a
+                      ($dApplicative :: GHC.Base.Applicative m)
+                      ($dSemigroup :: Data.Semigroup.Semigroup e).
+                  @ (Data.Check.CheckT m e a)
+                  (Data.Check.$fApplicativeCheckT_$cp1Applicative
+                     @ m
+                     @ e
+                     @ a
+                     $dApplicative
+                     $dSemigroup)
+                  (Data.Check.$fApplicativeCheckT_$cpure
+                     @ m
+                     @ e
+                     @ a
+                     $dApplicative
+                     $dSemigroup)
+                  (Data.Check.$fApplicativeCheckT_$c<*>
+                     @ m
+                     @ e
+                     @ a
+                     $dApplicative
+                     $dSemigroup)
+                  (Data.Check.$fApplicativeCheckT_$c*>
+                     @ m
+                     @ e
+                     @ a
+                     $dApplicative
+                     $dSemigroup)
+                  (Data.Check.$fApplicativeCheckT_$c<*
+                     @ m
+                     @ e
+                     @ a
+                     $dApplicative
+                     $dSemigroup) -}
+8534ffd37d07ef94328259d099f678b3
+  $fApplicativeCheckT1 ::
+    (GHC.Base.Applicative m, Data.Semigroup.Semigroup e) =>
+    forall a1 b.
+    Data.Check.CheckT m e a a1
+    -> Data.Check.CheckT m e a b -> a -> m (GHC.Base.Maybe e, a1)
+  {- Arity: 4, HasNoCafRefs,
+     Strictness: <L,U(U(C(U),A),A,C(C1(U)),A,A)><L,U(C(C1(U)),A,A)><L,C(U)><L,C(U)>,
+     Unfolding: (\ @ (m :: * -> *)
+                   @ e
+                   @ a
+                   ($dApplicative :: GHC.Base.Applicative m)
+                   ($dSemigroup :: Data.Semigroup.Semigroup e)
+                   @ a1
+                   @ b
+                   (eta :: Data.Check.CheckT m e a a1)
+                   (eta1 :: Data.Check.CheckT m e a b) ->
+                 Data.Check.$fApplicativeCheckT3
+                   @ m
+                   @ e
+                   @ a
+                   $dApplicative
+                   $dSemigroup
+                   @ b
+                   @ a1
+                   (let {
+                      f :: m (GHC.Base.Maybe e, a1) -> m (GHC.Base.Maybe e, b -> a1)
+                      = GHC.Base.fmap
+                          @ m
+                          (GHC.Base.$p1Applicative @ m $dApplicative)
+                          @ (GHC.Base.Maybe e, a1)
+                          @ (GHC.Base.Maybe e, b -> a1)
+                          (Data.Check.$fApplicativeCheckT2 @ b @ e @ a1)
+                    } in
+                    (\ (x :: a) ->
+                     f (eta `cast` (Data.Check.N:CheckT[0] <m>_R <e>_N <a>_R <a1>_N) x))
+                      `cast`
+                    (Sym (Data.Check.N:CheckT[0] <m>_R <e>_N <a>_R <b -> a1>_N)))
+                   eta1) -}
+1ad001c02506fab95d51427fedb831dd
+  $fApplicativeCheckT2 ::
+    (GHC.Base.Maybe e, a) -> (GHC.Base.Maybe e, b -> a)
+  {- Arity: 1, HasNoCafRefs,
+     Unfolding: (\ @ b @ e @ a (ds :: (GHC.Base.Maybe e, a)) ->
+                 case ds of wild { (,) x y -> (x, \ (ds1 :: b) -> y) }) -}
+8534ffd37d07ef94328259d099f678b3
+  $fApplicativeCheckT3 ::
+    (GHC.Base.Applicative m, Data.Semigroup.Semigroup e) =>
+    forall a1 b.
+    Data.Check.CheckT m e a (a1 -> b)
+    -> Data.Check.CheckT m e a a1 -> a -> m (GHC.Base.Maybe e, b)
+  {- Arity: 5, HasNoCafRefs,
+     Strictness: <S(LLC(C(S))LL),U(1*U(1*C1(C1(U)),A),A,1*C1(C1(U)),A,A)><L,U(C(C1(U)),A,A)><L,1*C1(U)><L,1*C1(U)><L,U>,
+     Unfolding: (\ @ (m :: * -> *)
+                   @ e
+                   @ a
+                   ($dApplicative :: GHC.Base.Applicative m)
+                   ($dSemigroup :: Data.Semigroup.Semigroup e)
+                   @ a1
+                   @ b
+                   (eta :: Data.Check.CheckT m e a (a1 -> b))
+                   (eta1 :: Data.Check.CheckT m e a a1)
+                   (eta2 :: a) ->
+                 GHC.Base.<*>
+                   @ m
+                   $dApplicative
+                   @ (GHC.Base.Maybe e, a1)
+                   @ (GHC.Base.Maybe e, b)
+                   (GHC.Base.fmap
+                      @ m
+                      (GHC.Base.$p1Applicative @ m $dApplicative)
+                      @ (GHC.Base.Maybe e, a1 -> b)
+                      @ ((GHC.Base.Maybe e, a1) -> (GHC.Base.Maybe e, b))
+                      (\ (f' :: (GHC.Base.Maybe e, a1 -> b))
+                         (b' :: (GHC.Base.Maybe e, a1)) ->
+                       (case f' of wild { (,) x ds1 ->
+                        case x of wild1 {
+                          GHC.Base.Nothing -> case b' of wild2 { (,) x1 ds2 -> x1 }
+                          GHC.Base.Just ipv
+                          -> case b' of wild2 { (,) x1 ds2 ->
+                             case x1 of wild3 {
+                               GHC.Base.Nothing -> wild1
+                               GHC.Base.Just ipv1
+                               -> GHC.Base.Just
+                                    @ e
+                                    (Data.Semigroup.<> @ e $dSemigroup ipv ipv1) } } } },
+                        case f' of wild { (,) ds1 y ->
+                        y (Data.Tuple.snd @ (GHC.Base.Maybe e) @ a1 b') }))
+                      (eta `cast` (Data.Check.N:CheckT[0] <m>_R <e>_N <a>_R <a1 -> b>_N)
+                         eta2))
+                   (eta1 `cast` (Data.Check.N:CheckT[0] <m>_R <e>_N <a>_R <a1>_N)
+                      eta2)) -}
+8534ffd37d07ef94328259d099f678b3
+  $fApplicativeCheckT4 ::
+    (GHC.Base.Applicative m, Data.Semigroup.Semigroup e) =>
+    forall a1 b.
+    Data.Check.CheckT m e a a1
+    -> Data.Check.CheckT m e a b -> a -> m (GHC.Base.Maybe e, b)
+  {- Arity: 4, HasNoCafRefs,
+     Strictness: <L,U(U(C(U),A),A,C(C1(U)),A,A)><L,U(C(C1(U)),A,A)><L,C(U)><L,C(U)>,
+     Unfolding: (\ @ (m :: * -> *)
+                   @ e
+                   @ a
+                   ($dApplicative :: GHC.Base.Applicative m)
+                   ($dSemigroup :: Data.Semigroup.Semigroup e)
+                   @ a1
+                   @ b
+                   (eta :: Data.Check.CheckT m e a a1)
+                   (eta1 :: Data.Check.CheckT m e a b) ->
+                 Data.Check.$fApplicativeCheckT3
+                   @ m
+                   @ e
+                   @ a
+                   $dApplicative
+                   $dSemigroup
+                   @ b
+                   @ b
+                   (let {
+                      f :: m (GHC.Base.Maybe e, a1) -> m (GHC.Base.Maybe e, b -> b)
+                      = GHC.Base.fmap
+                          @ m
+                          (GHC.Base.$p1Applicative @ m $dApplicative)
+                          @ (GHC.Base.Maybe e, a1)
+                          @ (GHC.Base.Maybe e, b -> b)
+                          (Data.Check.$fApplicativeCheckT5 @ b @ e @ a1)
+                    } in
+                    (\ (x :: a) ->
+                     f (eta `cast` (Data.Check.N:CheckT[0] <m>_R <e>_N <a>_R <a1>_N) x))
+                      `cast`
+                    (Sym (Data.Check.N:CheckT[0] <m>_R <e>_N <a>_R <b -> b>_N)))
+                   eta1) -}
+7b46be5be2bbe6278ce8c94b9901362c
+  $fApplicativeCheckT5 ::
+    (GHC.Base.Maybe e, a) -> (GHC.Base.Maybe e, b -> b)
+  {- Arity: 1, HasNoCafRefs,
+     Unfolding: (\ @ b @ e @ a (ds :: (GHC.Base.Maybe e, a)) ->
+                 case ds of wild { (,) x y -> (x, GHC.Base.breakpoint @ b) }) -}
+b1ae7d76c53055a92854e24be1467046
+  $fApplicativeCheckT6 ::
+    (GHC.Base.Applicative m, Data.Semigroup.Semigroup e) =>
+    forall a1. a1 -> a -> m (GHC.Base.Maybe e, a1)
+  {- Arity: 4, HasNoCafRefs,
+     Strictness: <S(LC(S)LLL),1*U(A,1*C1(U),A,A,A)><L,A><L,U><L,A>,
+     Unfolding: InlineRule (4, True, False)
+                (\ @ (m :: * -> *)
+                   @ e
+                   @ a
+                   ($dApplicative :: GHC.Base.Applicative m)
+                   ($dSemigroup :: Data.Semigroup.Semigroup e)
+                   @ a1
+                   (b :: a1)
+                   (eta :: a) ->
+                 GHC.Base.pure
+                   @ m
+                   $dApplicative
+                   @ (GHC.Base.Maybe e, a1)
+                   (GHC.Base.Nothing @ e, b)) -}
+8534ffd37d07ef94328259d099f678b3
+  $fApplicativeCheckT_$c*> ::
+    (GHC.Base.Applicative m, Data.Semigroup.Semigroup e) =>
+    forall a1 b.
+    Data.Check.CheckT m e a a1
+    -> Data.Check.CheckT m e a b -> Data.Check.CheckT m e a b
+  {- Arity: 4, HasNoCafRefs,
+     Strictness: <L,U(U(C(U),A),A,C(C1(U)),A,A)><L,U(C(C1(U)),A,A)><L,C(U)><L,C(U)>,
+     Unfolding: InlineRule (0, True, True)
+                Data.Check.$fApplicativeCheckT4
+                  `cast`
+                (forall (m :: <* -> *>_N) (e :: <*>_N) (a :: <*>_N).
+                 <GHC.Base.Applicative m>_R
+                 ->_R <Data.Semigroup.Semigroup e>_R
+                 ->_R forall (a1 :: <*>_N) (b :: <*>_N).
+                      <Data.Check.CheckT m e a a1>_R
+                      ->_R <Data.Check.CheckT m e a b>_R
+                      ->_R Sym (Data.Check.N:CheckT[0] <m>_R <e>_N <a>_R <b>_N)) -}
+8534ffd37d07ef94328259d099f678b3
+  $fApplicativeCheckT_$c<* ::
+    (GHC.Base.Applicative m, Data.Semigroup.Semigroup e) =>
+    forall a1 b.
+    Data.Check.CheckT m e a a1
+    -> Data.Check.CheckT m e a b -> Data.Check.CheckT m e a a1
+  {- Arity: 4, HasNoCafRefs,
+     Strictness: <L,U(U(C(U),A),A,C(C1(U)),A,A)><L,U(C(C1(U)),A,A)><L,C(U)><L,C(U)>,
+     Unfolding: InlineRule (0, True, True)
+                Data.Check.$fApplicativeCheckT1
+                  `cast`
+                (forall (m :: <* -> *>_N) (e :: <*>_N) (a :: <*>_N).
+                 <GHC.Base.Applicative m>_R
+                 ->_R <Data.Semigroup.Semigroup e>_R
+                 ->_R forall (a1 :: <*>_N) (b :: <*>_N).
+                      <Data.Check.CheckT m e a a1>_R
+                      ->_R <Data.Check.CheckT m e a b>_R
+                      ->_R Sym (Data.Check.N:CheckT[0] <m>_R <e>_N <a>_R <a1>_N)) -}
+8534ffd37d07ef94328259d099f678b3
+  $fApplicativeCheckT_$c<*> ::
+    (GHC.Base.Applicative m, Data.Semigroup.Semigroup e) =>
+    forall a1 b.
+    Data.Check.CheckT m e a (a1 -> b)
+    -> Data.Check.CheckT m e a a1 -> Data.Check.CheckT m e a b
+  {- Arity: 5, HasNoCafRefs,
+     Strictness: <S(LLC(C(S))LL),U(1*U(1*C1(C1(U)),A),A,1*C1(C1(U)),A,A)><L,U(C(C1(U)),A,A)><L,1*C1(U)><L,1*C1(U)><L,U>,
+     Unfolding: InlineRule (0, True, True)
+                Data.Check.$fApplicativeCheckT3
+                  `cast`
+                (forall (m :: <* -> *>_N) (e :: <*>_N) (a :: <*>_N).
+                 <GHC.Base.Applicative m>_R
+                 ->_R <Data.Semigroup.Semigroup e>_R
+                 ->_R forall (a1 :: <*>_N) (b :: <*>_N).
+                      <Data.Check.CheckT m e a (a1 -> b)>_R
+                      ->_R <Data.Check.CheckT m e a a1>_R
+                      ->_R Sym (Data.Check.N:CheckT[0] <m>_R <e>_N <a>_R <b>_N)) -}
+8534ffd37d07ef94328259d099f678b3
+  $fApplicativeCheckT_$cp1Applicative ::
+    (GHC.Base.Applicative m, Data.Semigroup.Semigroup e) =>
+    GHC.Base.Functor (Data.Check.CheckT m e a)
+  {- Arity: 2, HasNoCafRefs,
+     Strictness: <L,1*U(1*U(C(U),A),A,A,A,A)><L,A>m,
+     Unfolding: InlineRule (2, True, False)
+                (\ @ (m :: * -> *)
+                   @ e
+                   @ a
+                   ($dApplicative :: GHC.Base.Applicative m)
+                   ($dSemigroup :: Data.Semigroup.Semigroup e) ->
+                 Data.Check.$fFunctorCheckT
+                   @ m
+                   @ e
+                   @ a
+                   (GHC.Base.$p1Applicative @ m $dApplicative)) -}
+8534ffd37d07ef94328259d099f678b3
+  $fApplicativeCheckT_$cpure ::
+    (GHC.Base.Applicative m, Data.Semigroup.Semigroup e) =>
+    forall a1. a1 -> Data.Check.CheckT m e a a1
+  {- Arity: 4, HasNoCafRefs,
+     Strictness: <S(LC(S)LLL),1*U(A,1*C1(U),A,A,A)><L,A><L,U><L,A>,
+     Unfolding: InlineRule (0, True, True)
+                Data.Check.$fApplicativeCheckT6
+                  `cast`
+                (forall (m :: <* -> *>_N) (e :: <*>_N) (a :: <*>_N).
+                 <GHC.Base.Applicative m>_R
+                 ->_R <Data.Semigroup.Semigroup e>_R
+                 ->_R forall (a1 :: <*>_N).
+                      <a1>_R
+                      ->_R Sym (Data.Check.N:CheckT[0] <m>_R <e>_N <a>_R <a1>_N)) -}
+8534ffd37d07ef94328259d099f678b3
+  $fArrowCheckT ::
+    (GHC.Base.Monad m, Data.Semigroup.Semigroup e) =>
+    Control.Arrow.Arrow (Data.Check.CheckT m e)
+  DFunId
+  {- Arity: 2, HasNoCafRefs,
+     Strictness: <L,U(U(A,C(U),A,A,A),C(C1(U)),A,C(U),A)><L,U(C(C1(U)),A,A)>m,
+     Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun: @ (m :: * -> *)
+                      @ e
+                      ($dMonad :: GHC.Base.Monad m)
+                      ($dSemigroup :: Data.Semigroup.Semigroup e).
+                  @ (Data.Check.CheckT m e)
+                  (Data.Check.$fCategoryTYPECheckT @ m @ e $dMonad $dSemigroup)
+                  (Data.Check.$fArrowCheckT_$carr @ m @ e $dMonad $dSemigroup)
+                  (Data.Check.$fArrowCheckT_$cfirst @ m @ e $dMonad $dSemigroup)
+                  (Data.Check.$fArrowCheckT_$csecond @ m @ e $dMonad $dSemigroup)
+                  (Data.Check.$fArrowCheckT_$c*** @ m @ e $dMonad $dSemigroup)
+                  (Data.Check.$fArrowCheckT_$c&&& @ m @ e $dMonad $dSemigroup) -}
+8534ffd37d07ef94328259d099f678b3
+  $fArrowCheckT1 ::
+    (GHC.Base.Monad m, Data.Semigroup.Semigroup e) =>
+    forall b c c'.
+    Data.Check.CheckT m e b c
+    -> Data.Check.CheckT m e b c' -> b -> m (GHC.Base.Maybe e, (c, c'))
+  {- Arity: 5, HasNoCafRefs,
+     Strictness: <S(LC(C(S))LLL),U(1*U(A,1*C1(U),A,A,A),C(C1(U)),A,C(U),A)><L,U(C(C1(U)),A,A)><L,C(U)><L,C(U)><L,U>,
+     Unfolding: (\ @ (m :: * -> *)
+                   @ e
+                   ($dMonad :: GHC.Base.Monad m)
+                   ($dSemigroup :: Data.Semigroup.Semigroup e)
+                   @ b
+                   @ c
+                   @ c'
+                   (eta :: Data.Check.CheckT m e b c)
+                   (eta1 :: Data.Check.CheckT m e b c')
+                   (eta2 :: b) ->
+                 Data.Check.$fArrowCheckT3
+                   @ m
+                   @ e
+                   $dMonad
+                   $dSemigroup
+                   @ (b, b)
+                   @ (c, c')
+                   @ b
+                   (Data.Check.$fArrowCheckT2
+                      @ m
+                      @ e
+                      $dMonad
+                      $dSemigroup
+                      @ b
+                      @ c
+                      @ b
+                      @ c'
+                      eta
+                      eta1)
+                     `cast`
+                   (Sym (Data.Check.N:CheckT[0] <m>_R <e>_N <(b, b)>_R <(c, c')>_N))
+                   (\ (eta3 :: b)[OneShot] ->
+                    GHC.Base.pure
+                      @ m
+                      (GHC.Base.$p1Monad @ m $dMonad)
+                      @ (GHC.Base.Maybe e, (b, b))
+                      (GHC.Base.Nothing @ e, (eta3, eta3)))
+                     `cast`
+                   (Sym (Data.Check.N:CheckT[0] <m>_R <e>_N <b>_R <(b, b)>_N))
+                   eta2) -}
+8534ffd37d07ef94328259d099f678b3
+  $fArrowCheckT2 ::
+    (GHC.Base.Monad m, Data.Semigroup.Semigroup e) =>
+    forall b c b' c'.
+    Data.Check.CheckT m e b c
+    -> Data.Check.CheckT m e b' c'
+    -> (b, b')
+    -> m (GHC.Base.Maybe e, (c, c'))
+  {- Arity: 5, HasNoCafRefs,
+     Strictness: <S(LC(C(S))LLL),U(A,C(C1(U)),A,C(U),A)><L,U(C(C1(U)),A,A)><L,1*C1(U)><L,1*C1(U)><S,1*U(U,U)>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (5, True, False)
+                (\ @ (m :: * -> *)
+                   @ e
+                   (w :: GHC.Base.Monad m)
+                   (w1 :: Data.Semigroup.Semigroup e)
+                   @ b
+                   @ c
+                   @ b'
+                   @ c'
+                   (w2 :: Data.Check.CheckT m e b c)
+                   (w3 :: Data.Check.CheckT m e b' c')
+                   (w4 :: (b, b')) ->
+                 case w4 of ww { (,) ww1 ww2 ->
+                 Data.Check.$w$c***
+                   @ m
+                   @ e
+                   w
+                   w1
+                   @ b
+                   @ c
+                   @ b'
+                   @ c'
+                   w2
+                   w3
+                   ww1
+                   ww2 }) -}
+8534ffd37d07ef94328259d099f678b3
+  $fArrowCheckT3 ::
+    (GHC.Base.Monad m, Data.Semigroup.Semigroup e) =>
+    forall b c a.
+    Data.Check.CheckT m e b c
+    -> Data.Check.CheckT m e a b -> a -> m (GHC.Base.Maybe e, c)
+  {- Arity: 5, HasNoCafRefs,
+     Strictness: <S(LC(C(S))LLL),U(A,C(C1(U)),A,C(U),A)><L,U(C(C1(U)),A,A)><L,C(U)><L,1*C1(U)><L,U>,
+     Unfolding: (\ @ (m :: * -> *)
+                   @ e
+                   ($dMonad :: GHC.Base.Monad m)
+                   ($dSemigroup :: Data.Semigroup.Semigroup e)
+                   @ b
+                   @ c
+                   @ a
+                   (ds :: Data.Check.CheckT m e b c)
+                   (ds1 :: Data.Check.CheckT m e a b)
+                   (eta :: a) ->
+                 GHC.Base.>>=
+                   @ m
+                   $dMonad
+                   @ (GHC.Base.Maybe e, b)
+                   @ (GHC.Base.Maybe e, c)
+                   (ds1 `cast` (Data.Check.N:CheckT[0] <m>_R <e>_N <a>_R <b>_N) eta)
+                   (\ (ds2 :: (GHC.Base.Maybe e, b)) ->
+                    case ds2 of wild { (,) errs b1 ->
+                    GHC.Base.>>=
+                      @ m
+                      $dMonad
+                      @ (GHC.Base.Maybe e, c)
+                      @ (GHC.Base.Maybe e, c)
+                      (ds `cast` (Data.Check.N:CheckT[0] <m>_R <e>_N <b>_R <c>_N) b1)
+                      (\ (ds3 :: (GHC.Base.Maybe e, c)) ->
+                       case ds3 of wild1 { (,) errs' c1 ->
+                       GHC.Base.return
+                         @ m
+                         $dMonad
+                         @ (GHC.Base.Maybe e, c)
+                         (case errs of wild2 {
+                            GHC.Base.Nothing -> errs'
+                            GHC.Base.Just ipv
+                            -> case errs' of wild3 {
+                                 GHC.Base.Nothing -> wild2
+                                 GHC.Base.Just ipv1
+                                 -> GHC.Base.Just
+                                      @ e
+                                      (Data.Semigroup.<> @ e $dSemigroup ipv ipv1) } },
+                          c1) }) })) -}
+8534ffd37d07ef94328259d099f678b3
+  $fArrowCheckT4 ::
+    (GHC.Base.Monad m, Data.Semigroup.Semigroup e) =>
+    forall b c d.
+    Data.Check.CheckT m e b c -> (d, b) -> m (GHC.Base.Maybe e, (d, c))
+  {- Arity: 4, HasNoCafRefs,
+     Strictness: <S(LC(C(S))LLL),U(1*U(A,1*C1(U),A,A,A),C(C1(U)),A,C(U),A)><L,U(C(C1(U)),A,A)><L,1*C1(U)><S,1*U(U,U)>,
+     Unfolding: InlineRule (4, True, False)
+                (\ @ (m :: * -> *)
+                   @ e
+                   ($dMonad :: GHC.Base.Monad m)
+                   ($dSemigroup :: Data.Semigroup.Semigroup e)
+                   @ b
+                   @ c
+                   @ d
+                   (eta :: Data.Check.CheckT m e b c)
+                   (eta1 :: (d, b)) ->
+                 Data.Check.$fArrowCheckT2
+                   @ m
+                   @ e
+                   $dMonad
+                   $dSemigroup
+                   @ d
+                   @ d
+                   @ b
+                   @ c
+                   (Data.Check.$fArrowCheckT5 @ m @ e $dMonad $dSemigroup @ d)
+                     `cast`
+                   (Sym (Data.Check.N:CheckT[0] <m>_R <e>_N <d>_R <d>_N))
+                   eta
+                   eta1) -}
+b7fdb35d1a2e7dcb4ad01626c9fc45d8
+  $fArrowCheckT5 ::
+    (GHC.Base.Monad m, Data.Semigroup.Semigroup e) =>
+    forall a. a -> m (GHC.Base.Maybe e, a)
+  {- Arity: 3, HasNoCafRefs,
+     Strictness: <S(S(LC(S)LLL)LLLL),1*U(1*U(A,1*C1(U),A,A,A),A,A,A,A)><L,A><L,U>,
+     Unfolding: InlineRule (3, True, False)
+                (\ @ (m :: * -> *)
+                   @ e
+                   ($dMonad :: GHC.Base.Monad m)
+                   ($dSemigroup :: Data.Semigroup.Semigroup e)
+                   @ a
+                   (eta :: a) ->
+                 GHC.Base.pure
+                   @ m
+                   (GHC.Base.$p1Monad @ m $dMonad)
+                   @ (GHC.Base.Maybe e, a)
+                   (GHC.Base.Nothing @ e, eta)) -}
+8534ffd37d07ef94328259d099f678b3
+  $fArrowCheckT6 ::
+    (GHC.Base.Monad m, Data.Semigroup.Semigroup e) =>
+    forall b c d.
+    Data.Check.CheckT m e b c -> (b, d) -> m (GHC.Base.Maybe e, (c, d))
+  {- Arity: 4, HasNoCafRefs,
+     Strictness: <S(LC(C(S))LLL),U(1*U(A,1*C1(U),A,A,A),C(C1(U)),A,C(U),A)><L,U(C(C1(U)),A,A)><L,1*C1(U)><S,1*U(U,U)>,
+     Unfolding: InlineRule (4, True, False)
+                (\ @ (m :: * -> *)
+                   @ e
+                   ($dMonad :: GHC.Base.Monad m)
+                   ($dSemigroup :: Data.Semigroup.Semigroup e)
+                   @ b
+                   @ c
+                   @ d
+                   (eta :: Data.Check.CheckT m e b c)
+                   (eta1 :: (b, d)) ->
+                 Data.Check.$fArrowCheckT2
+                   @ m
+                   @ e
+                   $dMonad
+                   $dSemigroup
+                   @ b
+                   @ c
+                   @ d
+                   @ d
+                   eta
+                   (Data.Check.$fArrowCheckT5 @ m @ e $dMonad $dSemigroup @ d)
+                     `cast`
+                   (Sym (Data.Check.N:CheckT[0] <m>_R <e>_N <d>_R <d>_N))
+                   eta1) -}
+f91b44452cbbc33863c2052f5e94f818
+  $fArrowCheckT7 ::
+    (GHC.Base.Monad m, Data.Semigroup.Semigroup e) =>
+    forall b c. (b -> c) -> b -> m (GHC.Base.Maybe e, c)
+  {- Arity: 4, HasNoCafRefs,
+     Strictness: <S(S(LC(S)LLL)LLLL),1*U(1*U(A,1*C1(U),A,A,A),A,A,A,A)><L,A><L,1*C1(U)><L,U>,
+     Unfolding: InlineRule (4, True, False)
+                (\ @ (m :: * -> *)
+                   @ e
+                   ($dMonad :: GHC.Base.Monad m)
+                   ($dSemigroup :: Data.Semigroup.Semigroup e)
+                   @ b
+                   @ c
+                   (eta :: b -> c)
+                   (eta1 :: b) ->
+                 GHC.Base.pure
+                   @ m
+                   (GHC.Base.$p1Monad @ m $dMonad)
+                   @ (GHC.Base.Maybe e, c)
+                   (GHC.Base.Nothing @ e, eta eta1)) -}
+8534ffd37d07ef94328259d099f678b3
+  $fArrowCheckT_$c&&& ::
+    (GHC.Base.Monad m, Data.Semigroup.Semigroup e) =>
+    forall b c c'.
+    Data.Check.CheckT m e b c
+    -> Data.Check.CheckT m e b c' -> Data.Check.CheckT m e b (c, c')
+  {- Arity: 5, HasNoCafRefs,
+     Strictness: <S(LC(C(S))LLL),U(1*U(A,1*C1(U),A,A,A),C(C1(U)),A,C(U),A)><L,U(C(C1(U)),A,A)><L,C(U)><L,C(U)><L,U>,
+     Unfolding: InlineRule (0, True, True)
+                Data.Check.$fArrowCheckT1
+                  `cast`
+                (forall (m :: <* -> *>_N) (e :: <*>_N).
+                 <GHC.Base.Monad m>_R
+                 ->_R <Data.Semigroup.Semigroup e>_R
+                 ->_R forall (b :: <*>_N) (c :: <*>_N) (c' :: <*>_N).
+                      <Data.Check.CheckT m e b c>_R
+                      ->_R <Data.Check.CheckT m e b c'>_R
+                      ->_R Sym (Data.Check.N:CheckT[0] <m>_R <e>_N <b>_R <(c, c')>_N)) -}
+8534ffd37d07ef94328259d099f678b3
+  $fArrowCheckT_$c*** ::
+    (GHC.Base.Monad m, Data.Semigroup.Semigroup e) =>
+    forall b c b' c'.
+    Data.Check.CheckT m e b c
+    -> Data.Check.CheckT m e b' c'
+    -> Data.Check.CheckT m e (b, b') (c, c')
+  {- Arity: 5, HasNoCafRefs,
+     Strictness: <S(LC(C(S))LLL),U(A,C(C1(U)),A,C(U),A)><L,U(C(C1(U)),A,A)><L,1*C1(U)><L,1*C1(U)><S,1*U(U,U)>,
+     Unfolding: InlineRule (0, True, True)
+                Data.Check.$fArrowCheckT2
+                  `cast`
+                (forall (m :: <* -> *>_N) (e :: <*>_N).
+                 <GHC.Base.Monad m>_R
+                 ->_R <Data.Semigroup.Semigroup e>_R
+                 ->_R forall (b :: <*>_N) (c :: <*>_N) (b' :: <*>_N) (c' :: <*>_N).
+                      <Data.Check.CheckT m e b c>_R
+                      ->_R <Data.Check.CheckT m e b' c'>_R
+                      ->_R Sym (Data.Check.N:CheckT[0]
+                                    <m>_R <e>_N <(b, b')>_R <(c, c')>_N)) -}
+8534ffd37d07ef94328259d099f678b3
+  $fArrowCheckT_$carr ::
+    (GHC.Base.Monad m, Data.Semigroup.Semigroup e) =>
+    forall b c. (b -> c) -> Data.Check.CheckT m e b c
+  {- Arity: 4, HasNoCafRefs,
+     Strictness: <S(S(LC(S)LLL)LLLL),1*U(1*U(A,1*C1(U),A,A,A),A,A,A,A)><L,A><L,1*C1(U)><L,U>,
+     Unfolding: InlineRule (0, True, True)
+                Data.Check.$fArrowCheckT7
+                  `cast`
+                (forall (m :: <* -> *>_N) (e :: <*>_N).
+                 <GHC.Base.Monad m>_R
+                 ->_R <Data.Semigroup.Semigroup e>_R
+                 ->_R forall (b :: <*>_N) (c :: <*>_N).
+                      <b -> c>_R
+                      ->_R Sym (Data.Check.N:CheckT[0] <m>_R <e>_N <b>_R <c>_N)) -}
+8534ffd37d07ef94328259d099f678b3
+  $fArrowCheckT_$cfirst ::
+    (GHC.Base.Monad m, Data.Semigroup.Semigroup e) =>
+    forall b c d.
+    Data.Check.CheckT m e b c -> Data.Check.CheckT m e (b, d) (c, d)
+  {- Arity: 4, HasNoCafRefs,
+     Strictness: <S(LC(C(S))LLL),U(1*U(A,1*C1(U),A,A,A),C(C1(U)),A,C(U),A)><L,U(C(C1(U)),A,A)><L,1*C1(U)><S,1*U(U,U)>,
+     Unfolding: InlineRule (0, True, True)
+                Data.Check.$fArrowCheckT6
+                  `cast`
+                (forall (m :: <* -> *>_N) (e :: <*>_N).
+                 <GHC.Base.Monad m>_R
+                 ->_R <Data.Semigroup.Semigroup e>_R
+                 ->_R forall (b :: <*>_N) (c :: <*>_N) (d :: <*>_N).
+                      <Data.Check.CheckT m e b c>_R
+                      ->_R Sym (Data.Check.N:CheckT[0]
+                                    <m>_R <e>_N <(b, d)>_R <(c, d)>_N)) -}
+8534ffd37d07ef94328259d099f678b3
+  $fArrowCheckT_$csecond ::
+    (GHC.Base.Monad m, Data.Semigroup.Semigroup e) =>
+    forall b c d.
+    Data.Check.CheckT m e b c -> Data.Check.CheckT m e (d, b) (d, c)
+  {- Arity: 4, HasNoCafRefs,
+     Strictness: <S(LC(C(S))LLL),U(1*U(A,1*C1(U),A,A,A),C(C1(U)),A,C(U),A)><L,U(C(C1(U)),A,A)><L,1*C1(U)><S,1*U(U,U)>,
+     Unfolding: InlineRule (0, True, True)
+                Data.Check.$fArrowCheckT4
+                  `cast`
+                (forall (m :: <* -> *>_N) (e :: <*>_N).
+                 <GHC.Base.Monad m>_R
+                 ->_R <Data.Semigroup.Semigroup e>_R
+                 ->_R forall (b :: <*>_N) (c :: <*>_N) (d :: <*>_N).
+                      <Data.Check.CheckT m e b c>_R
+                      ->_R Sym (Data.Check.N:CheckT[0]
+                                    <m>_R <e>_N <(d, b)>_R <(d, c)>_N)) -}
+8534ffd37d07ef94328259d099f678b3
+  $fArrowChoiceCheckT ::
+    (GHC.Base.Monad m, Data.Semigroup.Semigroup e) =>
+    Control.Arrow.ArrowChoice (Data.Check.CheckT m e)
+  DFunId
+  {- Arity: 2, HasNoCafRefs,
+     Strictness: <L,U(U(A,C(U),A,A,A),C(C1(U)),A,U,A)><L,U(C(C1(U)),A,A)>m,
+     Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun: @ (m :: * -> *)
+                      @ e
+                      ($dMonad :: GHC.Base.Monad m)
+                      ($dSemigroup :: Data.Semigroup.Semigroup e).
+                  @ (Data.Check.CheckT m e)
+                  (Data.Check.$fArrowCheckT @ m @ e $dMonad $dSemigroup)
+                  (Data.Check.$fArrowChoiceCheckT_$cleft @ m @ e $dMonad $dSemigroup)
+                  (Data.Check.$fArrowChoiceCheckT_$cright
+                     @ m
+                     @ e
+                     $dMonad
+                     $dSemigroup)
+                  (Data.Check.$fArrowChoiceCheckT_$c+++ @ m @ e $dMonad $dSemigroup)
+                  (Data.Check.$fArrowChoiceCheckT_$c|||
+                     @ m
+                     @ e
+                     $dMonad
+                     $dSemigroup) -}
+8534ffd37d07ef94328259d099f678b3
+  $fArrowChoiceCheckT1 ::
+    (GHC.Base.Monad m, Data.Semigroup.Semigroup e) =>
+    forall b d c.
+    Data.Check.CheckT m e b d
+    -> Data.Check.CheckT m e c d
+    -> Data.Either.Either b c
+    -> m (GHC.Base.Maybe e, d)
+  {- Arity: 5, HasNoCafRefs,
+     Strictness: <S(LC(C(S))LLL),U(U(A,C(U),A,A,A),C(C1(U)),A,U,A)><L,U(C(C1(U)),A,A)><L,1*C1(U)><L,1*C1(U)><L,U>,
+     Unfolding: (\ @ (m :: * -> *)
+                   @ e
+                   ($dMonad :: GHC.Base.Monad m)
+                   ($dSemigroup :: Data.Semigroup.Semigroup e)
+                   @ b
+                   @ d
+                   @ c
+                   (eta :: Data.Check.CheckT m e b d)
+                   (eta1 :: Data.Check.CheckT m e c d)
+                   (eta2 :: Data.Either.Either b c) ->
+                 let {
+                   lvl11 :: GHC.Base.Applicative m = GHC.Base.$p1Monad @ m $dMonad
+                 } in
+                 Data.Check.$fArrowCheckT3
+                   @ m
+                   @ e
+                   $dMonad
+                   $dSemigroup
+                   @ (Data.Either.Either d d)
+                   @ d
+                   @ (Data.Either.Either b c)
+                   (\ (eta3 :: Data.Either.Either d d) ->
+                    GHC.Base.pure
+                      @ m
+                      lvl11
+                      @ (GHC.Base.Maybe e, d)
+                      (GHC.Base.Nothing @ e,
+                       case eta3 of wild {
+                         Data.Either.Left x -> x Data.Either.Right y -> y }))
+                     `cast`
+                   (Sym (Data.Check.N:CheckT[0]
+                             <m>_R <e>_N <Data.Either.Either d d>_R <d>_N))
+                   (\ (w :: Data.Either.Either b c)[OneShot] ->
+                    Data.Check.$w$c+++ @ m @ e $dMonad @ b @ d @ c @ d eta eta1 w)
+                     `cast`
+                   (Sym (Data.Check.N:CheckT[0]
+                             <m>_R <e>_N <Data.Either.Either b c>_R <Data.Either.Either d d>_N))
+                   eta2) -}
+8534ffd37d07ef94328259d099f678b3
+  $fArrowChoiceCheckT2 ::
+    (GHC.Base.Monad m, Data.Semigroup.Semigroup e) =>
+    forall b c b' c'.
+    Data.Check.CheckT m e b c
+    -> Data.Check.CheckT m e b' c'
+    -> Data.Either.Either b b'
+    -> m (GHC.Base.Maybe e, Data.Either.Either c c')
+  {- Arity: 5, HasNoCafRefs,
+     Strictness: <S(LC(C(S))LLL),U(A,1*C1(C1(U)),A,1*U,A)><L,A><L,1*C1(U)><L,1*C1(U)><S,1*U>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (5, True, True)
+                (\ @ (m :: * -> *)
+                   @ e
+                   (w :: GHC.Base.Monad m)
+                   (w1 :: Data.Semigroup.Semigroup e)
+                   @ b
+                   @ c
+                   @ b'
+                   @ c'
+                   (w2 :: Data.Check.CheckT m e b c)
+                   (w3 :: Data.Check.CheckT m e b' c')
+                   (w4 :: Data.Either.Either b b') ->
+                 Data.Check.$w$c+++ @ m @ e w @ b @ c @ b' @ c' w2 w3 w4) -}
+8534ffd37d07ef94328259d099f678b3
+  $fArrowChoiceCheckT3 ::
+    (GHC.Base.Monad m, Data.Semigroup.Semigroup e) =>
+    forall b c d.
+    Data.Check.CheckT m e b c
+    -> Data.Either.Either d b
+    -> m (GHC.Base.Maybe e, Data.Either.Either d c)
+  {- Arity: 4, HasNoCafRefs,
+     Strictness: <S(LC(C(S))LLL),U(1*U(A,1*C1(U),A,A,A),C(C1(U)),A,U,A)><L,A><L,1*C1(U)><S,1*U>,
+     Unfolding: InlineRule (4, True, False)
+                (\ @ (m :: * -> *)
+                   @ e
+                   ($dMonad :: GHC.Base.Monad m)
+                   ($dSemigroup :: Data.Semigroup.Semigroup e)
+                   @ b
+                   @ c
+                   @ d
+                   (eta :: Data.Check.CheckT m e b c)
+                   (eta1 :: Data.Either.Either d b) ->
+                 Data.Check.$fArrowChoiceCheckT2
+                   @ m
+                   @ e
+                   $dMonad
+                   $dSemigroup
+                   @ d
+                   @ d
+                   @ b
+                   @ c
+                   (Data.Check.$fArrowCheckT5 @ m @ e $dMonad $dSemigroup @ d)
+                     `cast`
+                   (Sym (Data.Check.N:CheckT[0] <m>_R <e>_N <d>_R <d>_N))
+                   eta
+                   eta1) -}
+8534ffd37d07ef94328259d099f678b3
+  $fArrowChoiceCheckT4 ::
+    (GHC.Base.Monad m, Data.Semigroup.Semigroup e) =>
+    forall b c d.
+    Data.Check.CheckT m e b c
+    -> Data.Either.Either b d
+    -> m (GHC.Base.Maybe e, Data.Either.Either c d)
+  {- Arity: 4, HasNoCafRefs,
+     Strictness: <S(LC(C(S))LLL),U(1*U(A,1*C1(U),A,A,A),C(C1(U)),A,U,A)><L,A><L,1*C1(U)><S,1*U>,
+     Unfolding: InlineRule (4, True, False)
+                (\ @ (m :: * -> *)
+                   @ e
+                   ($dMonad :: GHC.Base.Monad m)
+                   ($dSemigroup :: Data.Semigroup.Semigroup e)
+                   @ b
+                   @ c
+                   @ d
+                   (eta :: Data.Check.CheckT m e b c)
+                   (eta1 :: Data.Either.Either b d) ->
+                 Data.Check.$fArrowChoiceCheckT2
+                   @ m
+                   @ e
+                   $dMonad
+                   $dSemigroup
+                   @ b
+                   @ c
+                   @ d
+                   @ d
+                   eta
+                   (Data.Check.$fArrowCheckT5 @ m @ e $dMonad $dSemigroup @ d)
+                     `cast`
+                   (Sym (Data.Check.N:CheckT[0] <m>_R <e>_N <d>_R <d>_N))
+                   eta1) -}
+8534ffd37d07ef94328259d099f678b3
+  $fArrowChoiceCheckT_$c+++ ::
+    (GHC.Base.Monad m, Data.Semigroup.Semigroup e) =>
+    forall b c b' c'.
+    Data.Check.CheckT m e b c
+    -> Data.Check.CheckT m e b' c'
+    -> Data.Check.CheckT
+         m e (Data.Either.Either b b') (Data.Either.Either c c')
+  {- Arity: 5, HasNoCafRefs,
+     Strictness: <S(LC(C(S))LLL),U(A,1*C1(C1(U)),A,1*U,A)><L,A><L,1*C1(U)><L,1*C1(U)><S,1*U>,
+     Unfolding: InlineRule (0, True, True)
+                Data.Check.$fArrowChoiceCheckT2
+                  `cast`
+                (forall (m :: <* -> *>_N) (e :: <*>_N).
+                 <GHC.Base.Monad m>_R
+                 ->_R <Data.Semigroup.Semigroup e>_R
+                 ->_R forall (b :: <*>_N) (c :: <*>_N) (b' :: <*>_N) (c' :: <*>_N).
+                      <Data.Check.CheckT m e b c>_R
+                      ->_R <Data.Check.CheckT m e b' c'>_R
+                      ->_R Sym (Data.Check.N:CheckT[0]
+                                    <m>_R
+                                    <e>_N
+                                    <Data.Either.Either b b'>_R
+                                    <Data.Either.Either c c'>_N)) -}
+8534ffd37d07ef94328259d099f678b3
+  $fArrowChoiceCheckT_$cleft ::
+    (GHC.Base.Monad m, Data.Semigroup.Semigroup e) =>
+    forall b c d.
+    Data.Check.CheckT m e b c
+    -> Data.Check.CheckT
+         m e (Data.Either.Either b d) (Data.Either.Either c d)
+  {- Arity: 4, HasNoCafRefs,
+     Strictness: <S(LC(C(S))LLL),U(1*U(A,1*C1(U),A,A,A),C(C1(U)),A,U,A)><L,A><L,1*C1(U)><S,1*U>,
+     Unfolding: InlineRule (0, True, True)
+                Data.Check.$fArrowChoiceCheckT4
+                  `cast`
+                (forall (m :: <* -> *>_N) (e :: <*>_N).
+                 <GHC.Base.Monad m>_R
+                 ->_R <Data.Semigroup.Semigroup e>_R
+                 ->_R forall (b :: <*>_N) (c :: <*>_N) (d :: <*>_N).
+                      <Data.Check.CheckT m e b c>_R
+                      ->_R Sym (Data.Check.N:CheckT[0]
+                                    <m>_R
+                                    <e>_N
+                                    <Data.Either.Either b d>_R
+                                    <Data.Either.Either c d>_N)) -}
+8534ffd37d07ef94328259d099f678b3
+  $fArrowChoiceCheckT_$cright ::
+    (GHC.Base.Monad m, Data.Semigroup.Semigroup e) =>
+    forall b c d.
+    Data.Check.CheckT m e b c
+    -> Data.Check.CheckT
+         m e (Data.Either.Either d b) (Data.Either.Either d c)
+  {- Arity: 4, HasNoCafRefs,
+     Strictness: <S(LC(C(S))LLL),U(1*U(A,1*C1(U),A,A,A),C(C1(U)),A,U,A)><L,A><L,1*C1(U)><S,1*U>,
+     Unfolding: InlineRule (0, True, True)
+                Data.Check.$fArrowChoiceCheckT3
+                  `cast`
+                (forall (m :: <* -> *>_N) (e :: <*>_N).
+                 <GHC.Base.Monad m>_R
+                 ->_R <Data.Semigroup.Semigroup e>_R
+                 ->_R forall (b :: <*>_N) (c :: <*>_N) (d :: <*>_N).
+                      <Data.Check.CheckT m e b c>_R
+                      ->_R Sym (Data.Check.N:CheckT[0]
+                                    <m>_R
+                                    <e>_N
+                                    <Data.Either.Either d b>_R
+                                    <Data.Either.Either d c>_N)) -}
+8534ffd37d07ef94328259d099f678b3
+  $fArrowChoiceCheckT_$c||| ::
+    (GHC.Base.Monad m, Data.Semigroup.Semigroup e) =>
+    forall b d c.
+    Data.Check.CheckT m e b d
+    -> Data.Check.CheckT m e c d
+    -> Data.Check.CheckT m e (Data.Either.Either b c) d
+  {- Arity: 5, HasNoCafRefs,
+     Strictness: <S(LC(C(S))LLL),U(U(A,C(U),A,A,A),C(C1(U)),A,U,A)><L,U(C(C1(U)),A,A)><L,1*C1(U)><L,1*C1(U)><L,U>,
+     Unfolding: InlineRule (0, True, True)
+                Data.Check.$fArrowChoiceCheckT1
+                  `cast`
+                (forall (m :: <* -> *>_N) (e :: <*>_N).
+                 <GHC.Base.Monad m>_R
+                 ->_R <Data.Semigroup.Semigroup e>_R
+                 ->_R forall (b :: <*>_N) (d :: <*>_N) (c :: <*>_N).
+                      <Data.Check.CheckT m e b d>_R
+                      ->_R <Data.Check.CheckT m e c d>_R
+                      ->_R Sym (Data.Check.N:CheckT[0]
+                                    <m>_R <e>_N <Data.Either.Either b c>_R <d>_N)) -}
+8534ffd37d07ef94328259d099f678b3
+  $fCategoryTYPECheckT ::
+    (GHC.Base.Monad m, Data.Semigroup.Semigroup e) =>
+    Control.Category.Category (Data.Check.CheckT m e)
+  DFunId
+  {- Arity: 2, HasNoCafRefs,
+     Strictness: <L,U(U(A,C(U),A,A,A),C(C1(U)),A,C(U),A)><L,U(C(C1(U)),A,A)>m,
+     Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun: @ (m :: * -> *)
+                      @ e
+                      ($dMonad :: GHC.Base.Monad m)
+                      ($dSemigroup :: Data.Semigroup.Semigroup e).
+                  @ *
+                  @ (Data.Check.CheckT m e)
+                  (Data.Check.$fCategoryTYPECheckT_$cid @ m @ e $dMonad $dSemigroup)
+                  (Data.Check.$fCategoryTYPECheckT_$c.
+                     @ m
+                     @ e
+                     $dMonad
+                     $dSemigroup) -}
+8534ffd37d07ef94328259d099f678b3
+  $fCategoryTYPECheckT_$c. ::
+    (GHC.Base.Monad m, Data.Semigroup.Semigroup e) =>
+    forall b c a.
+    Data.Check.CheckT m e b c
+    -> Data.Check.CheckT m e a b -> Data.Check.CheckT m e a c
+  {- Arity: 5, HasNoCafRefs,
+     Strictness: <S(LC(C(S))LLL),U(A,C(C1(U)),A,C(U),A)><L,U(C(C1(U)),A,A)><L,C(U)><L,1*C1(U)><L,U>,
+     Unfolding: InlineRule (0, True, True)
+                Data.Check.$fArrowCheckT3
+                  `cast`
+                (forall (m :: <* -> *>_N) (e :: <*>_N).
+                 <GHC.Base.Monad m>_R
+                 ->_R <Data.Semigroup.Semigroup e>_R
+                 ->_R forall (b :: <*>_N) (c :: <*>_N) (a :: <*>_N).
+                      <Data.Check.CheckT m e b c>_R
+                      ->_R <Data.Check.CheckT m e a b>_R
+                      ->_R Sym (Data.Check.N:CheckT[0] <m>_R <e>_N <a>_R <c>_N)) -}
+8534ffd37d07ef94328259d099f678b3
+  $fCategoryTYPECheckT_$cid ::
+    (GHC.Base.Monad m, Data.Semigroup.Semigroup e) =>
+    forall a. Data.Check.CheckT m e a a
+  {- Arity: 3, HasNoCafRefs,
+     Strictness: <S(S(LC(S)LLL)LLLL),1*U(1*U(A,1*C1(U),A,A,A),A,A,A,A)><L,A><L,U>,
+     Unfolding: InlineRule (0, True, True)
+                Data.Check.$fArrowCheckT5
+                  `cast`
+                (forall (m :: <* -> *>_N) (e :: <*>_N).
+                 <GHC.Base.Monad m>_R
+                 ->_R <Data.Semigroup.Semigroup e>_R
+                 ->_R forall (a :: <*>_N).
+                      Sym (Data.Check.N:CheckT[0] <m>_R <e>_N <a>_R <a>_N)) -}
+8534ffd37d07ef94328259d099f678b3
+  $fFunctorCheckT ::
+    GHC.Base.Functor m => GHC.Base.Functor (Data.Check.CheckT m e a)
+  DFunId
+  {- Arity: 1, HasNoCafRefs, Strictness: <L,U(C(U),A)>m,
+     Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun: @ (m :: * -> *)
+                      @ e
+                      @ a
+                      ($dFunctor :: GHC.Base.Functor m).
+                  @ (Data.Check.CheckT m e a)
+                  (Data.Check.$fFunctorCheckT_$cfmap @ m @ e @ a $dFunctor)
+                  (Data.Check.$fFunctorCheckT_$c<$ @ m @ e @ a $dFunctor) -}
+8534ffd37d07ef94328259d099f678b3
+  $fFunctorCheckT1 ::
+    GHC.Base.Functor m =>
+    forall a1 b.
+    a1 -> Data.Check.CheckT m e a b -> a -> m (GHC.Base.Maybe e, a1)
+  {- Arity: 3, HasNoCafRefs,
+     Strictness: <L,1*U(1*C1(U),A)><L,U><L,C(U)>,
+     Unfolding: (\ @ (m :: * -> *)
+                   @ e
+                   @ a
+                   ($dFunctor :: GHC.Base.Functor m)
+                   @ a1
+                   @ b
+                   (eta :: a1)
+                   (eta1 :: Data.Check.CheckT m e a b) ->
+                 let {
+                   f :: m (GHC.Base.Maybe e, b) -> m (GHC.Base.Maybe e, a1)
+                   = GHC.Base.fmap
+                       @ m
+                       $dFunctor
+                       @ (GHC.Base.Maybe e, b)
+                       @ (GHC.Base.Maybe e, a1)
+                       (\ (ds :: (GHC.Base.Maybe e, b)) ->
+                        case ds of wild { (,) x y -> (x, eta) })
+                 } in
+                 \ (x :: a) ->
+                 f (eta1 `cast` (Data.Check.N:CheckT[0] <m>_R <e>_N <a>_R <b>_N)
+                      x)) -}
+8534ffd37d07ef94328259d099f678b3
+  $fFunctorCheckT2 ::
+    GHC.Base.Functor m =>
+    forall a1 b.
+    (a1 -> b)
+    -> Data.Check.CheckT m e a a1 -> a -> m (GHC.Base.Maybe e, b)
+  {- Arity: 3, HasNoCafRefs,
+     Strictness: <L,1*U(1*C1(U),A)><L,C(U)><L,C(U)>,
+     Unfolding: InlineRule (3, True, False)
+                (\ @ (m :: * -> *)
+                   @ e
+                   @ a
+                   ($dFunctor :: GHC.Base.Functor m)
+                   @ a1
+                   @ b
+                   (f :: a1 -> b)
+                   (ds :: Data.Check.CheckT m e a a1) ->
+                 let {
+                   f1 :: m (GHC.Base.Maybe e, a1) -> m (GHC.Base.Maybe e, b)
+                   = GHC.Base.fmap
+                       @ m
+                       $dFunctor
+                       @ (GHC.Base.Maybe e, a1)
+                       @ (GHC.Base.Maybe e, b)
+                       (GHC.Base.$fFunctor(,)_$cfmap @ (GHC.Base.Maybe e) @ a1 @ b f)
+                 } in
+                 \ (x :: a) ->
+                 f1
+                   (ds `cast` (Data.Check.N:CheckT[0] <m>_R <e>_N <a>_R <a1>_N) x)) -}
+8534ffd37d07ef94328259d099f678b3
+  $fFunctorCheckT_$c<$ ::
+    GHC.Base.Functor m =>
+    forall a1 b.
+    a1 -> Data.Check.CheckT m e a b -> Data.Check.CheckT m e a a1
+  {- Arity: 3, HasNoCafRefs,
+     Strictness: <L,1*U(1*C1(U),A)><L,U><L,C(U)>,
+     Unfolding: InlineRule (0, True, True)
+                Data.Check.$fFunctorCheckT1
+                  `cast`
+                (forall (m :: <* -> *>_N) (e :: <*>_N) (a :: <*>_N).
+                 <GHC.Base.Functor m>_R
+                 ->_R forall (a1 :: <*>_N) (b :: <*>_N).
+                      <a1>_R
+                      ->_R <Data.Check.CheckT m e a b>_R
+                      ->_R Sym (Data.Check.N:CheckT[0] <m>_R <e>_N <a>_R <a1>_N)) -}
+8534ffd37d07ef94328259d099f678b3
+  $fFunctorCheckT_$cfmap ::
+    GHC.Base.Functor m =>
+    forall a1 b.
+    (a1 -> b)
+    -> Data.Check.CheckT m e a a1 -> Data.Check.CheckT m e a b
+  {- Arity: 3, HasNoCafRefs,
+     Strictness: <L,1*U(1*C1(U),A)><L,C(U)><L,C(U)>,
+     Unfolding: InlineRule (0, True, True)
+                Data.Check.$fFunctorCheckT2
+                  `cast`
+                (forall (m :: <* -> *>_N) (e :: <*>_N) (a :: <*>_N).
+                 <GHC.Base.Functor m>_R
+                 ->_R forall (a1 :: <*>_N) (b :: <*>_N).
+                      <a1 -> b>_R
+                      ->_R <Data.Check.CheckT m e a a1>_R
+                      ->_R Sym (Data.Check.N:CheckT[0] <m>_R <e>_N <a>_R <b>_N)) -}
+8534ffd37d07ef94328259d099f678b3
+  $fMonoidCheckT ::
+    (GHC.Base.Monad m, Data.Semigroup.Semigroup e) =>
+    GHC.Base.Monoid (Data.Check.CheckT m e a a)
+  DFunId
+  {- Arity: 2, HasNoCafRefs,
+     Strictness: <L,U(U(A,C(U),A,A,A),C(C1(U)),A,C(U),A)><L,U(C(C1(U)),A,A)>m,
+     Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun: @ (m :: * -> *)
+                      @ e
+                      @ a
+                      ($dMonad :: GHC.Base.Monad m)
+                      ($dSemigroup :: Data.Semigroup.Semigroup e).
+                  @ (Data.Check.CheckT m e a a)
+                  (Data.Check.$fMonoidCheckT_$cmempty
+                     @ m
+                     @ e
+                     @ a
+                     $dMonad
+                     $dSemigroup)
+                  (Data.Check.$fMonoidCheckT_$cmappend
+                     @ m
+                     @ e
+                     @ a
+                     $dMonad
+                     $dSemigroup)
+                  (Data.Check.$fMonoidCheckT_$cmconcat
+                     @ m
+                     @ e
+                     @ a
+                     $dMonad
+                     $dSemigroup) -}
+8534ffd37d07ef94328259d099f678b3
+  $fMonoidCheckT1 ::
+    (GHC.Base.Monad m, Data.Semigroup.Semigroup e) =>
+    [Data.Check.CheckT m e a a] -> a -> m (GHC.Base.Maybe e, a)
+  {- Arity: 4, HasNoCafRefs,
+     Strictness: <S,U(U(A,C(U),A,A,A),C(C1(U)),A,C(U),A)><L,U(C(C1(U)),A,A)><S,1*U><L,U>,
+     Unfolding: (\ @ (m :: * -> *)
+                   @ e
+                   @ a
+                   ($dMonad :: GHC.Base.Monad m)
+                   ($dSemigroup :: Data.Semigroup.Semigroup e)
+                   (eta :: [Data.Check.CheckT m e a a])
+                   (eta1 :: a) ->
+                 letrec {
+                   go :: [Data.Check.CheckT m e a a] -> a -> m (GHC.Base.Maybe e, a)
+                     {- Arity: 2, Strictness: <S,1*U><L,U> -}
+                   = \ (ds :: [Data.Check.CheckT m e a a]) (eta2 :: a) ->
+                     case ds of wild {
+                       []
+                       -> Data.Check.$fArrowCheckT5 @ m @ e $dMonad $dSemigroup @ a eta2
+                       : y ys
+                       -> Data.Check.$fArrowCheckT3
+                            @ m
+                            @ e
+                            $dMonad
+                            $dSemigroup
+                            @ a
+                            @ a
+                            @ a
+                            y
+                            (go ys)
+                              `cast`
+                            (Sym (Data.Check.N:CheckT[0] <m>_R <e>_N <a>_R <a>_N))
+                            eta2 }
+                 } in
+                 go eta eta1) -}
+8534ffd37d07ef94328259d099f678b3
+  $fMonoidCheckT2 ::
+    (GHC.Base.Monad m, Data.Semigroup.Semigroup e) =>
+    Data.Check.CheckT m e a a
+    -> Data.Check.CheckT m e a a -> a -> m (GHC.Base.Maybe e, a)
+  {- Arity: 5, HasNoCafRefs,
+     Strictness: <L,U(A,C(C1(U)),A,C(U),A)><L,U(C(C1(U)),A,A)>,
+     Unfolding: InlineRule (2, True, True)
+                (\ @ (m :: * -> *)
+                   @ e
+                   @ a
+                   ($dMonad :: GHC.Base.Monad m)
+                   ($dSemigroup :: Data.Semigroup.Semigroup e)
+                   (eta :: Data.Check.CheckT m e a a)
+                   (eta1 :: Data.Check.CheckT m e a a)
+                   (eta2 :: a) ->
+                 Data.Check.$fArrowCheckT3
+                   @ m
+                   @ e
+                   $dMonad
+                   $dSemigroup
+                   @ a
+                   @ a
+                   @ a
+                   eta
+                   eta1
+                   eta2) -}
+22b1f76b32e553bf46cdb1471915fe78
+  $fMonoidCheckT3 ::
+    (GHC.Base.Monad m, Data.Semigroup.Semigroup e) =>
+    a -> m (GHC.Base.Maybe e, a)
+  {- Arity: 3, HasNoCafRefs,
+     Strictness: <L,U(U(A,C(U),A,A,A),A,A,A,A)><L,A>,
+     Unfolding: InlineRule (2, True, True)
+                (\ @ (m :: * -> *)
+                   @ e
+                   @ a
+                   ($dMonad :: GHC.Base.Monad m)
+                   ($dSemigroup :: Data.Semigroup.Semigroup e)
+                   (eta :: a) ->
+                 Data.Check.$fArrowCheckT5 @ m @ e $dMonad $dSemigroup @ a eta) -}
+8534ffd37d07ef94328259d099f678b3
+  $fMonoidCheckT_$cmappend ::
+    (GHC.Base.Monad m, Data.Semigroup.Semigroup e) =>
+    Data.Check.CheckT m e a a
+    -> Data.Check.CheckT m e a a -> Data.Check.CheckT m e a a
+  {- Arity: 5, HasNoCafRefs,
+     Strictness: <L,U(A,C(C1(U)),A,C(U),A)><L,U(C(C1(U)),A,A)>,
+     Unfolding: InlineRule (0, True, True)
+                Data.Check.$fMonoidCheckT2
+                  `cast`
+                (forall (m :: <* -> *>_N) (e :: <*>_N) (a :: <*>_N).
+                 <GHC.Base.Monad m>_R
+                 ->_R <Data.Semigroup.Semigroup e>_R
+                 ->_R <Data.Check.CheckT m e a a>_R
+                 ->_R <Data.Check.CheckT m e a a>_R
+                 ->_R Sym (Data.Check.N:CheckT[0] <m>_R <e>_N <a>_R <a>_N)) -}
+8534ffd37d07ef94328259d099f678b3
+  $fMonoidCheckT_$cmconcat ::
+    (GHC.Base.Monad m, Data.Semigroup.Semigroup e) =>
+    [Data.Check.CheckT m e a a] -> Data.Check.CheckT m e a a
+  {- Arity: 4, HasNoCafRefs,
+     Strictness: <S,U(U(A,C(U),A,A,A),C(C1(U)),A,C(U),A)><L,U(C(C1(U)),A,A)><S,1*U><L,U>,
+     Unfolding: InlineRule (0, True, True)
+                Data.Check.$fMonoidCheckT1
+                  `cast`
+                (forall (m :: <* -> *>_N) (e :: <*>_N) (a :: <*>_N).
+                 <GHC.Base.Monad m>_R
+                 ->_R <Data.Semigroup.Semigroup e>_R
+                 ->_R <[Data.Check.CheckT m e a a]>_R
+                 ->_R Sym (Data.Check.N:CheckT[0] <m>_R <e>_N <a>_R <a>_N)) -}
+8534ffd37d07ef94328259d099f678b3
+  $fMonoidCheckT_$cmempty ::
+    (GHC.Base.Monad m, Data.Semigroup.Semigroup e) =>
+    Data.Check.CheckT m e a a
+  {- Arity: 3, HasNoCafRefs,
+     Strictness: <L,U(U(A,C(U),A,A,A),A,A,A,A)><L,A>,
+     Unfolding: InlineRule (0, True, True)
+                Data.Check.$fMonoidCheckT3
+                  `cast`
+                (forall (m :: <* -> *>_N) (e :: <*>_N) (a :: <*>_N).
+                 <GHC.Base.Monad m>_R
+                 ->_R <Data.Semigroup.Semigroup e>_R
+                 ->_R Sym (Data.Check.N:CheckT[0] <m>_R <e>_N <a>_R <a>_N)) -}
+8534ffd37d07ef94328259d099f678b3
+  $fProfunctorCheckT ::
+    GHC.Base.Functor m =>
+    Data.Profunctor.Unsafe.Profunctor (Data.Check.CheckT m e)
+  DFunId
+  {- Arity: 1, HasNoCafRefs, Strictness: <L,U(C(U),A)>m,
+     Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun: @ (m :: * -> *)
+                      @ e
+                      ($dFunctor :: GHC.Base.Functor m).
+                  @ (Data.Check.CheckT m e)
+                  (Data.Check.$fProfunctorCheckT_$cdimap @ m @ e $dFunctor)
+                  (Data.Check.$fProfunctorCheckT_$clmap @ m @ e $dFunctor)
+                  (Data.Check.$fProfunctorCheckT_$crmap @ m @ e $dFunctor)
+                  (Data.Check.$fProfunctorCheckT_$c#. @ m @ e $dFunctor)
+                  (Data.Check.$fProfunctorCheckT_$c.# @ m @ e $dFunctor) -}
+8534ffd37d07ef94328259d099f678b3
+  $fProfunctorCheckT1 ::
+    GHC.Base.Functor m =>
+    forall a b c.
+    (a -> b)
+    -> Data.Check.CheckT m e b c -> a -> m (GHC.Base.Maybe e, c)
+  {- Arity: 4, HasNoCafRefs, Strictness: <L,A><L,C(U)><L,C(U)>,
+     Unfolding: InlineRule (3, True, False)
+                (\ @ (m :: * -> *)
+                   @ e
+                   ($dFunctor :: GHC.Base.Functor m)
+                   @ a
+                   @ b
+                   @ c
+                   (f :: a -> b)
+                   (ds :: Data.Check.CheckT m e b c)
+                   (eta :: a) ->
+                 ds `cast` (Data.Check.N:CheckT[0] <m>_R <e>_N <b>_R <c>_N)
+                   (f eta)) -}
+8534ffd37d07ef94328259d099f678b3
+  $fProfunctorCheckT2 ::
+    GHC.Base.Functor m =>
+    forall b c a.
+    (b -> c)
+    -> Data.Check.CheckT m e a b -> a -> m (GHC.Base.Maybe e, c)
+  {- Arity: 3, HasNoCafRefs, Strictness: <L,U(C(U),A)>,
+     Unfolding: InlineRule (1, True, True)
+                (\ @ (m :: * -> *)
+                   @ e
+                   ($dFunctor :: GHC.Base.Functor m)
+                   @ b
+                   @ c
+                   @ a
+                   (eta :: b -> c)
+                   (eta1 :: Data.Check.CheckT m e a b) ->
+                 Data.Check.$fFunctorCheckT2
+                   @ m
+                   @ e
+                   @ a
+                   $dFunctor
+                   @ b
+                   @ c
+                   eta
+                   eta1) -}
+8534ffd37d07ef94328259d099f678b3
+  $fProfunctorCheckT_$c#. ::
+    GHC.Base.Functor m =>
+    forall c b a.
+    GHC.Types.Coercible c b =>
+    (b -> c) -> Data.Check.CheckT m e a b -> Data.Check.CheckT m e a c
+  {- Arity: 1, HasNoCafRefs, Strictness: <L,U(C(U),A)>,
+     Inline: INLINE (sat-args=0),
+     Unfolding: InlineRule (1, False, False)
+                (\ @ (m :: * -> *)
+                   @ e
+                   ($dFunctor :: GHC.Base.Functor m)
+                   @ c
+                   @ b
+                   @ a
+                   ($dCoercible :: GHC.Types.Coercible c b)
+                   (f :: b -> c)
+                   (p1 :: Data.Check.CheckT m e a b) ->
+                 case p1
+                        `cast`
+                      (Data.Check.N:CheckT[0] <m>_R <e>_N <a>_R <b>_N) of nt { DEFAULT ->
+                 Data.Check.$fProfunctorCheckT_$crmap
+                   @ m
+                   @ e
+                   $dFunctor
+                   @ b
+                   @ c
+                   @ a
+                   f
+                   nt
+                     `cast`
+                   (Sym (Data.Check.N:CheckT[0] <m>_R <e>_N <a>_R <b>_N)) }) -}
+8534ffd37d07ef94328259d099f678b3
+  $fProfunctorCheckT_$c.# ::
+    GHC.Base.Functor m =>
+    forall b a c.
+    GHC.Types.Coercible b a =>
+    Data.Check.CheckT m e b c -> (a -> b) -> Data.Check.CheckT m e a c
+  {- Arity: 1, HasNoCafRefs, Strictness: <L,U(C(U),A)>,
+     Inline: INLINE (sat-args=0),
+     Unfolding: InlineRule (1, False, False)
+                (\ @ (m :: * -> *)
+                   @ e
+                   ($dFunctor :: GHC.Base.Functor m)
+                   @ b
+                   @ a
+                   @ c
+                   ($dCoercible :: GHC.Types.Coercible b a)
+                   (p1 :: Data.Check.CheckT m e b c)
+                   (eta :: a -> b)
+                   (eta1 :: a) ->
+                 case p1
+                        `cast`
+                      (Data.Check.N:CheckT[0] <m>_R <e>_N <b>_R <c>_N) of nt { DEFAULT ->
+                 (Data.Check.$fProfunctorCheckT_$clmap
+                    @ m
+                    @ e
+                    $dFunctor
+                    @ a
+                    @ b
+                    @ c
+                    eta
+                    nt `cast` (Sym (Data.Check.N:CheckT[0] <m>_R <e>_N <b>_R <c>_N)))
+                   `cast`
+                 (Data.Check.N:CheckT[0] <m>_R <e>_N <a>_R <c>_N)
+                   eta1 })
+                  `cast`
+                (forall (m :: <* -> *>_N) (e :: <*>_N).
+                 <GHC.Base.Functor m>_R
+                 ->_R forall (b :: <*>_N) (a :: <*>_N) (c :: <*>_N).
+                      <GHC.Types.Coercible b a>_R
+                      ->_R <Data.Check.CheckT m e b c>_R
+                      ->_R <a -> b>_R
+                      ->_R Sym (Data.Check.N:CheckT[0] <m>_R <e>_N <a>_R <c>_N)) -}
+8534ffd37d07ef94328259d099f678b3
+  $fProfunctorCheckT_$cdimap ::
+    GHC.Base.Functor m =>
+    forall a b c d.
+    (a -> b)
+    -> (c -> d)
+    -> Data.Check.CheckT m e b c
+    -> Data.Check.CheckT m e a d
+  {- Arity: 3, HasNoCafRefs, Strictness: <L,U(C(U),A)><L,U><L,U>,
+     Inline: INLINE (sat-args=2),
+     Unfolding: InlineRule (3, False, False)
+                (\ @ (m :: * -> *)
+                   @ e
+                   ($dFunctor :: GHC.Base.Functor m)
+                   @ a
+                   @ b
+                   @ c
+                   @ d
+                   (f :: a -> b)
+                   (g :: c -> d)
+                   (x :: Data.Check.CheckT m e b c) ->
+                 Data.Check.$fProfunctorCheckT_$clmap
+                   @ m
+                   @ e
+                   $dFunctor
+                   @ a
+                   @ b
+                   @ d
+                   f
+                   (Data.Check.$fProfunctorCheckT_$crmap
+                      @ m
+                      @ e
+                      $dFunctor
+                      @ c
+                      @ d
+                      @ b
+                      g
+                      x)) -}
+8534ffd37d07ef94328259d099f678b3
+  $fProfunctorCheckT_$clmap ::
+    GHC.Base.Functor m =>
+    forall a b c.
+    (a -> b) -> Data.Check.CheckT m e b c -> Data.Check.CheckT m e a c
+  {- Arity: 4, HasNoCafRefs, Strictness: <L,A><L,C(U)><L,C(U)>,
+     Unfolding: InlineRule (0, True, True)
+                Data.Check.$fProfunctorCheckT1
+                  `cast`
+                (forall (m :: <* -> *>_N) (e :: <*>_N).
+                 <GHC.Base.Functor m>_R
+                 ->_R forall (a :: <*>_N) (b :: <*>_N) (c :: <*>_N).
+                      <a -> b>_R
+                      ->_R <Data.Check.CheckT m e b c>_R
+                      ->_R Sym (Data.Check.N:CheckT[0] <m>_R <e>_N <a>_R <c>_N)) -}
+8534ffd37d07ef94328259d099f678b3
+  $fProfunctorCheckT_$crmap ::
+    GHC.Base.Functor m =>
+    forall b c a.
+    (b -> c) -> Data.Check.CheckT m e a b -> Data.Check.CheckT m e a c
+  {- Arity: 3, HasNoCafRefs, Strictness: <L,U(C(U),A)>,
+     Unfolding: InlineRule (0, True, True)
+                Data.Check.$fProfunctorCheckT2
+                  `cast`
+                (forall (m :: <* -> *>_N) (e :: <*>_N).
+                 <GHC.Base.Functor m>_R
+                 ->_R forall (b :: <*>_N) (c :: <*>_N) (a :: <*>_N).
+                      <b -> c>_R
+                      ->_R <Data.Check.CheckT m e a b>_R
+                      ->_R Sym (Data.Check.N:CheckT[0] <m>_R <e>_N <a>_R <c>_N)) -}
+51f15606e118cebebe1f597a5dce0010
+  $tc'CheckT :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   4699546740392891529##
+                   6043069516232391020##
+                   Data.Check.$trModule
+                   Data.Check.$tc'CheckT1) -}
+bdc1aeb50de106fbef8d19b77a8785c7
+  $tc'CheckT1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'CheckT"#) -}
+0475f7d9dc20fe99acc1c36b15a33260
+  $tcCheckT :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   5963876382210967892##
+                   5994131920798552916##
+                   Data.Check.$trModule
+                   Data.Check.$tcCheckT1) -}
+a0e460a071568e7c53f0b882b1fc1006
+  $tcCheckT1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "CheckT"#) -}
+6e65b4df02e8ec1e42dcd90dbfe7d90d
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module
+                   Data.Check.$trModule2
+                   Data.Check.$trModule1) -}
+7fca864d2e02825bc170b4b4997002c1
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "Data.Check"#) -}
+c9be468c0f08bf45c8e8a97862ad5402
+  $trModule2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS
+                   "check-0.1.0.0-4tu45YB2z1Y8P1saycWUPF"#) -}
+8534ffd37d07ef94328259d099f678b3
+  $w$c*** ::
+    (GHC.Base.Monad m, Data.Semigroup.Semigroup e) =>
+    forall b c b' c'.
+    Data.Check.CheckT m e b c
+    -> Data.Check.CheckT m e b' c'
+    -> b
+    -> b'
+    -> m (GHC.Base.Maybe e, (c, c'))
+  {- Arity: 6, HasNoCafRefs,
+     Strictness: <S(LC(C(S))LLL),U(A,C(C1(U)),A,C(U),A)><L,U(C(C1(U)),A,A)><L,1*C1(U)><L,1*C1(U)><L,U><L,U>,
+     Inline: [0],
+     Unfolding: (\ @ (m :: * -> *)
+                   @ e
+                   (w :: GHC.Base.Monad m)
+                   (w1 :: Data.Semigroup.Semigroup e)
+                   @ b
+                   @ c
+                   @ b'
+                   @ c'
+                   (w2 :: Data.Check.CheckT m e b c)
+                   (w3 :: Data.Check.CheckT m e b' c')
+                   (ww :: b)
+                   (ww1 :: b') ->
+                 let {
+                   lvl11 :: m (GHC.Base.Maybe e, c')
+                   = w3 `cast` (Data.Check.N:CheckT[0] <m>_R <e>_N <b'>_R <c'>_N) ww1
+                 } in
+                 GHC.Base.>>=
+                   @ m
+                   w
+                   @ (GHC.Base.Maybe e, c)
+                   @ (GHC.Base.Maybe e, (c, c'))
+                   (w2 `cast` (Data.Check.N:CheckT[0] <m>_R <e>_N <b>_R <c>_N) ww)
+                   (\ (ds :: (GHC.Base.Maybe e, c)) ->
+                    case ds of wild { (,) errs b1 ->
+                    GHC.Base.>>=
+                      @ m
+                      w
+                      @ (GHC.Base.Maybe e, c')
+                      @ (GHC.Base.Maybe e, (c, c'))
+                      lvl11
+                      (\ (ds1 :: (GHC.Base.Maybe e, c')) ->
+                       case ds1 of wild1 { (,) errs' b'1 ->
+                       GHC.Base.return
+                         @ m
+                         w
+                         @ (GHC.Base.Maybe e, (c, c'))
+                         (case errs of wild2 {
+                            GHC.Base.Nothing -> errs'
+                            GHC.Base.Just ipv
+                            -> case errs' of wild3 {
+                                 GHC.Base.Nothing -> wild2
+                                 GHC.Base.Just ipv1
+                                 -> GHC.Base.Just @ e (Data.Semigroup.<> @ e w1 ipv ipv1) } },
+                          (b1, b'1)) }) })) -}
+8534ffd37d07ef94328259d099f678b3
+  $w$c+++ ::
+    GHC.Base.Monad m =>
+    forall b c b' c'.
+    Data.Check.CheckT m e b c
+    -> Data.Check.CheckT m e b' c'
+    -> Data.Either.Either b b'
+    -> m (GHC.Base.Maybe e, Data.Either.Either c c')
+  {- Arity: 4, HasNoCafRefs,
+     Strictness: <S(LC(C(S))LLL),U(A,1*C1(C1(U)),A,1*U,A)><L,1*C1(U)><L,1*C1(U)><S,1*U>,
+     Inline: [0],
+     Unfolding: (\ @ (m :: * -> *)
+                   @ e
+                   (w :: GHC.Base.Monad m)
+                   @ b
+                   @ c
+                   @ b'
+                   @ c'
+                   (w1 :: Data.Check.CheckT m e b c)
+                   (w2 :: Data.Check.CheckT m e b' c')
+                   (w3 :: Data.Either.Either b b') ->
+                 case w3 of wild {
+                   Data.Either.Left a
+                   -> let {
+                        lvl11 :: (GHC.Base.Maybe e, Data.Either.Either c c')
+                                 -> m (GHC.Base.Maybe e, Data.Either.Either c c')
+                        = GHC.Base.return
+                            @ m
+                            w
+                            @ (GHC.Base.Maybe e, Data.Either.Either c c')
+                      } in
+                      GHC.Base.>>=
+                        @ m
+                        w
+                        @ (GHC.Base.Maybe e, c)
+                        @ (GHC.Base.Maybe e, Data.Either.Either c c')
+                        (w1 `cast` (Data.Check.N:CheckT[0] <m>_R <e>_N <b>_R <c>_N) a)
+                        (\ (b1 :: (GHC.Base.Maybe e, c)) ->
+                         lvl11
+                           (case b1 of wild1 { (,) x y -> (x, Data.Either.Left @ c @ c' y) }))
+                   Data.Either.Right a'
+                   -> let {
+                        lvl11 :: (GHC.Base.Maybe e, Data.Either.Either c c')
+                                 -> m (GHC.Base.Maybe e, Data.Either.Either c c')
+                        = GHC.Base.return
+                            @ m
+                            w
+                            @ (GHC.Base.Maybe e, Data.Either.Either c c')
+                      } in
+                      GHC.Base.>>=
+                        @ m
+                        w
+                        @ (GHC.Base.Maybe e, c')
+                        @ (GHC.Base.Maybe e, Data.Either.Either c c')
+                        (w2 `cast` (Data.Check.N:CheckT[0] <m>_R <e>_N <b'>_R <c'>_N) a')
+                        (\ (b'1 :: (GHC.Base.Maybe e, c')) ->
+                         lvl11
+                           (case b'1 of wild1 { (,) x y ->
+                            (x, Data.Either.Right @ c @ c' y) })) }) -}
+d298301c88a58527c4d166a8178d35a4
+  $wexpectM ::
+    GHC.Base.Monad m =>
+    (a -> m GHC.Types.Bool) -> e -> a -> m (GHC.Base.Maybe e, a)
+  {- Arity: 4, HasNoCafRefs,
+     Strictness: <S(LC(C(S))LLL),U(A,1*C1(C1(U)),A,C(U),A)><L,1*C1(U)><L,U><L,U>,
+     Inline: [0],
+     Unfolding: (\ @ (m :: * -> *)
+                   @ e
+                   @ a
+                   (w :: GHC.Base.Monad m)
+                   (w1 :: a -> m GHC.Types.Bool)
+                   (w2 :: e)
+                   (w3 :: a) ->
+                 let {
+                   lvl11 :: GHC.Base.Maybe e = GHC.Base.Just @ e w2
+                 } in
+                 GHC.Base.>>=
+                   @ m
+                   w
+                   @ GHC.Types.Bool
+                   @ (GHC.Base.Maybe e, a)
+                   (w1 w3)
+                   (\ (res :: GHC.Types.Bool) ->
+                    GHC.Base.return
+                      @ m
+                      w
+                      @ (GHC.Base.Maybe e, a)
+                      (case res of wild {
+                         GHC.Types.False -> lvl11 GHC.Types.True -> GHC.Base.Nothing @ e },
+                       w3))) -}
+b3fa8211ef9ba026b8f6ee84bed84405
+  $wsupposeM ::
+    GHC.Base.Monad m =>
+    (a -> m GHC.Types.Bool)
+    -> e -> a -> m (GHC.Base.Maybe e, GHC.Types.Bool)
+  {- Arity: 4, HasNoCafRefs,
+     Strictness: <S(LC(C(S))LLL),U(A,1*C1(C1(U)),A,C(U),A)><L,1*C1(U)><L,U><L,U>,
+     Inline: [0],
+     Unfolding: (\ @ (m :: * -> *)
+                   @ e
+                   @ a
+                   (w :: GHC.Base.Monad m)
+                   (w1 :: a -> m GHC.Types.Bool)
+                   (w2 :: e)
+                   (w3 :: a) ->
+                 let {
+                   lvl11 :: GHC.Base.Maybe e = GHC.Base.Just @ e w2
+                 } in
+                 GHC.Base.>>=
+                   @ m
+                   w
+                   @ GHC.Types.Bool
+                   @ (GHC.Base.Maybe e, GHC.Types.Bool)
+                   (w1 w3)
+                   (\ (res :: GHC.Types.Bool) ->
+                    GHC.Base.return
+                      @ m
+                      w
+                      @ (GHC.Base.Maybe e, GHC.Types.Bool)
+                      (case res of wild {
+                         GHC.Types.False -> lvl11 GHC.Types.True -> GHC.Base.Nothing @ e },
+                       res))) -}
+62157fd56b3d693ecedc953b9b910022
+  type Check error input output =
+    Data.Check.CheckT Data.Functor.Identity.Identity error input output
+8534ffd37d07ef94328259d099f678b3
+  type role CheckT representational nominal representational nominal
+  newtype CheckT (monad :: * -> *) error input output
+    = CheckT {runCheckT :: input
+                           -> monad (GHC.Base.Maybe error, output)}
+8d285d69b95445b96bdfb97728a6a9ec
+  check :: Data.Check.Check e a b -> a -> Data.Either.Either e b
+  {- Arity: 2, HasNoCafRefs,
+     Strictness: <C(S(SL)),1*C1(U(1*U,U))><L,U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ @ e @ a @ b (c :: Data.Check.Check e a b) (a1 :: a) ->
+                 case (c `cast`
+                       (Data.Check.N:CheckT[0]
+                            <Data.Functor.Identity.Identity>_R <e>_N <a>_R <b>_N)
+                         a1)
+                        `cast`
+                      (Data.Functor.Identity.N:Identity[0]
+                           <(GHC.Base.Maybe e, b)>_R) of wild { (,) errs b1 ->
+                 case errs of wild1 {
+                   GHC.Base.Nothing -> Data.Either.Right @ e @ b b1
+                   GHC.Base.Just x -> Data.Either.Left @ e @ b x } }) -}
+d3a88f76abb15559aaacdfbad2816763
+  checkT ::
+    GHC.Base.Monad m =>
+    Data.Check.CheckT m e a b -> a -> m (Data.Either.Either e b)
+  {- Arity: 3, HasNoCafRefs,
+     Strictness: <S(LC(C(S))LLL),U(A,1*C1(C1(U)),A,1*U,A)><L,1*C1(U)><L,U>,
+     Unfolding: (\ @ (m :: * -> *)
+                   @ e
+                   @ a
+                   @ b
+                   ($dMonad :: GHC.Base.Monad m)
+                   (ds :: Data.Check.CheckT m e a b)
+                   (a1 :: a) ->
+                 let {
+                   lvl11 :: Data.Either.Either e b -> m (Data.Either.Either e b)
+                   = GHC.Base.return @ m $dMonad @ (Data.Either.Either e b)
+                 } in
+                 GHC.Base.>>=
+                   @ m
+                   $dMonad
+                   @ (GHC.Base.Maybe e, b)
+                   @ (Data.Either.Either e b)
+                   (ds `cast` (Data.Check.N:CheckT[0] <m>_R <e>_N <a>_R <b>_N) a1)
+                   (\ (ds1 :: (GHC.Base.Maybe e, b)) ->
+                    case ds1 of wild { (,) errs b1 ->
+                    lvl11
+                      (case errs of wild1 {
+                         GHC.Base.Nothing -> Data.Either.Right @ e @ b b1
+                         GHC.Base.Just x -> Data.Either.Left @ e @ b x }) })) -}
+84a7329b53edc1003bc5cce12a0b75b4
+  expect ::
+    (GHC.Base.Applicative m, Data.Semigroup.Semigroup e) =>
+    (a -> GHC.Types.Bool) -> e -> Data.Check.CheckT m e a a
+  {- Arity: 5, HasNoCafRefs,
+     Strictness: <S(LC(S)LLL),1*U(A,1*C1(U),A,A,A)><L,A><L,1*C1(U)><L,U><L,U>,
+     Unfolding: InlineRule (0, True, True)
+                Data.Check.expect1
+                  `cast`
+                (forall (m :: <* -> *>_N) (e :: <*>_N) (a :: <*>_N).
+                 <GHC.Base.Applicative m>_R
+                 ->_R <Data.Semigroup.Semigroup e>_R
+                 ->_R <a -> GHC.Types.Bool>_R
+                 ->_R <e>_R
+                 ->_R Sym (Data.Check.N:CheckT[0] <m>_R <e>_N <a>_R <a>_N)) -}
+84cb174f7a6322955cbaf63d5d875208
+  expect1 ::
+    (GHC.Base.Applicative m, Data.Semigroup.Semigroup e) =>
+    (a -> GHC.Types.Bool) -> e -> a -> m (GHC.Base.Maybe e, a)
+  {- Arity: 5, HasNoCafRefs,
+     Strictness: <S(LC(S)LLL),1*U(A,1*C1(U),A,A,A)><L,A><L,1*C1(U)><L,U><L,U>,
+     Unfolding: InlineRule (5, True, False)
+                (\ @ (m :: * -> *)
+                   @ e
+                   @ a
+                   ($dApplicative :: GHC.Base.Applicative m)
+                   ($dSemigroup :: Data.Semigroup.Semigroup e)
+                   (p :: a -> GHC.Types.Bool)
+                   (err :: e)
+                   (eta :: a) ->
+                 GHC.Base.pure
+                   @ m
+                   $dApplicative
+                   @ (GHC.Base.Maybe e, a)
+                   (case p eta of wild {
+                      GHC.Types.False -> GHC.Base.Just @ e err
+                      GHC.Types.True -> GHC.Base.Nothing @ e },
+                    eta)) -}
+dca72d5a6039e45846dcb8d5c4609331
+  expectAll ::
+    (Data.Foldable.Foldable f, GHC.Base.Monad m,
+     Data.Semigroup.Semigroup e) =>
+    f (a -> m GHC.Types.Bool, e) -> Data.Check.CheckT m e a a
+  {- Arity: 3, HasNoCafRefs,
+     Strictness: <S(LC(C(S))LLLLLLLLLLLLLL),1*U(A,1*C1(C1(U)),A,A,A,A,A,A,A,A,A,A,A,A,A,A)><L,U(U(A,C(U),A,A,A),C(C1(U)),A,C(U),A)><L,U(C(C1(U)),A,A)>,
+     Unfolding: (\ @ (f :: * -> *)
+                   @ (m :: * -> *)
+                   @ e
+                   @ a
+                   ($dFoldable :: Data.Foldable.Foldable f)
+                   ($dMonad :: GHC.Base.Monad m)
+                   ($dSemigroup :: Data.Semigroup.Semigroup e) ->
+                 Data.Foldable.foldMap
+                   @ f
+                   $dFoldable
+                   @ (Data.Check.CheckT m e a a)
+                   @ (a -> m GHC.Types.Bool, e)
+                   (Data.Check.$fMonoidCheckT @ m @ e @ a $dMonad $dSemigroup)
+                   (\ (p :: (a -> m GHC.Types.Bool, e)) (eta :: a) ->
+                    let {
+                      err :: e = case p of wild { (,) ds y -> y }
+                    } in
+                    let {
+                      lvl11 :: GHC.Base.Maybe e = GHC.Base.Just @ e err
+                    } in
+                    GHC.Base.>>=
+                      @ m
+                      $dMonad
+                      @ GHC.Types.Bool
+                      @ (GHC.Base.Maybe e, a)
+                      (case p of wild { (,) x ds -> x eta })
+                      (\ (res :: GHC.Types.Bool) ->
+                       GHC.Base.return
+                         @ m
+                         $dMonad
+                         @ (GHC.Base.Maybe e, a)
+                         (case res of wild {
+                            GHC.Types.False -> lvl11 GHC.Types.True -> GHC.Base.Nothing @ e },
+                          eta)))
+                     `cast`
+                   (<(a -> m GHC.Types.Bool, e)>_R
+                    ->_R Sym (Data.Check.N:CheckT[0] <m>_R <e>_N <a>_R <a>_N))) -}
+1c935c749769c21981c92316529b6b01
+  expectM ::
+    (GHC.Base.Monad m, Data.Semigroup.Semigroup e) =>
+    (a -> m GHC.Types.Bool) -> e -> Data.Check.CheckT m e a a
+  {- Arity: 5, HasNoCafRefs,
+     Strictness: <S(LC(C(S))LLL),U(A,1*C1(C1(U)),A,C(U),A)><L,A><L,1*C1(U)><L,U><L,U>,
+     Unfolding: InlineRule (0, True, True)
+                Data.Check.expectM1
+                  `cast`
+                (forall (m :: <* -> *>_N) (e :: <*>_N) (a :: <*>_N).
+                 <GHC.Base.Monad m>_R
+                 ->_R <Data.Semigroup.Semigroup e>_R
+                 ->_R <a -> m GHC.Types.Bool>_R
+                 ->_R <e>_R
+                 ->_R Sym (Data.Check.N:CheckT[0] <m>_R <e>_N <a>_R <a>_N)) -}
+c67e39d47db5970b65f03c409a8f6844
+  expectM1 ::
+    (GHC.Base.Monad m, Data.Semigroup.Semigroup e) =>
+    (a -> m GHC.Types.Bool) -> e -> a -> m (GHC.Base.Maybe e, a)
+  {- Arity: 5, HasNoCafRefs,
+     Strictness: <S(LC(C(S))LLL),U(A,1*C1(C1(U)),A,C(U),A)><L,A><L,1*C1(U)><L,U><L,U>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (5, True, True)
+                (\ @ (m :: * -> *)
+                   @ e
+                   @ a
+                   (w :: GHC.Base.Monad m)
+                   (w1 :: Data.Semigroup.Semigroup e)
+                   (w2 :: a -> m GHC.Types.Bool)
+                   (w3 :: e)
+                   (w4 :: a) ->
+                 Data.Check.$wexpectM @ m @ e @ a w w2 w3 w4) -}
+a8fccbc48f2fe6e370ef35213243a50a
+  failure ::
+    (GHC.Base.Applicative m, GHC.Base.Monoid e) =>
+    Data.Check.CheckT m e a b
+  {- Arity: 3,
+     Strictness: <S(LC(S)LLL),1*U(A,1*C1(U),A,A,A)><L,1*U(1*U,A,A)><L,A>,
+     Unfolding: InlineRule (0, True, True)
+                Data.Check.failure1
+                  `cast`
+                (forall (m :: <* -> *>_N) (e :: <*>_N) (a :: <*>_N) (b :: <*>_N).
+                 <GHC.Base.Applicative m>_R
+                 ->_R <GHC.Base.Monoid e>_R
+                 ->_R Sym (Data.Check.N:CheckT[0] <m>_R <e>_N <a>_R <b>_N)) -}
+5b0c6c4f7bbcf2320d970a7420297850
+  failure1 ::
+    (GHC.Base.Applicative m, GHC.Base.Monoid e) =>
+    a -> m (GHC.Base.Maybe e, b)
+  {- Arity: 3,
+     Strictness: <S(LC(S)LLL),1*U(A,1*C1(U),A,A,A)><L,1*U(1*U,A,A)><L,A>,
+     Unfolding: InlineRule (3, True, False)
+                (\ @ (m :: * -> *)
+                   @ e
+                   @ a
+                   @ b
+                   ($dApplicative :: GHC.Base.Applicative m)
+                   ($dMonoid :: GHC.Base.Monoid e)
+                   (eta :: a) ->
+                 GHC.Base.pure
+                   @ m
+                   $dApplicative
+                   @ (GHC.Base.Maybe e, b)
+                   (GHC.Base.Just @ e (GHC.Base.mempty @ e $dMonoid),
+                    Data.Check.failure2 @ b)) -}
+e59e351478b227292fcbfe1272083910
+  failure2 :: b
+  {- Strictness: x -}
+c899600edab6132461eddfc933cea9b9
+  liftEffect ::
+    GHC.Base.Monad m => (a -> m b) -> Data.Check.CheckT m e a b
+  {- Arity: 3, HasNoCafRefs,
+     Strictness: <S(S(S(C(C(S))L)LLLL)LLLL),1*U(1*U(1*U(1*C1(C1(U)),A),A,A,A,A),A,A,A,A)><L,1*C1(U)><L,U>,
+     Unfolding: InlineRule (0, True, True)
+                Data.Check.liftEffect1
+                  `cast`
+                (forall (m :: <* -> *>_N) (a :: <*>_N) (b :: <*>_N) (e :: <*>_N).
+                 <GHC.Base.Monad m>_R
+                 ->_R <a -> m b>_R
+                 ->_R Sym (Data.Check.N:CheckT[0] <m>_R <e>_N <a>_R <b>_N)) -}
+f6c4d9ebd1066b2c2098728ad32dccc6
+  liftEffect1 ::
+    GHC.Base.Monad m => (a -> m b) -> a -> m (GHC.Base.Maybe e, b)
+  {- Arity: 3, HasNoCafRefs,
+     Strictness: <S(S(S(C(C(S))L)LLLL)LLLL),1*U(1*U(1*U(1*C1(C1(U)),A),A,A,A,A),A,A,A,A)><L,1*C1(U)><L,U>,
+     Unfolding: InlineRule (3, True, False)
+                (\ @ (m :: * -> *)
+                   @ a
+                   @ b
+                   @ e
+                   ($dMonad :: GHC.Base.Monad m)
+                   (eta :: a -> m b)
+                   (eta1 :: a) ->
+                 GHC.Base.fmap
+                   @ m
+                   (GHC.Base.$p1Applicative @ m (GHC.Base.$p1Monad @ m $dMonad))
+                   @ b
+                   @ (GHC.Base.Maybe e, b)
+                   (Data.Check.liftEffect2 @ b @ e)
+                   (eta eta1)) -}
+74809e9226e04c1459bd74b1e4ea69af
+  liftEffect2 :: b -> (GHC.Base.Maybe e, b)
+  {- Arity: 1, HasNoCafRefs,
+     Unfolding: (\ @ b @ e ->
+                 GHC.Tuple.(,) @ (GHC.Base.Maybe e) @ b (GHC.Base.Nothing @ e)) -}
+5406ad6b7728f4f035efe464e47c7a6f
+  runCheckT ::
+    Data.Check.CheckT monad error input output
+    -> input -> monad (GHC.Base.Maybe error, output)
+  RecSel Left Data.Check.CheckT
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>,
+     Unfolding: InlineRule (0, True, True)
+                Data.Check.runCheckT1
+                  `cast`
+                (forall (monad :: <*
+                                   -> *>_N) (error :: <*>_N) (input :: <*>_N) (output :: <*>_N).
+                 <Data.Check.CheckT monad error input output>_R
+                 ->_R Data.Check.N:CheckT[0]
+                          <monad>_R <error>_N <input>_R <output>_N) -}
+cbae491c588ba3f8e9a8e30c8fc2a886
+  runCheckT1 ::
+    Data.Check.CheckT monad error input output
+    -> Data.Check.CheckT monad error input output
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, True)
+                (\ @ (monad :: * -> *)
+                   @ error
+                   @ input
+                   @ output
+                   (ds :: Data.Check.CheckT monad error input output) ->
+                 ds) -}
+fe00e00e7862816b5238b01d547fa2b4
+  suppose ::
+    (GHC.Base.Applicative m, Data.Semigroup.Semigroup e) =>
+    (a -> GHC.Types.Bool)
+    -> e -> Data.Check.CheckT m e a GHC.Types.Bool
+  {- Arity: 5, HasNoCafRefs,
+     Strictness: <S(LC(S)LLL),1*U(A,1*C1(U),A,A,A)><L,A><L,1*C1(U)><L,U><L,U>,
+     Unfolding: InlineRule (0, True, True)
+                Data.Check.suppose1
+                  `cast`
+                (forall (m :: <* -> *>_N) (e :: <*>_N) (a :: <*>_N).
+                 <GHC.Base.Applicative m>_R
+                 ->_R <Data.Semigroup.Semigroup e>_R
+                 ->_R <a -> GHC.Types.Bool>_R
+                 ->_R <e>_R
+                 ->_R Sym (Data.Check.N:CheckT[0]
+                               <m>_R <e>_N <a>_R <GHC.Types.Bool>_N)) -}
+1b7d3b26d309e3ab6dc27396c7059804
+  suppose1 ::
+    (GHC.Base.Applicative m, Data.Semigroup.Semigroup e) =>
+    (a -> GHC.Types.Bool)
+    -> e -> a -> m (GHC.Base.Maybe e, GHC.Types.Bool)
+  {- Arity: 5, HasNoCafRefs,
+     Strictness: <S(LC(S)LLL),1*U(A,1*C1(U),A,A,A)><L,A><L,1*C1(U)><L,U><L,U>,
+     Unfolding: InlineRule (5, True, False)
+                (\ @ (m :: * -> *)
+                   @ e
+                   @ a
+                   ($dApplicative :: GHC.Base.Applicative m)
+                   ($dSemigroup :: Data.Semigroup.Semigroup e)
+                   (p :: a -> GHC.Types.Bool)
+                   (err :: e)
+                   (eta :: a) ->
+                 let {
+                   res :: GHC.Types.Bool = p eta
+                 } in
+                 GHC.Base.pure
+                   @ m
+                   $dApplicative
+                   @ (GHC.Base.Maybe e, GHC.Types.Bool)
+                   (case res of wild {
+                      GHC.Types.False -> GHC.Base.Just @ e err
+                      GHC.Types.True -> GHC.Base.Nothing @ e },
+                    res)) -}
+3b73d1ae612f2ed7a80a349e155100a2
+  supposeM ::
+    (GHC.Base.Monad m, Data.Semigroup.Semigroup e) =>
+    (a -> m GHC.Types.Bool)
+    -> e -> Data.Check.CheckT m e a GHC.Types.Bool
+  {- Arity: 5, HasNoCafRefs,
+     Strictness: <S(LC(C(S))LLL),U(A,1*C1(C1(U)),A,C(U),A)><L,A><L,1*C1(U)><L,U><L,U>,
+     Unfolding: InlineRule (0, True, True)
+                Data.Check.supposeM1
+                  `cast`
+                (forall (m :: <* -> *>_N) (e :: <*>_N) (a :: <*>_N).
+                 <GHC.Base.Monad m>_R
+                 ->_R <Data.Semigroup.Semigroup e>_R
+                 ->_R <a -> m GHC.Types.Bool>_R
+                 ->_R <e>_R
+                 ->_R Sym (Data.Check.N:CheckT[0]
+                               <m>_R <e>_N <a>_R <GHC.Types.Bool>_N)) -}
+1d31cb229f27785053751b72172b3646
+  supposeM1 ::
+    (GHC.Base.Monad m, Data.Semigroup.Semigroup e) =>
+    (a -> m GHC.Types.Bool)
+    -> e -> a -> m (GHC.Base.Maybe e, GHC.Types.Bool)
+  {- Arity: 5, HasNoCafRefs,
+     Strictness: <S(LC(C(S))LLL),U(A,1*C1(C1(U)),A,C(U),A)><L,A><L,1*C1(U)><L,U><L,U>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (5, True, True)
+                (\ @ (m :: * -> *)
+                   @ e
+                   @ a
+                   (w :: GHC.Base.Monad m)
+                   (w1 :: Data.Semigroup.Semigroup e)
+                   (w2 :: a -> m GHC.Types.Bool)
+                   (w3 :: e)
+                   (w4 :: a) ->
+                 Data.Check.$wsupposeM @ m @ e @ a w w2 w3 w4) -}
+a093cf89985e87318622044dc4f2afe0
+  whenFalse ::
+    (GHC.Base.Applicative m, Data.Semigroup.Semigroup e) =>
+    e -> Data.Check.CheckT m e GHC.Types.Bool GHC.Types.Bool
+  {- Arity: 4, HasNoCafRefs,
+     Strictness: <S(LC(S)LLL),1*U(A,1*C1(U),A,A,A)><L,A><L,U><L,U>,
+     Unfolding: InlineRule (0, True, True)
+                Data.Check.whenFalse1
+                  `cast`
+                (forall (m :: <* -> *>_N) (e :: <*>_N).
+                 <GHC.Base.Applicative m>_R
+                 ->_R <Data.Semigroup.Semigroup e>_R
+                 ->_R <e>_R
+                 ->_R Sym (Data.Check.N:CheckT[0]
+                               <m>_R <e>_N <GHC.Types.Bool>_R <GHC.Types.Bool>_N)) -}
+fd8115441f36cce3f1d555e8ac5c84ad
+  whenFalse1 ::
+    (GHC.Base.Applicative m, Data.Semigroup.Semigroup e) =>
+    e -> GHC.Types.Bool -> m (GHC.Base.Maybe e, GHC.Types.Bool)
+  {- Arity: 4, HasNoCafRefs,
+     Strictness: <S(LC(S)LLL),1*U(A,1*C1(U),A,A,A)><L,A><L,U><L,U>,
+     Unfolding: InlineRule (4, True, False)
+                (\ @ (m :: * -> *)
+                   @ e
+                   ($dApplicative :: GHC.Base.Applicative m)
+                   ($dSemigroup :: Data.Semigroup.Semigroup e)
+                   (err :: e)
+                   (eta :: GHC.Types.Bool) ->
+                 GHC.Base.pure
+                   @ m
+                   $dApplicative
+                   @ (GHC.Base.Maybe e, GHC.Types.Bool)
+                   (case eta of wild {
+                      GHC.Types.False -> GHC.Base.Just @ e err
+                      GHC.Types.True -> GHC.Base.Nothing @ e },
+                    eta)) -}
+instance [safe] GHC.Base.Applicative [Data.Check.CheckT]
+  = Data.Check.$fApplicativeCheckT
+instance [safe] Control.Arrow.Arrow [Data.Check.CheckT]
+  = Data.Check.$fArrowCheckT
+instance [safe] Control.Arrow.ArrowChoice [Data.Check.CheckT]
+  = Data.Check.$fArrowChoiceCheckT
+instance [safe] Control.Category.Category [TYPE, Data.Check.CheckT]
+  = Data.Check.$fCategoryTYPECheckT
+instance [safe] GHC.Base.Functor [Data.Check.CheckT]
+  = Data.Check.$fFunctorCheckT
+instance [safe] GHC.Base.Monoid [Data.Check.CheckT]
+  = Data.Check.$fMonoidCheckT
+instance [safe] Data.Profunctor.Unsafe.Profunctor [Data.Check.CheckT]
+  = Data.Check.$fProfunctorCheckT
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: safe
+require own pkg trusted: False
+

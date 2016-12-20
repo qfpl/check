@@ -1,0 +1,926 @@
+
+==================== FINAL INTERFACE ====================
+2016-12-20 11:10:20.3464838 UTC
+
+interface check-0.1.0.0-4tu45YB2z1Y8P1saycWUPF:Data.Check.Field 8001
+  interface hash: a3590059944f260ef96ab95e6c9de880
+  ABI hash: 430a672fd0815474d98dc49a615dc6b1
+  export-list hash: 440b8a9bd6ce1df79f21b37a7653866b
+  orphan hash: a8956483d5d6c3c7c329e8035207bad8
+  flag hash: 4a2e1df77ec5c02eaa04b15345e497a9
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Data.Check.check
+  Data.Check.checkT
+  Data.Check.failure
+  Data.Check.liftEffect
+  Data.Check.Field.expect
+  Data.Check.Field.expectAll
+  Data.Check.Field.expectM
+  Data.Check.Field.suppose
+  Data.Check.Field.supposeM
+  Data.Check.Field.whenFalse
+  Data.Check.Field.CheckField
+  Data.Check.Field.CheckFieldT
+module dependencies: Data.Check
+package dependencies: StateVar-1.1.0.4@StateVar-1.1.0.4-CJpWsiXJdd89SnV9dZtTwc
+                      Win32-2.3.1.1@Win32-2.3.1.1
+                      aeson-0.11.2.1@aeson-0.11.2.1-5ZQWuTFmffALcfpzDCXoOz
+                      array-0.5.1.1@array-0.5.1.1
+                      attoparsec-0.13.1.0@attoparsec-0.13.1.0-5Olk1S76r1CDYzFS6V3sZR
+                      base-4.9.0.0
+                      base-orphans-0.5.4@base-orphans-0.5.4-5IQvrjd7gNP548VkOOyIq6
+                      bifunctors-5.4.1@bifunctors-5.4.1-8Xk5Wsnk1fr6rBLkW9MO8p
+                      binary-0.8.3.0@binary-0.8.3.0
+                      bytestring-0.10.8.1@bytestring-0.10.8.1
+                      comonad-5@comonad-5-2RMxpSOQ5MCHLHIelJrHD4
+                      containers-0.5.7.1@containers-0.5.7.1
+                      contravariant-1.4@contravariant-1.4-KSQE31a7FruKHDlp90hIUT
+                      deepseq-1.4.2.0@deepseq-1.4.2.0
+                      distributive-0.5.0.2@distributive-0.5.0.2-Cdz2vLOk85j1doGXLcictT
+                      dlist-0.8.0.2@dlist-0.8.0.2-GWAMmbX9rLg3tqrbOizHGv
+                      ghc-boot-th-8.0.1@ghc-boot-th-8.0.1 ghc-prim-0.5.0.0
+                      hashable-1.2.4.0@hashable-1.2.4.0-EMu4H7FB10MAl6hwKw992G
+                      integer-gmp-1.0.0.1
+                      primitive-0.6.1.0@primitive-0.6.1.0-Ip44DqhfCp21tTUYbecwa
+                      profunctors-5.2@profunctors-5.2-2ZZOz6u59T2H8y7z3NgZkY
+                      scientific-0.3.4.9@scientific-0.3.4.9-6oTYuCcx6H5BsTGU7D2Gk3
+                      stm-2.4.4.1@stm-2.4.4.1-4z2NRWnB0NIIUvSJsHW0kF
+                      tagged-0.8.5@tagged-0.8.5-CtgV6EcN0do8F92i1S6iYx
+                      template-haskell-2.11.0.0
+                      text-1.2.2.1@text-1.2.2.1-5QpmrLQApEZ4Ly9nMHWY0s
+                      time-1.6.0.1@time-1.6.0.1 transformers-0.5.2.0@transformers-0.5.2.0
+                      transformers-compat-0.5.1.4@transformers-compat-0.5.1.4-81lZyuOJOvsD0zyCv2TKld
+                      unordered-containers-0.2.7.1@unordered-containers-0.2.7.1-Eo9jd5DMz45DhBLCG8skzW
+                      vector-0.11.0.0@vector-0.11.0.0-BEDZb5o2QOhGbIm6ky7rl6
+orphans: aeson-0.11.2.1@aeson-0.11.2.1-5ZQWuTFmffALcfpzDCXoOz:Data.Aeson.Types.Generic
+         aeson-0.11.2.1@aeson-0.11.2.1-5ZQWuTFmffALcfpzDCXoOz:Data.Aeson.Types.Instances
+         attoparsec-0.13.1.0@attoparsec-0.13.1.0-5Olk1S76r1CDYzFS6V3sZR:Data.Attoparsec.ByteString.Char8
+         attoparsec-0.13.1.0@attoparsec-0.13.1.0-5Olk1S76r1CDYzFS6V3sZR:Data.Attoparsec.Text.Internal
+         base-4.9.0.0:GHC.Base base-4.9.0.0:GHC.Float
+         binary-0.8.3.0@binary-0.8.3.0:Data.Binary.Generic
+         bytestring-0.10.8.1@bytestring-0.10.8.1:Data.ByteString.Builder
+         hashable-1.2.4.0@hashable-1.2.4.0-EMu4H7FB10MAl6hwKw992G:Data.Hashable.Generic
+         stm-2.4.4.1@stm-2.4.4.1-4z2NRWnB0NIIUvSJsHW0kF:Control.Monad.STM
+         text-1.2.2.1@text-1.2.2.1-5QpmrLQApEZ4Ly9nMHWY0s:Data.Text
+         text-1.2.2.1@text-1.2.2.1-5QpmrLQApEZ4Ly9nMHWY0s:Data.Text.Lazy
+         text-1.2.2.1@text-1.2.2.1-5QpmrLQApEZ4Ly9nMHWY0s:Data.Text.Show
+         time-1.6.0.1@time-1.6.0.1:Data.Time.Calendar.Gregorian
+         time-1.6.0.1@time-1.6.0.1:Data.Time.Format.Parse
+         time-1.6.0.1@time-1.6.0.1:Data.Time.LocalTime.LocalTime
+         transformers-0.5.2.0@transformers-0.5.2.0:Control.Monad.Trans.Error
+         vector-0.11.0.0@vector-0.11.0.0-BEDZb5o2QOhGbIm6ky7rl6:Data.Vector.Fusion.Bundle
+         vector-0.11.0.0@vector-0.11.0.0-BEDZb5o2QOhGbIm6ky7rl6:Data.Vector.Unboxed
+family instance modules: attoparsec-0.13.1.0@attoparsec-0.13.1.0-5Olk1S76r1CDYzFS6V3sZR:Data.Attoparsec.Internal.Types
+                         base-4.9.0.0:Control.Applicative base-4.9.0.0:Data.Complex
+                         base-4.9.0.0:Data.Either base-4.9.0.0:Data.Functor.Compose
+                         base-4.9.0.0:Data.Functor.Const base-4.9.0.0:Data.Functor.Identity
+                         base-4.9.0.0:Data.Functor.Product base-4.9.0.0:Data.Functor.Sum
+                         base-4.9.0.0:Data.List.NonEmpty base-4.9.0.0:Data.Monoid
+                         base-4.9.0.0:Data.Semigroup base-4.9.0.0:Data.Type.Equality
+                         base-4.9.0.0:Data.Version base-4.9.0.0:Data.Void
+                         base-4.9.0.0:GHC.Exts base-4.9.0.0:GHC.Generics
+                         base-4.9.0.0:GHC.IO.Exception base-4.9.0.0:GHC.TypeLits
+                         bifunctors-5.4.1@bifunctors-5.4.1-8Xk5Wsnk1fr6rBLkW9MO8p:Data.Bifunctor.Biff
+                         bifunctors-5.4.1@bifunctors-5.4.1-8Xk5Wsnk1fr6rBLkW9MO8p:Data.Bifunctor.Clown
+                         bifunctors-5.4.1@bifunctors-5.4.1-8Xk5Wsnk1fr6rBLkW9MO8p:Data.Bifunctor.Joker
+                         bifunctors-5.4.1@bifunctors-5.4.1-8Xk5Wsnk1fr6rBLkW9MO8p:Data.Bifunctor.Product
+                         bifunctors-5.4.1@bifunctors-5.4.1-8Xk5Wsnk1fr6rBLkW9MO8p:Data.Bifunctor.Sum
+                         bifunctors-5.4.1@bifunctors-5.4.1-8Xk5Wsnk1fr6rBLkW9MO8p:Data.Bifunctor.Tannen
+                         containers-0.5.7.1@containers-0.5.7.1:Data.IntMap.Base
+                         containers-0.5.7.1@containers-0.5.7.1:Data.IntSet.Base
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Map.Base
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Sequence
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Set.Base
+                         dlist-0.8.0.2@dlist-0.8.0.2-GWAMmbX9rLg3tqrbOizHGv:Data.DList
+                         ghc-boot-th-8.0.1@ghc-boot-th-8.0.1:GHC.LanguageExtensions.Type
+                         primitive-0.6.1.0@primitive-0.6.1.0-Ip44DqhfCp21tTUYbecwa:Control.Monad.Primitive
+                         tagged-0.8.5@tagged-0.8.5-CtgV6EcN0do8F92i1S6iYx:Data.Tagged
+                         template-haskell-2.11.0.0:Language.Haskell.TH.Syntax
+                         text-1.2.2.1@text-1.2.2.1-5QpmrLQApEZ4Ly9nMHWY0s:Data.Text
+                         text-1.2.2.1@text-1.2.2.1-5QpmrLQApEZ4Ly9nMHWY0s:Data.Text.Lazy
+                         unordered-containers-0.2.7.1@unordered-containers-0.2.7.1-Eo9jd5DMz45DhBLCG8skzW:Data.HashMap.Base
+                         unordered-containers-0.2.7.1@unordered-containers-0.2.7.1-Eo9jd5DMz45DhBLCG8skzW:Data.HashSet
+                         vector-0.11.0.0@vector-0.11.0.0-BEDZb5o2QOhGbIm6ky7rl6:Data.Vector
+                         vector-0.11.0.0@vector-0.11.0.0-BEDZb5o2QOhGbIm6ky7rl6:Data.Vector.Primitive
+                         vector-0.11.0.0@vector-0.11.0.0-BEDZb5o2QOhGbIm6ky7rl6:Data.Vector.Storable
+                         vector-0.11.0.0@vector-0.11.0.0-BEDZb5o2QOhGbIm6ky7rl6:Data.Vector.Unboxed
+                         vector-0.11.0.0@vector-0.11.0.0-BEDZb5o2QOhGbIm6ky7rl6:Data.Vector.Unboxed.Base
+import  -/  aeson-0.11.2.1@aeson-0.11.2.1-5ZQWuTFmffALcfpzDCXoOz:Data.Aeson b323887803b1d3b16a4828adfc247669
+import  -/  aeson-0.11.2.1@aeson-0.11.2.1-5ZQWuTFmffALcfpzDCXoOz:Data.Aeson.Types.Class 398d5f8a1c840e1122bb76cc4083aabf
+import  -/  aeson-0.11.2.1@aeson-0.11.2.1-5ZQWuTFmffALcfpzDCXoOz:Data.Aeson.Types.Internal 3e6ce24a0adc2d36babdff66b970486c
+import  -/  base-4.9.0.0:Data.Foldable 3cbed01c922be29649c33015287c82ca
+import  -/  base-4.9.0.0:Data.Functor.Identity 7dfca64497900ab559eec24d051e061e
+import  -/  base-4.9.0.0:Data.List.NonEmpty 64f932d268ed85c9c4bc822b240e6225
+import  -/  base-4.9.0.0:Data.Semigroup 4aef0ef9e6e6826b7d625ca18dc999aa
+import  -/  base-4.9.0.0:Data.Tuple 84c2bcc75b7a239341ae2f88cce9d8d7
+import  -/  base-4.9.0.0:GHC.Base dd8044a8d640eee51828c17c476a6ba7
+import  -/  base-4.9.0.0:Prelude 2d9cd8b0ec3d728f62b734df888d2e34
+import  -/  Data.Check 9f8a933e7f7ab56ebdcb3917fdd7857b
+  exports: b89e30ca0f69a1e13206ffdd0e53a638
+  CheckT 8534ffd37d07ef94328259d099f678b3
+  check 8d285d69b95445b96bdfb97728a6a9ec
+  checkT d3a88f76abb15559aaacdfbad2816763
+  expect 84a7329b53edc1003bc5cce12a0b75b4
+  expectM 1c935c749769c21981c92316529b6b01
+  failure a8fccbc48f2fe6e370ef35213243a50a
+  liftEffect c899600edab6132461eddfc933cea9b9
+  suppose fe00e00e7862816b5238b01d547fa2b4
+  supposeM 3b73d1ae612f2ed7a80a349e155100a2
+import  -/  containers-0.5.7.1@containers-0.5.7.1:Data.Map 59ba4f128d7d19046010538c416f3875
+import  -/  containers-0.5.7.1@containers-0.5.7.1:Data.Map.Base d6db6ac95571c976686f97c64548b060
+import  -/  text-1.2.2.1@text-1.2.2.1-5QpmrLQApEZ4Ly9nMHWY0s:Data.Text 8dbacab9fc008bc20f8ced1c7c1f4b82
+import  -/  text-1.2.2.1@text-1.2.2.1-5QpmrLQApEZ4Ly9nMHWY0s:Data.Text.Internal 80110b2fecada91347ca30963f299ad2
+68dbbd2b7d311e10a7d18b30ba929ddb
+  $fMonoidFieldErrors ::
+    GHC.Base.Monoid (Data.Check.Field.FieldErrors e)
+  DFunId
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun: @ e.
+                  @ (Data.Check.Field.FieldErrors e)
+                  (Data.Map.Base.Tip
+                     @ Data.Text.Internal.Text
+                     @ (Data.List.NonEmpty.NonEmpty e))
+                    `cast`
+                  (Sym (Data.Check.Field.N:FieldErrors[0] <e>_R))
+                  (Data.Check.Field.$fMonoidFieldErrors_$c<> @ e)
+                  (Data.Check.Field.$fMonoidFieldErrors_$cmconcat @ e) -}
+68dbbd2b7d311e10a7d18b30ba929ddb
+  $fMonoidFieldErrors1 ::
+    [Data.Check.Field.FieldErrors e] -> Data.Check.Field.FieldErrors e
+  {- Arity: 1, Strictness: <S,1*U> -}
+68dbbd2b7d311e10a7d18b30ba929ddb
+  $fMonoidFieldErrors2 ::
+    Data.Check.Field.FieldErrors e
+    -> Data.Check.Field.FieldErrors e
+    -> Data.Map.Base.Map
+         Data.Text.Internal.Text (Data.List.NonEmpty.NonEmpty e)
+  {- Arity: 2, Strictness: <S,1*U><S,1*U>,
+     Unfolding: (\ @ e
+                   (ds :: Data.Check.Field.FieldErrors e)
+                   (ds1 :: Data.Check.Field.FieldErrors e) ->
+                 Data.Check.Field.$fMonoidFieldErrors_$sunionWithKey
+                   @ (Data.List.NonEmpty.NonEmpty e)
+                   (Data.Check.Field.$fMonoidFieldErrors3 @ e)
+                   ds `cast` (Data.Check.Field.N:FieldErrors[0] <e>_R)
+                   ds1 `cast` (Data.Check.Field.N:FieldErrors[0] <e>_R)) -}
+edc03d0770a3bd35471451d481def7d2
+  $fMonoidFieldErrors3 ::
+    Data.Text.Internal.Text
+    -> Data.List.NonEmpty.NonEmpty e
+    -> Data.List.NonEmpty.NonEmpty e
+    -> Data.List.NonEmpty.NonEmpty e
+  {- Arity: 3, HasNoCafRefs,
+     Unfolding: (\ @ e
+                   (ds :: Data.Text.Internal.Text)
+                   (x :: Data.List.NonEmpty.NonEmpty e)[OneShot]
+                   (y :: Data.List.NonEmpty.NonEmpty e)[OneShot] ->
+                 Data.Semigroup.$fSemigroupNonEmpty_$c<> @ e x y) -}
+68dbbd2b7d311e10a7d18b30ba929ddb
+  $fMonoidFieldErrors_$c<> ::
+    Data.Check.Field.FieldErrors e
+    -> Data.Check.Field.FieldErrors e -> Data.Check.Field.FieldErrors e
+  {- Arity: 2, Strictness: <S,1*U><S,1*U>,
+     Unfolding: InlineRule (0, True, True)
+                Data.Check.Field.$fMonoidFieldErrors2
+                  `cast`
+                (forall (e :: <*>_N).
+                 <Data.Check.Field.FieldErrors e>_R
+                 ->_R <Data.Check.Field.FieldErrors e>_R
+                 ->_R Sym (Data.Check.Field.N:FieldErrors[0] <e>_R)) -}
+68dbbd2b7d311e10a7d18b30ba929ddb
+  $fMonoidFieldErrors_$cmconcat ::
+    [Data.Check.Field.FieldErrors e] -> Data.Check.Field.FieldErrors e
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: (\ @ e (eta :: [Data.Check.Field.FieldErrors e]) ->
+                 Data.Check.Field.$fMonoidFieldErrors1 @ e eta) -}
+79dffc205989e0e0a792ead48e9e001e
+  $fMonoidFieldErrors_$sunionWithKey ::
+    (Data.Text.Internal.Text -> a -> a -> a)
+    -> Data.Map.Base.Map Data.Text.Internal.Text a
+    -> Data.Map.Base.Map Data.Text.Internal.Text a
+    -> Data.Map.Base.Map Data.Text.Internal.Text a
+  {- Arity: 3, Strictness: <L,C(C1(C1(U)))><S,1*U><S,1*U> -}
+68dbbd2b7d311e10a7d18b30ba929ddb
+  $fSemigroupFieldErrors ::
+    Data.Semigroup.Semigroup (Data.Check.Field.FieldErrors e)
+  DFunId
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun: @ e.
+                  @ (Data.Check.Field.FieldErrors e)
+                  (Data.Check.Field.$fMonoidFieldErrors_$c<> @ e)
+                  (Data.Check.Field.$fSemigroupFieldErrors_$csconcat @ e)
+                  (Data.Check.Field.$fSemigroupFieldErrors_$cstimes @ e) -}
+68dbbd2b7d311e10a7d18b30ba929ddb
+  $fSemigroupFieldErrors1 ::
+    Data.Check.Field.FieldErrors e
+    -> [Data.Check.Field.FieldErrors e]
+    -> Data.Check.Field.FieldErrors e
+  {- Arity: 2, Strictness: <S,1*U><S,1*U> -}
+68dbbd2b7d311e10a7d18b30ba929ddb
+  $fSemigroupFieldErrors_$csconcat ::
+    Data.List.NonEmpty.NonEmpty (Data.Check.Field.FieldErrors e)
+    -> Data.Check.Field.FieldErrors e
+  {- Arity: 1, Strictness: <S(SS),1*U(1*U,1*U)>, Inline: INLINE[0],
+     Unfolding: InlineRule (1, True, False)
+                (\ @ e
+                   (w :: Data.List.NonEmpty.NonEmpty
+                           (Data.Check.Field.FieldErrors e)) ->
+                 case w of ww { Data.List.NonEmpty.:| ww1 ww2 ->
+                 Data.Check.Field.$fSemigroupFieldErrors1 @ e ww1 ww2 }) -}
+68dbbd2b7d311e10a7d18b30ba929ddb
+  $fSemigroupFieldErrors_$cstimes ::
+    GHC.Real.Integral b =>
+    b
+    -> Data.Check.Field.FieldErrors e -> Data.Check.Field.FieldErrors e
+  {- Arity: 3,
+     Strictness: <S(SLLLLLLLL),U(U,U,C(C1(U)),C(C1(U)),A,A,A,A,A)><L,U><S,U> -}
+68dbbd2b7d311e10a7d18b30ba929ddb
+  $fToJSONFieldErrors ::
+    Data.Aeson.Types.Class.ToJSON e =>
+    Data.Aeson.Types.Class.ToJSON (Data.Check.Field.FieldErrors e)
+  DFunId
+  {- Arity: 1, Strictness: <L,U(C(U),A)>m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun: @ e ($dToJSON :: Data.Aeson.Types.Class.ToJSON e).
+                  @ (Data.Check.Field.FieldErrors e)
+                  (Data.Check.Field.$fToJSONFieldErrors_$ctoJSON @ e $dToJSON)
+                  (Data.Check.Field.$fToJSONFieldErrors_$ctoEncoding @ e $dToJSON) -}
+f6ff54e9890c350ba0019dd93db8cc13
+  $fToJSONFieldErrors1 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 0#) -}
+506be1cadf0b752c2e2fadf4d70b265b
+  $fToJSONFieldErrors2 ::
+    GHC.Types.SPEC
+    -> (Data.Vector.Generic.Base.Mutable
+          Data.Vector.Vector
+          (Control.Monad.Primitive.PrimState (GHC.ST.ST GHC.Prim.RealWorld))
+          Data.Aeson.Types.Internal.Value,
+        GHC.Types.Int)
+    -> [Data.Aeson.Types.Internal.Value]
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          (Data.Vector.Generic.Base.Mutable
+             Data.Vector.Vector
+             (Control.Monad.Primitive.PrimState (GHC.ST.ST GHC.Prim.RealWorld))
+             Data.Aeson.Types.Internal.Value,
+           GHC.Types.Int) #)
+  {- Arity: 4, Strictness: <S,1*U><L,U(U(U,U,U),U(U))><S,1*U><S,U> -}
+68dbbd2b7d311e10a7d18b30ba929ddb
+  $fToJSONFieldErrors_$ctoEncoding ::
+    Data.Aeson.Types.Class.ToJSON e =>
+    Data.Check.Field.FieldErrors e
+    -> Data.Aeson.Types.Internal.Encoding
+  {- Arity: 1, Strictness: <L,U(C(U),A)>,
+     Inline: INLINE (sat-args=0),
+     Unfolding: InlineRule (1, False, False)
+                (\ @ e
+                   ($dToJSON :: Data.Aeson.Types.Class.ToJSON e)
+                   (eta :: Data.Check.Field.FieldErrors e) ->
+                 Data.Aeson.Encode.Builder.encodeToBuilder
+                   (Data.Check.Field.$fToJSONFieldErrors_$ctoJSON @ e $dToJSON eta))
+                  `cast`
+                (forall (e :: <*>_N).
+                 <Data.Aeson.Types.Class.ToJSON e>_R
+                 ->_R <Data.Check.Field.FieldErrors e>_R
+                 ->_R Sym (Data.Aeson.Types.Internal.N:Encoding[0])) -}
+68dbbd2b7d311e10a7d18b30ba929ddb
+  $fToJSONFieldErrors_$ctoJSON ::
+    Data.Aeson.Types.Class.ToJSON e =>
+    Data.Check.Field.FieldErrors e -> Data.Aeson.Types.Internal.Value
+  {- Arity: 2, Strictness: <L,U(C(U),A)><S,1*U>m1, Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, False)
+                (\ @ e
+                   (w :: Data.Aeson.Types.Class.ToJSON e)
+                   (w1 :: Data.Check.Field.FieldErrors e) ->
+                 case Data.Check.Field.$w$ctoJSON @ e w w1 of ww { Unit# ww1 ->
+                 Data.Aeson.Types.Internal.Object ww1 }) -}
+21b5f65a77226b7923b3c72d1b079b3c
+  $sfilterGt1 ::
+    Data.Text.Internal.Text
+    -> Data.Map.Base.Map Data.Text.Internal.Text v
+    -> Data.Map.Base.Map Data.Text.Internal.Text v
+  {- Arity: 2, Strictness: <L,1*U(U,U,U)><S,1*U> -}
+9da65813f707afdd2362989b78ca4cba
+  $sfilterLt1 ::
+    Data.Text.Internal.Text
+    -> Data.Map.Base.Map Data.Text.Internal.Text v
+    -> Data.Map.Base.Map Data.Text.Internal.Text v
+  {- Arity: 2, Strictness: <L,1*U(U,U,U)><S,1*U> -}
+6ded36b4e9c2a51028836c9027cc5cec
+  $strim1 ::
+    Data.Text.Internal.Text
+    -> Data.Text.Internal.Text
+    -> Data.Map.Base.Map Data.Text.Internal.Text a
+    -> Data.Map.Base.Map Data.Text.Internal.Text a
+  {- Arity: 3, HasNoCafRefs,
+     Strictness: <L,1*U(U,U,U)><L,1*U(U,U,U)><S,1*U> -}
+86db7173c9c34baf9afa1656e9bd485d
+  $strim3 ::
+    Data.Text.Internal.Text
+    -> Data.Map.Base.Map Data.Text.Internal.Text a
+    -> Data.Map.Base.Map Data.Text.Internal.Text a
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,1*U(U,U,U)><S,1*U> -}
+2e6bd8746f48702f52a6218e060591f8
+  $tc'FieldErrors :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   1788933872181037481##
+                   15482879491935702697##
+                   Data.Check.Field.$trModule
+                   Data.Check.Field.$tc'FieldErrors1) -}
+107406e55f39ea357e278b80f9bceb77
+  $tc'FieldErrors1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'FieldErrors"#) -}
+dcbc7150c88118a16f9f88bdde1d3d48
+  $tcFieldErrors :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   2833170788741926689##
+                   7845163863658328797##
+                   Data.Check.Field.$trModule
+                   Data.Check.Field.$tcFieldErrors1) -}
+c07fa424f6127ae2c5a19d2c7723139d
+  $tcFieldErrors1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "FieldErrors"#) -}
+aece97b3362cb1546bf813565ac4e645
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module
+                   Data.Check.Field.$trModule2
+                   Data.Check.Field.$trModule1) -}
+df1e308b7053cc0ed506e999fd17ad34
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "Data.Check.Field"#) -}
+aaac5ccd62e49bc81dce29ee6ae32e3b
+  $trModule2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS
+                   "check-0.1.0.0-4tu45YB2z1Y8P1saycWUPF"#) -}
+68dbbd2b7d311e10a7d18b30ba929ddb
+  $w$ctoJSON ::
+    Data.Aeson.Types.Class.ToJSON e =>
+    Data.Check.Field.FieldErrors e
+    -> (# Data.Aeson.Types.Internal.Object #)
+  {- Arity: 2, Strictness: <L,U(C(U),A)><S,1*U>, Inline: [0],
+     Unfolding: (\ @ e
+                   (w :: Data.Aeson.Types.Class.ToJSON e)
+                   (w1 :: Data.Check.Field.FieldErrors e) ->
+                 let {
+                   lvl5 :: e -> Data.Aeson.Types.Internal.Value
+                   = Data.Aeson.Types.Class.toJSON @ e w
+                 } in
+                 letrec {
+                   go10 :: [(Data.Text.Internal.Text,
+                             Data.Aeson.Types.Internal.Value)]
+                           -> Data.Map.Base.Map
+                                Data.Text.Internal.Text (Data.List.NonEmpty.NonEmpty e)
+                           -> [(Data.Text.Internal.Text, Data.Aeson.Types.Internal.Value)]
+                     {- Arity: 2, Strictness: <L,1*U><S,1*U> -}
+                   = \ (z' :: [(Data.Text.Internal.Text,
+                                Data.Aeson.Types.Internal.Value)])
+                       (ds :: Data.Map.Base.Map
+                                Data.Text.Internal.Text (Data.List.NonEmpty.NonEmpty e)) ->
+                     case ds of wild {
+                       Data.Map.Base.Bin dt kx x l r
+                       -> go10
+                            (GHC.Types.:
+                               @ (Data.Text.Internal.Text, Data.Aeson.Types.Internal.Value)
+                               (case x of wild1 { Data.List.NonEmpty.:| err ds1 ->
+                                case ds1 of wild2 {
+                                  [] -> (kx, Data.Aeson.Types.Class.toJSON @ e w err)
+                                  : ipv ipv1
+                                  -> (kx,
+                                      case GHC.Magic.runRW#
+                                             @ 'GHC.Types.PtrRepLifted
+                                             @ (Data.Vector.Vector Data.Aeson.Types.Internal.Value)
+                                             (\ (s1 :: GHC.Prim.State#
+                                                         GHC.Prim.RealWorld)[OneShot] ->
+                                              case GHC.Prim.newArray#
+                                                     @ Data.Aeson.Types.Internal.Value
+                                                     @ (Control.Monad.Primitive.PrimState
+                                                          (GHC.ST.ST GHC.Prim.RealWorld))
+                                                     0#
+                                                     (Data.Vector.Mutable.uninitialised
+                                                        @ Data.Aeson.Types.Internal.Value)
+                                                     s1
+                                                       `cast`
+                                                     (GHC.Prim.State#
+                                                        (Sym (Control.Monad.Primitive.D:R:PrimStateST[0]
+                                                                  <GHC.Prim.RealWorld>_N)))_R of ds2 { (#,#) ipv2 ipv3 ->
+                                              case Data.Check.Field.$fToJSONFieldErrors2
+                                                     GHC.Types.SPEC
+                                                     ((Data.Vector.Mutable.MVector
+                                                         @ (Control.Monad.Primitive.PrimState
+                                                              (GHC.ST.ST GHC.Prim.RealWorld))
+                                                         @ Data.Aeson.Types.Internal.Value
+                                                         0#
+                                                         0#
+                                                         ipv3)
+                                                        `cast`
+                                                      (Sub (Sym (Data.Vector.D:R:MutableVector[0])) <Control.Monad.Primitive.PrimState
+                                                                                                       (GHC.ST.ST
+                                                                                                          GHC.Prim.RealWorld)>_N <Data.Aeson.Types.Internal.Value>_N),
+                                                      Data.Check.Field.$fToJSONFieldErrors1)
+                                                     (GHC.Base.map
+                                                        @ e
+                                                        @ Data.Aeson.Types.Internal.Value
+                                                        lvl5
+                                                        (GHC.Types.: @ e err wild2))
+                                                     ipv2
+                                                       `cast`
+                                                     (GHC.Prim.State#
+                                                        (Control.Monad.Primitive.D:R:PrimStateST[0]
+                                                             <GHC.Prim.RealWorld>_N))_R of ds3 { (#,#) ipv6 ipv7 ->
+                                              case ipv7 of wild5 { (,) v' n ->
+                                              case v'
+                                                     `cast`
+                                                   (Sub (Data.Vector.D:R:MutableVector[0]) <Control.Monad.Primitive.PrimState
+                                                                                              (GHC.ST.ST
+                                                                                                 GHC.Prim.RealWorld)>_N <Data.Aeson.Types.Internal.Value>_N) of wild3 { Data.Vector.Mutable.MVector dt1 dt2 dt3 ->
+                                              case n of dt5 { GHC.Types.I# dt6 ->
+                                              case GHC.Prim.unsafeFreezeArray#
+                                                     @ (Control.Monad.Primitive.PrimState
+                                                          (GHC.ST.ST GHC.Prim.RealWorld))
+                                                     @ Data.Aeson.Types.Internal.Value
+                                                     dt3
+                                                     ipv6
+                                                       `cast`
+                                                     (GHC.Prim.State#
+                                                        (Sym (Control.Monad.Primitive.D:R:PrimStateST[0]
+                                                                  <GHC.Prim.RealWorld>_N)))_R of ds4 { (#,#) ipv4 ipv5 ->
+                                              (# ipv4
+                                                   `cast`
+                                                 (GHC.Prim.State#
+                                                    (Control.Monad.Primitive.D:R:PrimStateST[0]
+                                                         <GHC.Prim.RealWorld>_N))_R,
+                                                 Data.Vector.Vector
+                                                   @ Data.Aeson.Types.Internal.Value
+                                                   dt1
+                                                   dt6
+                                                   ipv5 #) } } } } } }) of ds2 { (#,#) ipv2 ipv3 ->
+                                      case ipv3 of dt1 { Data.Vector.Vector ipv4 ipv5 ipv6 ->
+                                      Data.Aeson.Types.Internal.Array dt1 } }) } })
+                               (go10 z' r))
+                            l
+                       Data.Map.Base.Tip -> z' }
+                 } in
+                 case Data.Aeson.Types.Internal.$sfromList1
+                        @ Data.Aeson.Types.Internal.Value
+                        (go10
+                           (GHC.Types.[]
+                              @ (Data.Text.Internal.Text, Data.Aeson.Types.Internal.Value))
+                           w1 `cast` (Data.Check.Field.N:FieldErrors[0] <e>_R))
+                        (Data.HashMap.Base.Empty
+                           @ Data.Text.Internal.Text
+                           @ Data.Aeson.Types.Internal.Value) of dt { DEFAULT ->
+                 (# dt #) }) -}
+2f1ea647ffc052c2f0de3e0731026238
+  $w$sgreater ::
+    Data.Text.Internal.Text
+    -> Data.Map.Base.Map Data.Text.Internal.Text a1
+    -> (# GHC.Base.Maybe a1,
+          Data.Map.Base.Map Data.Text.Internal.Text a1 #)
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,1*U(U,U,U)><S,1*U>,
+     Inline: [0] -}
+6ce90a3eedddbf2d1450e8b9e6cffd0a
+  $w$smiddle ::
+    Data.Text.Internal.Text
+    -> Data.Text.Internal.Text
+    -> Data.Map.Base.Map Data.Text.Internal.Text a1
+    -> (# GHC.Base.Maybe a1,
+          Data.Map.Base.Map Data.Text.Internal.Text a1 #)
+  {- Arity: 3, HasNoCafRefs,
+     Strictness: <L,1*U(U,U,U)><L,1*U(U,U,U)><S,1*U>, Inline: [0] -}
+25ffe72f76c084b1eb9a60682c682ee5
+  $wexpectAll ::
+    (Data.Foldable.Foldable f, GHC.Base.Monad m) =>
+    Data.Text.Internal.Text
+    -> f (a -> m GHC.Types.Bool, e)
+    -> Data.Check.Field.CheckFieldT m e a a
+  {- Arity: 2,
+     Strictness: <L,U(A,C(C1(U)),A,A,A,A,A,A,A,A,A,A,A,A,A,A)><L,U(U(A,C(U),A,A,A),C(C1(U)),A,C(U),A)>,
+     Inline: [0],
+     Unfolding: (\ @ (f :: * -> *)
+                   @ (m :: * -> *)
+                   @ e
+                   @ a
+                   (w :: Data.Foldable.Foldable f)
+                   (w1 :: GHC.Base.Monad m) ->
+                 let {
+                   $dMonoid :: GHC.Base.Monoid (Data.Check.Field.CheckFieldT m e a a)
+                   = Data.Check.$fMonoidCheckT
+                       @ m
+                       @ (Data.Check.Field.FieldErrors e)
+                       @ a
+                       w1
+                       (Data.Check.Field.$fSemigroupFieldErrors @ e)
+                 } in
+                 \ (field :: Data.Text.Internal.Text) ->
+                 Data.Foldable.foldMap
+                   @ f
+                   w
+                   @ (Data.Check.Field.CheckFieldT m e a a)
+                   @ (a -> m GHC.Types.Bool, e)
+                   $dMonoid
+                   (\ (p :: (a -> m GHC.Types.Bool, e)) (eta :: a) ->
+                    Data.Check.$wexpectM
+                      @ m
+                      @ (Data.Check.Field.FieldErrors e)
+                      @ a
+                      w1
+                      (case p of wild { (,) x ds -> x })
+                      (case field of dt { Data.Text.Internal.Text ipv ipv1 ipv2 ->
+                       (Data.Map.Base.Bin
+                          @ Data.Text.Internal.Text
+                          @ (Data.List.NonEmpty.NonEmpty e)
+                          1#
+                          dt
+                          (Data.List.NonEmpty.:|
+                             @ e
+                             (case p of wild { (,) ds y -> y })
+                             (GHC.Types.[] @ e))
+                          (Data.Map.Base.Tip
+                             @ Data.Text.Internal.Text
+                             @ (Data.List.NonEmpty.NonEmpty e))
+                          (Data.Map.Base.Tip
+                             @ Data.Text.Internal.Text
+                             @ (Data.List.NonEmpty.NonEmpty e)))
+                         `cast`
+                       (Sym (Data.Check.Field.N:FieldErrors[0] <e>_R)) })
+                      eta)
+                     `cast`
+                   (<(a -> m GHC.Types.Bool, e)>_R
+                    ->_R Sym (Data.Check.N:CheckT[0]
+                                  <m>_R <Data.Check.Field.FieldErrors e>_N <a>_R <a>_N))) -}
+06cc7c75af321d00ccd855b8a3cd090f
+  $wpoly_go10 ::
+    GHC.Prim.ByteArray#
+    -> GHC.Prim.Int#
+    -> GHC.Prim.Int#
+    -> Data.Map.Base.Map Data.Text.Internal.Text a
+    -> GHC.Base.Maybe a
+  {- Arity: 4, HasNoCafRefs, Strictness: <L,U><L,U><L,U><S,1*U>,
+     Inline: [0] -}
+671a3413b8b16c9ba846b3f0d242bd25
+  type CheckField e a b =
+    Data.Check.Field.CheckFieldT Data.Functor.Identity.Identity e a b
+60dded877f6b8c322136b419ac0a28c3
+  type CheckFieldT (m :: * -> *) e a b =
+    Data.Check.CheckT m (Data.Check.Field.FieldErrors e) a b
+68dbbd2b7d311e10a7d18b30ba929ddb
+  newtype FieldErrors e
+    = FieldErrors {getFieldErrors :: Data.Map.Base.Map
+                                       Data.Text.Internal.Text (Data.List.NonEmpty.NonEmpty e)}
+ea6e48b8beae5bf182e90e180fc0d015
+  expect ::
+    GHC.Base.Applicative m =>
+    Data.Text.Internal.Text
+    -> (a -> GHC.Types.Bool)
+    -> e
+    -> Data.Check.Field.CheckFieldT m e a a
+  {- Arity: 4, HasNoCafRefs,
+     Strictness: <L,U(A,C(U),A,A,A)><L,1*U(U,U,U)><L,C(U)><L,U>,
+     Unfolding: (\ @ (m :: * -> *)
+                   @ a
+                   @ e
+                   ($dApplicative :: GHC.Base.Applicative m)
+                   (field :: Data.Text.Internal.Text)
+                   (p :: a -> GHC.Types.Bool)
+                   (err :: e) ->
+                 let {
+                   err1 :: Data.Check.Field.FieldErrors e
+                   = case field of dt { Data.Text.Internal.Text ipv ipv1 ipv2 ->
+                     (Data.Map.Base.Bin
+                        @ Data.Text.Internal.Text
+                        @ (Data.List.NonEmpty.NonEmpty e)
+                        1#
+                        dt
+                        (Data.List.NonEmpty.$fApplicativeNonEmpty_$cpure @ e err)
+                        (Data.Map.Base.Tip
+                           @ Data.Text.Internal.Text
+                           @ (Data.List.NonEmpty.NonEmpty e))
+                        (Data.Map.Base.Tip
+                           @ Data.Text.Internal.Text
+                           @ (Data.List.NonEmpty.NonEmpty e)))
+                       `cast`
+                     (Sym (Data.Check.Field.N:FieldErrors[0] <e>_R)) }
+                 } in
+                 let {
+                   lvl5 :: GHC.Base.Maybe (Data.Check.Field.FieldErrors e)
+                   = GHC.Base.Just @ (Data.Check.Field.FieldErrors e) err1
+                 } in
+                 (\ (eta :: a) ->
+                  GHC.Base.pure
+                    @ m
+                    $dApplicative
+                    @ (GHC.Base.Maybe (Data.Check.Field.FieldErrors e), a)
+                    (case p eta of wild {
+                       GHC.Types.False -> lvl5
+                       GHC.Types.True
+                       -> GHC.Base.Nothing @ (Data.Check.Field.FieldErrors e) },
+                     eta))
+                   `cast`
+                 (Sym (Data.Check.N:CheckT[0]
+                           <m>_R <Data.Check.Field.FieldErrors e>_N <a>_R <a>_N))) -}
+4c3f9b6eb4a659c771101ba9002e5d39
+  expectAll ::
+    (Data.Foldable.Foldable f, GHC.Base.Monad m,
+     Data.Semigroup.Semigroup e) =>
+    Data.Text.Internal.Text
+    -> f (a -> m GHC.Types.Bool, e)
+    -> Data.Check.Field.CheckFieldT m e a a
+  {- Arity: 3,
+     Strictness: <L,U(A,C(C1(U)),A,A,A,A,A,A,A,A,A,A,A,A,A,A)><L,U(U(A,C(U),A,A,A),C(C1(U)),A,C(U),A)><L,A>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (3, True, True)
+                (\ @ (f :: * -> *)
+                   @ (m :: * -> *)
+                   @ e
+                   @ a
+                   (w :: Data.Foldable.Foldable f)
+                   (w1 :: GHC.Base.Monad m)
+                   (w2 :: Data.Semigroup.Semigroup e) ->
+                 Data.Check.Field.$wexpectAll @ f @ m @ e @ a w w1) -}
+fcea5eb71152f4a64c3a71894493a986
+  expectM ::
+    GHC.Base.Monad m =>
+    Data.Text.Internal.Text
+    -> (a -> m GHC.Types.Bool)
+    -> e
+    -> Data.Check.Field.CheckFieldT m e a a
+  {- Arity: 4, HasNoCafRefs,
+     Strictness: <L,U(A,C(C1(U)),A,C(U),A)><L,1*U(U,U,U)><L,C(U)><L,U>,
+     Unfolding: InlineRule (0, True, True)
+                Data.Check.Field.expectM1
+                  `cast`
+                (forall (m :: <* -> *>_N) (a :: <*>_N) (e :: <*>_N).
+                 <GHC.Base.Monad m>_R
+                 ->_R <Data.Text.Internal.Text>_R
+                 ->_R <a -> m GHC.Types.Bool>_R
+                 ->_R <e>_R
+                 ->_R Sym (Data.Check.N:CheckT[0]
+                               <m>_R <Data.Check.Field.FieldErrors e>_N <a>_R <a>_N)) -}
+92680d1e2914f5c692cd0182c454d919
+  expectM1 ::
+    GHC.Base.Monad m =>
+    Data.Text.Internal.Text
+    -> (a -> m GHC.Types.Bool)
+    -> e
+    -> a
+    -> m (GHC.Base.Maybe (Data.Check.Field.FieldErrors e), a)
+  {- Arity: 4, HasNoCafRefs,
+     Strictness: <L,U(A,C(C1(U)),A,C(U),A)><L,1*U(U,U,U)><L,C(U)><L,U>,
+     Unfolding: InlineRule (4, True, False)
+                (\ @ (m :: * -> *)
+                   @ a
+                   @ e
+                   ($dMonad :: GHC.Base.Monad m)
+                   (field :: Data.Text.Internal.Text)
+                   (p :: a -> m GHC.Types.Bool)
+                   (err :: e) ->
+                 let {
+                   w3 :: Data.Check.Field.FieldErrors e
+                   = case field of dt { Data.Text.Internal.Text ipv ipv1 ipv2 ->
+                     (Data.Map.Base.Bin
+                        @ Data.Text.Internal.Text
+                        @ (Data.List.NonEmpty.NonEmpty e)
+                        1#
+                        dt
+                        (Data.List.NonEmpty.$fApplicativeNonEmpty_$cpure @ e err)
+                        (Data.Map.Base.Tip
+                           @ Data.Text.Internal.Text
+                           @ (Data.List.NonEmpty.NonEmpty e))
+                        (Data.Map.Base.Tip
+                           @ Data.Text.Internal.Text
+                           @ (Data.List.NonEmpty.NonEmpty e)))
+                       `cast`
+                     (Sym (Data.Check.Field.N:FieldErrors[0] <e>_R)) }
+                 } in
+                 \ (w4 :: a) ->
+                 Data.Check.$wexpectM
+                   @ m
+                   @ (Data.Check.Field.FieldErrors e)
+                   @ a
+                   $dMonad
+                   p
+                   w3
+                   w4) -}
+b90f0fc97fc7d58e88dccf1fa8c31b3c
+  getFieldErrors ::
+    Data.Check.Field.FieldErrors e
+    -> Data.Map.Base.Map
+         Data.Text.Internal.Text (Data.List.NonEmpty.NonEmpty e)
+  RecSel Left Data.Check.Field.FieldErrors
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>,
+     Unfolding: InlineRule (0, True, True)
+                Data.Check.Field.getFieldErrors1
+                  `cast`
+                (forall (e :: <*>_N).
+                 <Data.Check.Field.FieldErrors e>_R
+                 ->_R Data.Check.Field.N:FieldErrors[0] <e>_R) -}
+3d67ccd869e156a7aae70688640943f2
+  getFieldErrors1 ::
+    Data.Check.Field.FieldErrors e -> Data.Check.Field.FieldErrors e
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, True)
+                (\ @ e (ds :: Data.Check.Field.FieldErrors e) -> ds) -}
+760d9b13550c4bd0170bdd012970d08b
+  suppose ::
+    GHC.Base.Applicative m =>
+    Data.Text.Internal.Text
+    -> (a -> GHC.Types.Bool)
+    -> e
+    -> Data.Check.Field.CheckFieldT m e a GHC.Types.Bool
+  {- Arity: 4, HasNoCafRefs,
+     Strictness: <L,U(A,C(U),A,A,A)><L,1*U(U,U,U)><L,C(U)><L,U>,
+     Unfolding: (\ @ (m :: * -> *)
+                   @ a
+                   @ e
+                   ($dApplicative :: GHC.Base.Applicative m)
+                   (field :: Data.Text.Internal.Text)
+                   (p :: a -> GHC.Types.Bool)
+                   (err :: e) ->
+                 let {
+                   err1 :: Data.Check.Field.FieldErrors e
+                   = case field of dt { Data.Text.Internal.Text ipv ipv1 ipv2 ->
+                     (Data.Map.Base.Bin
+                        @ Data.Text.Internal.Text
+                        @ (Data.List.NonEmpty.NonEmpty e)
+                        1#
+                        dt
+                        (Data.List.NonEmpty.$fApplicativeNonEmpty_$cpure @ e err)
+                        (Data.Map.Base.Tip
+                           @ Data.Text.Internal.Text
+                           @ (Data.List.NonEmpty.NonEmpty e))
+                        (Data.Map.Base.Tip
+                           @ Data.Text.Internal.Text
+                           @ (Data.List.NonEmpty.NonEmpty e)))
+                       `cast`
+                     (Sym (Data.Check.Field.N:FieldErrors[0] <e>_R)) }
+                 } in
+                 let {
+                   lvl5 :: GHC.Base.Maybe (Data.Check.Field.FieldErrors e)
+                   = GHC.Base.Just @ (Data.Check.Field.FieldErrors e) err1
+                 } in
+                 (\ (eta :: a) ->
+                  let {
+                    res :: GHC.Types.Bool = p eta
+                  } in
+                  GHC.Base.pure
+                    @ m
+                    $dApplicative
+                    @ (GHC.Base.Maybe (Data.Check.Field.FieldErrors e), GHC.Types.Bool)
+                    (case res of wild {
+                       GHC.Types.False -> lvl5
+                       GHC.Types.True
+                       -> GHC.Base.Nothing @ (Data.Check.Field.FieldErrors e) },
+                     res))
+                   `cast`
+                 (Sym (Data.Check.N:CheckT[0]
+                           <m>_R
+                           <Data.Check.Field.FieldErrors e>_N
+                           <a>_R
+                           <GHC.Types.Bool>_N))) -}
+ebf1843460e0948211561a7efe829b3f
+  supposeM ::
+    GHC.Base.Monad m =>
+    Data.Text.Internal.Text
+    -> (a -> m GHC.Types.Bool)
+    -> e
+    -> Data.Check.Field.CheckFieldT m e a GHC.Types.Bool
+  {- Arity: 4, HasNoCafRefs,
+     Strictness: <L,U(A,C(C1(U)),A,C(U),A)><L,1*U(U,U,U)><L,C(U)><L,U>,
+     Unfolding: InlineRule (0, True, True)
+                Data.Check.Field.supposeM1
+                  `cast`
+                (forall (m :: <* -> *>_N) (a :: <*>_N) (e :: <*>_N).
+                 <GHC.Base.Monad m>_R
+                 ->_R <Data.Text.Internal.Text>_R
+                 ->_R <a -> m GHC.Types.Bool>_R
+                 ->_R <e>_R
+                 ->_R Sym (Data.Check.N:CheckT[0]
+                               <m>_R
+                               <Data.Check.Field.FieldErrors e>_N
+                               <a>_R
+                               <GHC.Types.Bool>_N)) -}
+ff01be154014cdc5a7817c0964f12b89
+  supposeM1 ::
+    GHC.Base.Monad m =>
+    Data.Text.Internal.Text
+    -> (a -> m GHC.Types.Bool)
+    -> e
+    -> a
+    -> m (GHC.Base.Maybe (Data.Check.Field.FieldErrors e),
+          GHC.Types.Bool)
+  {- Arity: 4, HasNoCafRefs,
+     Strictness: <L,U(A,C(C1(U)),A,C(U),A)><L,1*U(U,U,U)><L,C(U)><L,U>,
+     Unfolding: InlineRule (4, True, False)
+                (\ @ (m :: * -> *)
+                   @ a
+                   @ e
+                   ($dMonad :: GHC.Base.Monad m)
+                   (field :: Data.Text.Internal.Text)
+                   (p :: a -> m GHC.Types.Bool)
+                   (err :: e) ->
+                 let {
+                   w3 :: Data.Check.Field.FieldErrors e
+                   = case field of dt { Data.Text.Internal.Text ipv ipv1 ipv2 ->
+                     (Data.Map.Base.Bin
+                        @ Data.Text.Internal.Text
+                        @ (Data.List.NonEmpty.NonEmpty e)
+                        1#
+                        dt
+                        (Data.List.NonEmpty.$fApplicativeNonEmpty_$cpure @ e err)
+                        (Data.Map.Base.Tip
+                           @ Data.Text.Internal.Text
+                           @ (Data.List.NonEmpty.NonEmpty e))
+                        (Data.Map.Base.Tip
+                           @ Data.Text.Internal.Text
+                           @ (Data.List.NonEmpty.NonEmpty e)))
+                       `cast`
+                     (Sym (Data.Check.Field.N:FieldErrors[0] <e>_R)) }
+                 } in
+                 \ (w4 :: a) ->
+                 Data.Check.$wsupposeM
+                   @ m
+                   @ (Data.Check.Field.FieldErrors e)
+                   @ a
+                   $dMonad
+                   p
+                   w3
+                   w4) -}
+34e5a2ca8d4cd16e1eb0ec43d5e4b9a5
+  whenFalse ::
+    GHC.Base.Applicative m =>
+    Data.Text.Internal.Text
+    -> e
+    -> Data.Check.Field.CheckFieldT m e GHC.Types.Bool GHC.Types.Bool
+  {- Arity: 3, HasNoCafRefs,
+     Strictness: <L,U(A,C(U),A,A,A)><L,1*U(U,U,U)><L,U>,
+     Unfolding: (\ @ (m :: * -> *)
+                   @ e
+                   ($dApplicative :: GHC.Base.Applicative m)
+                   (field :: Data.Text.Internal.Text)
+                   (err :: e) ->
+                 let {
+                   err1 :: Data.Check.Field.FieldErrors e
+                   = case field of dt { Data.Text.Internal.Text ipv ipv1 ipv2 ->
+                     (Data.Map.Base.Bin
+                        @ Data.Text.Internal.Text
+                        @ (Data.List.NonEmpty.NonEmpty e)
+                        1#
+                        dt
+                        (Data.List.NonEmpty.$fApplicativeNonEmpty_$cpure @ e err)
+                        (Data.Map.Base.Tip
+                           @ Data.Text.Internal.Text
+                           @ (Data.List.NonEmpty.NonEmpty e))
+                        (Data.Map.Base.Tip
+                           @ Data.Text.Internal.Text
+                           @ (Data.List.NonEmpty.NonEmpty e)))
+                       `cast`
+                     (Sym (Data.Check.Field.N:FieldErrors[0] <e>_R)) }
+                 } in
+                 let {
+                   lvl5 :: GHC.Base.Maybe (Data.Check.Field.FieldErrors e)
+                   = GHC.Base.Just @ (Data.Check.Field.FieldErrors e) err1
+                 } in
+                 (\ (eta :: GHC.Types.Bool) ->
+                  GHC.Base.pure
+                    @ m
+                    $dApplicative
+                    @ (GHC.Base.Maybe (Data.Check.Field.FieldErrors e), GHC.Types.Bool)
+                    (case eta of wild {
+                       GHC.Types.False -> lvl5
+                       GHC.Types.True
+                       -> GHC.Base.Nothing @ (Data.Check.Field.FieldErrors e) },
+                     eta))
+                   `cast`
+                 (Sym (Data.Check.N:CheckT[0]
+                           <m>_R
+                           <Data.Check.Field.FieldErrors e>_N
+                           <GHC.Types.Bool>_R
+                           <GHC.Types.Bool>_N))) -}
+instance GHC.Base.Monoid [Data.Check.Field.FieldErrors]
+  = Data.Check.Field.$fMonoidFieldErrors
+instance Data.Semigroup.Semigroup [Data.Check.Field.FieldErrors]
+  = Data.Check.Field.$fSemigroupFieldErrors
+instance Data.Aeson.Types.Class.ToJSON [Data.Check.Field.FieldErrors]
+  = Data.Check.Field.$fToJSONFieldErrors
+"SPEC/Data.Check.Field unionWithKey @ Text _" [ALWAYS] forall @ a
+                                                              ($dOrd :: GHC.Classes.Ord
+                                                                          Data.Text.Internal.Text)
+  Data.Map.Base.unionWithKey @ Data.Text.Internal.Text @ a $dOrd
+  = Data.Check.Field.$fMonoidFieldErrors_$sunionWithKey @ a
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: none
+require own pkg trusted: False
+

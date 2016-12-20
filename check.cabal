@@ -1,0 +1,39 @@
+name:                check
+version:             0.1.0.0
+synopsis:            Combinators for Arrow based data validation
+description:
+  "Check" aims to abstract common patterns in data validation. It uses Arrow
+  combinators to create powerful, flexible and composable validation pipelines.
+homepage:            https://github.com/lightandlight/check#readme
+license:             BSD3
+license-file:        LICENSE
+author:              Isaac Elliott
+maintainer:          isaace71295@gmail.com
+category:            Data
+build-type:          Simple
+extra-source-files:  README.md
+cabal-version:       >=1.10
+
+library
+  hs-source-dirs:      src
+  exposed-modules:     Data.Check
+                     , Data.Check.Field
+  build-depends:       base >= 4.7 && < 5
+                     , aeson
+                     , containers
+                     , profunctors
+                     , text
+  default-language:    Haskell2010
+
+test-suite check-test
+  type:                exitcode-stdio-1.0
+  hs-source-dirs:      test
+  main-is:             Spec.hs
+  build-depends:       base
+                     , check
+  ghc-options:         -threaded -rtsopts -with-rtsopts=-N
+  default-language:    Haskell2010
+
+source-repository head
+  type:     git
+  location: https://github.com/lightandlight/haskell-arrow-validators
