@@ -1,6 +1,7 @@
 module Data.Check.Field
   ( CheckField
   , CheckFieldT
+  , FieldErrors(..)
   , C.checkT
   , C.check
   , expectM
