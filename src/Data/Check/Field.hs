@@ -3,6 +3,7 @@ module Data.Check.Field
   , CheckFieldT
   , checkFieldT
   , checkField
+  , C.liftM
   , FieldErrors(..)
   , expectM
   , expect

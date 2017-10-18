@@ -19,6 +19,7 @@
 -- | >   = EmailInvalid
 -- | >   | UsernameNotAllowed
 -- | >   | PasswordTooWeak
+-- | >   deriving (Eq, Show)
 -- | >
 -- | > validEmail = not . isPrefixOf "invalid"
 -- | > strongPassword = (>= 8) . length
@@ -30,9 +31,9 @@
 -- | >
 -- | > validateUser :: CheckT IO [UserError] User User
 -- | > validateUser = proc user -> do
--- | >   expect (validEmail . email) [EmailInvalid] -< user
--- | >   expect (strongPassword . password) [PasswordTooWeak] -< user
 -- | >   expectM (usernameAllowed . username) [UsernameNotAllowed] -< user
+-- | >   expect (strongPassword . password) [PasswordTooWeak] -< user
+-- | >   expect (validEmail . email) [EmailInvalid] -< user
 -- | >   returnA -< user
 -- |
 -- | >>> checkT validateUser (User "allowed_username" "weak" "invalid@email.com")
@@ -50,9 +51,9 @@
 -- | >
 -- | > lookupUser :: String -> IO (Maybe User)
 -- | >
--- | > validateLogin :: CheckT IO LoginError LoginPayload User
+-- | > validateLogin :: CheckT IO [LoginError] LoginPayload User
 -- | > validateLogin = proc payload -> do
--- | >   maybeUser <- runM lookupUser -< loginUsername payload
+-- | >   maybeUser <- liftM lookupUser -< loginUsername payload
 -- | >   expect isJust [UserNotFound] -< maybeUser
 -- | >   case maybeUser of
 -- | >     Just user -> do
@@ -74,6 +75,7 @@ module Data.Check
   , Check
   , checkT
   , check
+  , liftM
   , expectM
   , expect
   , expectAll
@@ -136,6 +138,10 @@ instance (Monad m, Semigroup e) => Arrow (CheckT m e) where
     (errs,b) <- runCheckT ab a
     (errs',b') <- runCheckT ab' a'
     return (errs <> errs',(b,b'))
+
+-- | Lift an effectful function into a 'CheckT' computation
+liftM :: Functor m => (input -> m output) -> CheckT m e input output
+liftM f = CheckT (fmap ((,) Nothing) . f)
 
 instance (Monad m, Semigroup e) => ArrowChoice (CheckT m e) where
   ab +++ ab' = CheckT $ \ea -> case ea of
