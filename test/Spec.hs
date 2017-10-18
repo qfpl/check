@@ -29,7 +29,7 @@ prop_first =
         Check.expect isDigit [NotDigit] -< input
         returnA -< input
     input <- forAll $ liftA2 (,) Gen.unicodeAll Gen.unicodeAll
-    Check.check (first (f >>> g)) input === Check.check (first f >>> first g) input
+    Check.runCheck (first (f >>> g)) input === Check.runCheck (first f >>> first g) input
 
 prop_left :: Property
 prop_left =
@@ -44,7 +44,7 @@ prop_left =
         returnA -< input
     input <-
       forAll $ Gen.choice [Left <$> Gen.unicodeAll, Right <$> Gen.unicodeAll]
-    Check.check (left (f >>> g)) input === Check.check (left f >>> left g) input
+    Check.runCheck (left (f >>> g)) input === Check.runCheck (left f >>> left g) input
 
 
 
@@ -91,7 +91,7 @@ prop_example_1_fail =
         (Gen.string (Range.constant 0 100) Gen.ascii)
     p <- forAll $ Gen.string (Range.constant 0 7) Gen.ascii
     e <- forAll $ ("invalid" <>) <$> Gen.string (Range.constant 0 100) Gen.ascii
-    res <- liftIO $ Check.checkT validateUser (User u p e)
+    res <- liftIO $ Check.runCheckT validateUser (User u p e)
     res === Left [PasswordTooWeak, EmailInvalid]
 
 prop_example_1_success :: Property
@@ -104,7 +104,7 @@ prop_example_1_success =
     p <- forAll $ Gen.string (Range.constant 8 100) Gen.ascii
     e <- forAll .
       Gen.filter validEmail $ Gen.string (Range.constant 0 100) Gen.ascii
-    res <- liftIO $ Check.checkT validateUser (User u p e)
+    res <- liftIO $ Check.runCheckT validateUser (User u p e)
     res === Right (User u p e)
 
 data LoginPayload
@@ -142,7 +142,7 @@ prop_example_2_fail_1 =
         (`notElem` fmap username database)
         (Gen.string (Range.constant 0 100) Gen.ascii)
     p <- forAll $ Gen.string (Range.constant 0 100) Gen.ascii
-    res <- liftIO $ Check.checkT validateLogin (LoginPayload u p)
+    res <- liftIO $ Check.runCheckT validateLogin (LoginPayload u p)
     res === Left [UserNotFound]
 
 prop_example_2_fail_2 :: Property
@@ -153,7 +153,7 @@ prop_example_2_fail_2 =
       Gen.filter
         (/= password u)
         (Gen.string (Range.constant 0 100) Gen.ascii)
-    res <- liftIO $ Check.checkT validateLogin (LoginPayload (username u) p)
+    res <- liftIO $ Check.runCheckT validateLogin (LoginPayload (username u) p)
     res === Left [PasswordIncorrect]
 
 prop_example_2_success :: Property
@@ -161,7 +161,7 @@ prop_example_2_success =
   property $ do
     u <- forAll $ Gen.element database
     res <- liftIO $
-      Check.checkT validateLogin (LoginPayload (username u) $ password u)
+      Check.runCheckT validateLogin (LoginPayload (username u) $ password u)
     res === Right u
 
 main :: IO Bool
