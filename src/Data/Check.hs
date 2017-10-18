@@ -6,9 +6,10 @@
 --
 -- This is done by building a `CheckT` computation, which contains all the rules that some data
 -- should satisfy, then using `checkT` to run it with some input. If errors occurred
--- they are accumulated and returned, otherwise an output is returned.
+-- they are accumulated and returned, and an output may also be returned if those errors
+-- were not considered "fatal".
 --
--- The most effective way to build a `CheckT` computation is using 'Arrow's.
+-- Here's a simple example:
 --
 -- > {-# language Arrows #-}
 -- >
@@ -30,13 +31,32 @@
 -- > usernameAllowed username = do
 -- >   let usernamesInDatabase = ["foo", "bar", "baz"] -- Imagine this is a database lookup
 -- >   return $ username `notElem` usernamesInDatabase
--- >
+--
+-- `CheckT` is a 'Category', so for simple cases data can be validated by
+-- composing your expectations using `(>>>)`:
+--
 -- > validateUser :: CheckT IO [UserError] User User
--- > validateUser = proc user -> do
--- >   expectM (usernameAllowed . username) [UsernameNotAllowed] -< user
--- >   expect (strongPassword . password) [PasswordTooWeak] -< user
--- >   expect (validEmail . email) [EmailInvalid] -< user
--- >   returnA -< user
+-- > validateUser =
+-- >   expectM (usernameAllowed . username) [UsernameNotAllowed] >>>
+-- >   expect (strongPassword . password) [PasswordTooWeak] >>>
+-- >   expect (validEmail . email) [EmailInvalid]
+--
+-- `expectM`, `expect` and `expectAll` are used test predicates against the input
+-- data, and log errors if the predicates don't hold. Unlike the [Validation type](https://hackage.haskell.org/package/validation), the result is not forgotten
+-- in the presence of errors, so you can decompose your validation logic
+-- into smaller more manageable components.
+--
+-- You can also build a `CheckT` using a monadic interface. For simple cases,
+-- the translation from Arrow syntax is nearly identical. Here's the above
+-- example re-written using do-notation.
+--
+-- > validateUser :: CheckT IO [UserError] User User
+-- > validateUser = do
+-- >   expectM (usernameAllowed . username) [UsernameNotAllowed]
+-- >   expect (strongPassword . password) [PasswordTooWeak]
+-- >   expect (validEmail . email) [EmailInvalid]
+--
+-- They're the same program.
 --
 -- >>> checkT validateUser (User "allowed_username" "weak" "invalid@email.com")
 -- These [PasswordTooWeak, EmailInvalid] (User "allowed_username" "weak" "invalid@email.com")
@@ -45,7 +65,7 @@
 -- That (User "allowed_username" "strong_password" "valid_email")
 --
 -- A `CheckT` computation can have an output type that is different to its input type,
--- as well as letting intermediate results influence the flow of checking
+-- as well as letting intermediate results influence the flow of checking:
 --
 -- > data LoginPayload = LoginPayload { loginUsername :: String, loginPassword :: String }
 -- >
@@ -53,7 +73,9 @@
 -- >
 -- > lookupUser :: String -> IO (Maybe User)
 -- > lookupUser name = ...
--- >
+--
+-- In these cases, it's often easier to use Arrow notation:
+--
 -- > validateLogin :: CheckT IO [LoginError] LoginPayload User
 -- > validateLogin = proc payload -> do
 -- >   maybeUser <- liftEffect lookupUser -< loginUsername payload
@@ -61,7 +83,36 @@
 -- >     Just user -> do
 -- >       whenFalse [PasswordIncorrect] -< password user == loginPassword payload
 -- >       returnA -< user
--- >     Nothing -> err [UserNotFound] -< ()
+-- >     Nothing -> fatal [UserNotFound] -< ()
+--
+-- `liftEffect` applies an effectful transformation to the input, doing no
+-- checking in the process. In this case, it "does a database lookup" using
+-- some login information.
+--
+-- `whenFalse` will log some errors when its input is `False`. This is similar
+-- to an assert statement- it doesn't alter the flow of the program when the
+-- input is `True`
+--
+-- `fatal` logs a single, fatal set of errors, meaning that only the errors
+-- passed to `fatal` will be output if it is reached. This is useful when
+-- you can't produce the required output type. In the above example, if a user
+-- is not in the database then it is "impossible" to produce a value of type
+-- @User@. Thus, we fail with a `fatal` error.
+--
+-- To translate this example to do-notation, we need to use `lmap` from
+-- `Data.Profunctor` in order to refine the input to the `CheckT`. Here's what that
+-- looks like:
+--
+-- > validateLogin :: CheckT IO [LoginError] LoginPayload User
+-- > validateLogin = do
+-- >   maybeUser <- lmap loginUsername $ Check.liftEffect lookupUser
+-- >     case maybeUser of
+-- >       Just user -> do
+-- >         lmap ((password user ==) . loginPassword) $ Check.whenFalse [PasswordIncorrect]
+-- >         pure user
+-- >       Nothing -> Check.fatal [UserNotFound]
+--
+-- Again, they are the same program
 --
 -- >>> checkT validateLogin (LoginPayload "incorrect_username" "incorrect_password")
 -- This [UserNotFound]
@@ -82,7 +133,7 @@ module Data.Check
   , expect
   , expectAll
   , whenFalse
-  , err
+  , fatal
   , failure
   ) where
 
@@ -90,7 +141,6 @@ import Control.Applicative
 import Control.Arrow
 import Control.Category
 import Control.Monad.Chronicle
-import Control.Monad.IO.Class
 import Control.Monad.Reader
 import Data.Functor.Identity
 import Data.Profunctor
@@ -182,18 +232,18 @@ expectAll = foldMap (uncurry expectM)
 
 -- | Logs an error when `False` is passed in
 --
--- Returns `True` on success, and produces no input (a `This`) on failure
+-- Returns its input
 --
 -- > whenFalse = expect id
 whenFalse :: (Monad m, Semigroup e) => e -> CheckT m e Bool Bool
 whenFalse = expect id
 
 -- | Fail with the specified error(s), producing no output
-err :: (Monad m, Semigroup e) => e -> CheckT m e i o
-err = CheckT . Kleisli . const . confess
+fatal :: (Monad m, Semigroup e) => e -> CheckT m e i o
+fatal = CheckT . Kleisli . const . confess
 
 -- | Fail on any input, producing no output
 --
--- > failure = err mempty
+-- > failure = fatal mempty
 failure :: (Monad m, Semigroup e, Monoid e) => CheckT m e i o
-failure = err mempty
+failure = fatal mempty

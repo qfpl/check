@@ -31,7 +31,7 @@ module Data.Check.Field
   , expect
   , expectAll
   , whenFalse
-  , err
+  , fatal
   ) where
 
 import Data.Aeson
@@ -51,10 +51,6 @@ newtype FieldErrors e = FieldErrors { getFieldErrors :: Map Text (NonEmpty e) }
 
 instance Semigroup (FieldErrors e) where
   (<>) (FieldErrors ma) (FieldErrors mb) = FieldErrors $ M.unionWith (<>) ma mb
-
-instance Monoid (FieldErrors e) where
-  mempty = FieldErrors M.empty
-  mappend = (<>)
 
 singleError :: Text -> e -> FieldErrors e
 singleError field e = FieldErrors . M.singleton field $ pure e
@@ -106,6 +102,6 @@ expectAll :: (Foldable f, Monad m, Semigroup e) => Text -> f (i -> m Bool,e) -> 
 expectAll field = foldMap (uncurry (expectM field))
 
 -- | Fail with the specified error(s), producing no output
-err :: Monad m => Text -> e -> CheckFieldT m e i o
-err k e = C.err $ singleError k e
+fatal :: Monad m => Text -> e -> CheckFieldT m e i o
+fatal k e = C.fatal $ singleError k e
 

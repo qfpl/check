@@ -78,11 +78,10 @@ usernameAllowed u =
   pure $ u `notElem` fmap username database
 
 validateUser :: CheckT IO [UserError] User User
-validateUser = proc user -> do
-  Check.expectM (usernameAllowed . username) [UsernameNotAllowed] -< user
-  Check.expect (strongPassword . password) [PasswordTooWeak] -< user
-  Check.expect (validEmail . email) [EmailInvalid] -< user
-  returnA -< user
+validateUser =
+  Check.expectM (usernameAllowed . username) [UsernameNotAllowed] >>>
+  Check.expect (strongPassword . password) [PasswordTooWeak] >>>
+  Check.expect (validEmail . email) [EmailInvalid]
 
 validateUser_monad :: CheckT IO [UserError] User User
 validateUser_monad = do
@@ -165,7 +164,7 @@ validateLogin = proc payload -> do
     Just user -> do
       Check.whenFalse [PasswordIncorrect] -< password user == loginPassword payload
       returnA -< user
-    Nothing -> Check.err [UserNotFound] -< ()
+    Nothing -> Check.fatal [UserNotFound] -< ()
 
 validateLogin_monad :: CheckT IO [LoginError] LoginPayload User
 validateLogin_monad = do
@@ -174,7 +173,7 @@ validateLogin_monad = do
     Just user -> do
       lmap ((password user ==) . loginPassword) $ Check.whenFalse [PasswordIncorrect]
       pure user
-    Nothing -> Check.err [UserNotFound]
+    Nothing -> Check.fatal [UserNotFound]
 
 prop_example_2_fail_1 :: Property
 prop_example_2_fail_1 =
