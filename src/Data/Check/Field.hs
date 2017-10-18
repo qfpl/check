@@ -1,9 +1,9 @@
 module Data.Check.Field
   ( CheckField
   , CheckFieldT
+  , checkFieldT
+  , checkField
   , FieldErrors(..)
-  , C.checkT
-  , C.check
   , expectM
   , expect
   , expectAll
@@ -11,18 +11,20 @@ module Data.Check.Field
   , suppose
   , whenFalse
   , C.liftEffect
+  , C.err
   , C.failure
   ) where
 
-import           Data.Aeson
-import           Data.Functor.Identity (Identity)
-import           Data.List.NonEmpty    (NonEmpty (..))
-import           Data.Map              (Map)
-import qualified Data.Map              as M
-import           Data.Semigroup
-import           Data.Text             (Text)
+import Data.Aeson
+import Data.Functor.Identity (Identity)
+import Data.List.NonEmpty (NonEmpty (..))
+import Data.Map (Map)
+import Data.Semigroup
+import Data.Text (Text)
 
-import qualified Data.Check            as C
+import qualified Data.Map as M
+
+import qualified Data.Check as C
 
 newtype FieldErrors e = FieldErrors { getFieldErrors :: Map Text (NonEmpty e) }
 
@@ -45,12 +47,18 @@ instance ToJSON e => ToJSON (FieldErrors e) where
 type CheckFieldT m e a b = C.CheckT m (FieldErrors e) a b
 type CheckField e a b = CheckFieldT Identity e a b
 
+checkFieldT :: Monad m => CheckFieldT m e a b -> a -> m (Either (FieldErrors e) b)
+checkFieldT = C.checkT
+
+checkField :: CheckField e a b -> a -> Either (FieldErrors e) b
+checkField = C.check
+
 -- | Runs a predicate, and logs an error for a field if the predicate fails
 expectM
   :: Monad m
-  => Text           -- ^ Field name
-  -> (a -> m Bool)  -- ^ Effectful predicate
-  -> e              -- ^ Error to log if predicate fails
+  => Text          -- ^ Field name
+  -> (a -> m Bool) -- ^ Effectful predicate
+  -> e             -- ^ Error to log if predicate fails
   -> CheckFieldT m e a a
 expectM field p err = C.expectM p (singleError field err)
 
