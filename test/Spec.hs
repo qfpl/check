@@ -10,6 +10,7 @@ import Control.Monad.IO.Class
 import Data.Char
 import Data.Monoid
 import Data.List
+import Data.These
 
 import Data.Check (CheckT)
 import qualified Data.Check as Check
@@ -92,7 +93,7 @@ prop_example_1_fail =
     p <- forAll $ Gen.string (Range.constant 0 7) Gen.ascii
     e <- forAll $ ("invalid" <>) <$> Gen.string (Range.constant 0 100) Gen.ascii
     res <- liftIO $ Check.runCheckT validateUser (User u p e)
-    res === Left [PasswordTooWeak, EmailInvalid]
+    res === These [PasswordTooWeak, EmailInvalid] (User u p e)
 
 prop_example_1_success :: Property
 prop_example_1_success =
@@ -105,7 +106,7 @@ prop_example_1_success =
     e <- forAll .
       Gen.filter validEmail $ Gen.string (Range.constant 0 100) Gen.ascii
     res <- liftIO $ Check.runCheckT validateUser (User u p e)
-    res === Right (User u p e)
+    res === That (User u p e)
 
 data LoginPayload
   = LoginPayload
@@ -127,7 +128,7 @@ lookupUser name = pure $ findIn database
 
 validateLogin :: CheckT IO [LoginError] LoginPayload User
 validateLogin = proc payload -> do
-  maybeUser <- Check.liftM lookupUser -< loginUsername payload
+  maybeUser <- Check.liftEffect lookupUser -< loginUsername payload
   case maybeUser of
     Just user -> do
       Check.whenFalse [PasswordIncorrect] -< password user == loginPassword payload
@@ -143,7 +144,7 @@ prop_example_2_fail_1 =
         (Gen.string (Range.constant 0 100) Gen.ascii)
     p <- forAll $ Gen.string (Range.constant 0 100) Gen.ascii
     res <- liftIO $ Check.runCheckT validateLogin (LoginPayload u p)
-    res === Left [UserNotFound]
+    res === This [UserNotFound]
 
 prop_example_2_fail_2 :: Property
 prop_example_2_fail_2 =
@@ -154,7 +155,7 @@ prop_example_2_fail_2 =
         (/= password u)
         (Gen.string (Range.constant 0 100) Gen.ascii)
     res <- liftIO $ Check.runCheckT validateLogin (LoginPayload (username u) p)
-    res === Left [PasswordIncorrect]
+    res === These [PasswordIncorrect] u
 
 prop_example_2_success :: Property
 prop_example_2_success =
@@ -162,7 +163,7 @@ prop_example_2_success =
     u <- forAll $ Gen.element database
     res <- liftIO $
       Check.runCheckT validateLogin (LoginPayload (username u) $ password u)
-    res === Right u
+    res === That u
 
 main :: IO Bool
 main = do
