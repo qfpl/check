@@ -1,5 +1,6 @@
 {-# LANGUAGE FlexibleInstances #-}
 {-# LANGUAGE GeneralizedNewtypeDeriving #-}
+{-# LANGUAGE MultiParamTypeClasses #-}
 
 -- | Check is used to "check" inputs and accumulate errors on failure
 --
@@ -89,6 +90,8 @@ import Control.Applicative
 import Control.Arrow
 import Control.Category
 import Control.Monad.Chronicle
+import Control.Monad.IO.Class
+import Control.Monad.Reader
 import Data.Functor.Identity
 import Data.Profunctor
 import Data.Semigroup
@@ -107,6 +110,13 @@ newtype CheckT m error input output
     , ArrowApply
     , Profunctor
     )
+
+instance (Monad m, Semigroup e) => MonadReader i (CheckT m e i) where
+  ask = id
+  local = lmap
+
+instance (MonadIO m, Semigroup e) => MonadIO (CheckT m e i) where
+  liftIO = liftEffect . const . liftIO 
 
 -- | Non-effectful checking
 type Check error input output = CheckT Identity error input output

@@ -1,4 +1,4 @@
-{ mkDerivation, aeson, base, containers, hedgehog, profunctors
+{ mkDerivation, aeson, base, containers, hedgehog, mtl, profunctors
 , stdenv, text, these
 }:
 mkDerivation {
@@ -6,7 +6,7 @@ mkDerivation {
   version = "0.1.0.0";
   src = ./.;
   libraryHaskellDepends = [
-    aeson base containers profunctors text these
+    aeson base containers mtl profunctors text these
   ];
   testHaskellDepends = [ base containers hedgehog these ];
   homepage = "https://github.com/lightandlight/haskell-arrow-validation#readme";

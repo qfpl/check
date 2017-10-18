@@ -10,6 +10,7 @@ import Control.Monad.IO.Class
 import Data.Char
 import Data.Monoid
 import Data.List
+import Data.Profunctor
 import Data.These
 
 import Data.Check (CheckT)
@@ -74,7 +75,7 @@ database =
 
 usernameAllowed :: String -> IO Bool
 usernameAllowed u =
-  pure $ u `notElem` (fmap username database)
+  pure $ u `notElem` fmap username database
 
 validateUser :: CheckT IO [UserError] User User
 validateUser = proc user -> do
@@ -82,6 +83,12 @@ validateUser = proc user -> do
   Check.expect (strongPassword . password) [PasswordTooWeak] -< user
   Check.expect (validEmail . email) [EmailInvalid] -< user
   returnA -< user
+
+validateUser_monad :: CheckT IO [UserError] User User
+validateUser_monad = do
+  Check.expectM (usernameAllowed . username) [UsernameNotAllowed]
+  Check.expect (strongPassword . password) [PasswordTooWeak]
+  Check.expect (validEmail . email) [EmailInvalid]
 
 prop_example_1_fail :: Property
 prop_example_1_fail =
@@ -106,6 +113,31 @@ prop_example_1_success =
     e <- forAll .
       Gen.filter validEmail $ Gen.string (Range.constant 0 100) Gen.ascii
     res <- liftIO $ Check.runCheckT validateUser (User u p e)
+    res === That (User u p e)
+
+prop_example_1_fail_monad :: Property
+prop_example_1_fail_monad =
+  property $ do
+    u <- forAll $
+      Gen.filter
+        (`notElem` fmap username database)
+        (Gen.string (Range.constant 0 100) Gen.ascii)
+    p <- forAll $ Gen.string (Range.constant 0 7) Gen.ascii
+    e <- forAll $ ("invalid" <>) <$> Gen.string (Range.constant 0 100) Gen.ascii
+    res <- liftIO $ Check.runCheckT validateUser_monad (User u p e)
+    res === These [PasswordTooWeak, EmailInvalid] (User u p e)
+
+prop_example_1_success_monad :: Property
+prop_example_1_success_monad =
+  property $ do
+    u <- forAll $
+      Gen.filter
+        (`notElem` fmap username database)
+        (Gen.string (Range.constant 0 100) Gen.ascii)
+    p <- forAll $ Gen.string (Range.constant 8 100) Gen.ascii
+    e <- forAll .
+      Gen.filter validEmail $ Gen.string (Range.constant 0 100) Gen.ascii
+    res <- liftIO $ Check.runCheckT validateUser_monad (User u p e)
     res === That (User u p e)
 
 data LoginPayload
@@ -134,6 +166,15 @@ validateLogin = proc payload -> do
       Check.whenFalse [PasswordIncorrect] -< password user == loginPassword payload
       returnA -< user
     Nothing -> Check.err [UserNotFound] -< ()
+
+validateLogin_monad :: CheckT IO [LoginError] LoginPayload User
+validateLogin_monad = do
+  maybeUser <- lmap loginUsername $ Check.liftEffect lookupUser
+  case maybeUser of
+    Just user -> do
+      lmap ((password user ==) . loginPassword) $ Check.whenFalse [PasswordIncorrect]
+      pure user
+    Nothing -> Check.err [UserNotFound]
 
 prop_example_2_fail_1 :: Property
 prop_example_2_fail_1 =
@@ -165,6 +206,36 @@ prop_example_2_success =
       Check.runCheckT validateLogin (LoginPayload (username u) $ password u)
     res === That u
 
+prop_example_2_fail_1_monad :: Property
+prop_example_2_fail_1_monad =
+  property $ do
+    u <- forAll $
+      Gen.filter
+        (`notElem` fmap username database)
+        (Gen.string (Range.constant 0 100) Gen.ascii)
+    p <- forAll $ Gen.string (Range.constant 0 100) Gen.ascii
+    res <- liftIO $ Check.runCheckT validateLogin_monad (LoginPayload u p)
+    res === This [UserNotFound]
+
+prop_example_2_fail_2_monad :: Property
+prop_example_2_fail_2_monad =
+  property $ do
+    u <- forAll $ Gen.element database
+    p <- forAll $
+      Gen.filter
+        (/= password u)
+        (Gen.string (Range.constant 0 100) Gen.ascii)
+    res <- liftIO $ Check.runCheckT validateLogin_monad (LoginPayload (username u) p)
+    res === These [PasswordIncorrect] u
+
+prop_example_2_success_monad :: Property
+prop_example_2_success_monad =
+  property $ do
+    u <- forAll $ Gen.element database
+    res <- liftIO $
+      Check.runCheckT validateLogin_monad (LoginPayload (username u) $ password u)
+    res === That u
+
 main :: IO Bool
 main = do
   checkSequential
@@ -178,12 +249,24 @@ main = do
 
   checkSequential
     Group
-    { groupName = "Example"
+    { groupName = "Example - Arrow"
     , groupProperties =
       [ ("Example 1 failure", prop_example_1_fail)
       , ("Example 1 success", prop_example_1_success)
       , ("Example 2 failure 1", prop_example_2_fail_1)
       , ("Example 2 failure 2", prop_example_2_fail_2)
       , ("Example 2 success", prop_example_2_success)
+      ]
+    }
+
+  checkSequential
+    Group
+    { groupName = "Example - Monad"
+    , groupProperties =
+      [ ("Example 1 failure", prop_example_1_fail_monad)
+      , ("Example 1 success", prop_example_1_success_monad)
+      , ("Example 2 failure 1", prop_example_2_fail_1_monad)
+      , ("Example 2 failure 2", prop_example_2_fail_2_monad)
+      , ("Example 2 success", prop_example_2_success_monad)
       ]
     }
