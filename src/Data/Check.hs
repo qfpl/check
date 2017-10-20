@@ -33,7 +33,7 @@
 -- >   return $ username `notElem` usernamesInDatabase
 --
 -- `CheckT` is a 'Category', so for simple cases data can be validated by
--- composing your expectations using `(>>>)`:
+-- composing your expectations using `>>>`:
 --
 -- > validateUser :: CheckT IO [UserError] User User
 -- > validateUser =
@@ -142,6 +142,8 @@ import Control.Arrow
 import Control.Category
 import Control.Monad.Chronicle
 import Control.Monad.Reader
+import Data.Functor.Apply
+import Data.Functor.Bind
 import Data.Functor.Identity
 import Data.Profunctor
 import Data.Semigroup
@@ -161,13 +163,6 @@ newtype CheckT m error input output
     , Profunctor
     )
 
-instance (Monad m, Semigroup e) => MonadReader i (CheckT m e i) where
-  ask = id
-  local = lmap
-
-instance (MonadIO m, Semigroup e) => MonadIO (CheckT m e i) where
-  liftIO = liftEffect . const . liftIO 
-
 -- | Non-effectful checking
 type Check error input output = CheckT Identity error input output
 
@@ -182,24 +177,41 @@ runCheck c a = runIdentity $ runCheckT c a
 instance Functor m => Functor (CheckT m e i) where
   fmap f (CheckT (Kleisli m)) = CheckT . Kleisli $ fmap f <$> m
 
+instance (Applicative m, Semigroup e) => Apply (CheckT m e i) where
+  (<.>) = (<*>)
+
 instance (Applicative m, Semigroup e) => Applicative (CheckT m e i) where
   pure = CheckT . Kleisli . const . pure
   (CheckT (Kleisli f)) <*> (CheckT (Kleisli b)) =
     CheckT . Kleisli $ liftA2 (<*>) f b
 
+instance (Monad m, Semigroup e) => Bind (CheckT m e i) where
+  (>>-) = (>>=)
+
 instance (Monad m, Semigroup e) => Monad (CheckT m e i) where
   (CheckT (Kleisli m)) >>= f =
     CheckT . Kleisli $ \i -> m i >>= (($ i) . runKleisli . unCheckT . f)
 
--- | Lift an effectful function into a 'CheckT' computation
-liftEffect :: Functor m => (i -> m o) -> CheckT m e i o
-liftEffect f = CheckT $ Kleisli (ChronicleT . fmap That . f)
+instance (Monad m, Semigroup e) => MonadReader i (CheckT m e i) where
+  ask = id
+  local = lmap
+
+instance (MonadIO m, Semigroup e) => MonadIO (CheckT m e i) where
+  liftIO = liftEffect . const . liftIO
+
+instance (Monad m, Semigroup e) => Semigroup (CheckT m e i i) where
+  (<>) = (.)
 
 instance (Monad m, Semigroup e) => Monoid (CheckT m e i i) where
   mempty = id
   mappend = (.)
 
--- | Runs a predicate, and logs an error if the predicate fails
+-- | Lift an effectful function into a 'CheckT' computation
+liftEffect :: Functor m => (i -> m o) -> CheckT m e i o
+liftEffect f = CheckT $ Kleisli (ChronicleT . fmap That . f)
+
+
+-- | Runs a predicate, and logs some errors if the predicate fails
 --
 -- Returns its input
 expectM
@@ -224,13 +236,13 @@ expect p e =
     then pure a
     else chronicle $ These e a
 
--- | Combine many `expect`ments into a single check
+-- | Combine many `expect`ations into a single check
 --
 -- > expectAll = foldMap (uncurry expectM)
 expectAll :: (Foldable f, Monad m, Semigroup e) => f (i -> m Bool, e) -> CheckT m e i i
 expectAll = foldMap (uncurry expectM)
 
--- | Logs an error when `False` is passed in
+-- | Logs some errors when `False` is passed in
 --
 -- Returns its input
 --
@@ -238,7 +250,7 @@ expectAll = foldMap (uncurry expectM)
 whenFalse :: (Monad m, Semigroup e) => e -> CheckT m e Bool Bool
 whenFalse = expect id
 
--- | Fail with the specified error(s), producing no output
+-- | Fail with the specified errors, producing no output
 fatal :: (Monad m, Semigroup e) => e -> CheckT m e i o
 fatal = CheckT . Kleisli . const . confess
 

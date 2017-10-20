@@ -23,7 +23,8 @@
 module Data.Check.Field
   ( CheckField
   , CheckFieldT
-  , FieldErrors(..)
+  , FieldErrors
+  , getFieldErrors
   , runCheckFieldT
   , runCheckField
   , C.liftEffect
@@ -39,8 +40,12 @@ import Data.Functor.Identity (Identity)
 import Data.List.NonEmpty (NonEmpty (..))
 import Data.Map (Map)
 import Data.Semigroup
+import Data.Semigroup.Foldable
+import Data.Semigroup.Traversable
 import Data.Text (Text)
 import Data.These
+
+import qualified Data.List.NonEmpty as NE
 
 import qualified Data.Map as M
 
@@ -51,6 +56,15 @@ newtype FieldErrors e = FieldErrors { getFieldErrors :: Map Text (NonEmpty e) }
 
 instance Semigroup (FieldErrors e) where
   (<>) (FieldErrors ma) (FieldErrors mb) = FieldErrors $ M.unionWith (<>) ma mb
+
+instance Foldable1 FieldErrors where
+  foldMap1 f (FieldErrors v) =
+    foldMap1 (foldMap1 f) . NE.fromList $ M.elems v
+
+instance Traversable1 FieldErrors where
+  traverse1 f (FieldErrors v) =
+    FieldErrors . M.fromList . NE.toList <$>
+    traverse1 (traverse1 (traverse1 f)) (NE.fromList $ M.toList v)
 
 singleError :: Text -> e -> FieldErrors e
 singleError field e = FieldErrors . M.singleton field $ pure e
@@ -72,14 +86,14 @@ runCheckFieldT = C.runCheckT
 runCheckField :: CheckField e i o -> i -> These (FieldErrors e) o
 runCheckField = C.runCheck
 
--- | Runs a predicate, and logs an error for a field if the predicate fails
+-- | Runs a predicate, and logs some errors for a field if the predicate fails
 --
 -- Returns its input
 expectM
   :: Monad m
   => Text          -- ^ Field name
   -> (i -> m Bool) -- ^ Effectful predicate
-  -> e             -- ^ Error to log if predicate fails
+  -> e             -- ^ Errors to log if predicate fails
   -> CheckFieldT m e i i
 expectM field p e = C.expectM p (singleError field e)
 
@@ -87,7 +101,7 @@ expectM field p e = C.expectM p (singleError field e)
 expect :: Monad m => Text -> (i -> Bool) -> e -> CheckFieldT m e i i
 expect field p e = C.expect p (singleError field e)
 
--- | Logs an error for a field when `False` is passed in
+-- | Logs some errors for a field when `False` is passed in
 --
 -- Returns `True` on success, and produces no input (a `This`) on failure
 --
@@ -95,13 +109,12 @@ expect field p e = C.expect p (singleError field e)
 whenFalse :: Monad m => Text -> e -> CheckFieldT m e Bool Bool
 whenFalse field = expect field id
 
--- | Combine many `expect`ments into a single field check
+-- | Combine many `expect`ations into a single field check
 --
--- > expectAll = foldMap (uncurry expectM)
+-- > expectAll field = foldMap (uncurry (expectM field))
 expectAll :: (Foldable f, Monad m, Semigroup e) => Text -> f (i -> m Bool,e) -> CheckFieldT m e i i
 expectAll field = foldMap (uncurry (expectM field))
 
--- | Fail with the specified error(s), producing no output
+-- | Fail with the specified errors, producing no output
 fatal :: Monad m => Text -> e -> CheckFieldT m e i o
 fatal k e = C.fatal $ singleError k e
-
