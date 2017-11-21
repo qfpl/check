@@ -41,7 +41,7 @@
 -- >   expect (strongPassword . password) [PasswordTooWeak] >>>
 -- >   expect (validEmail . email) [EmailInvalid]
 --
--- `expectM`, `expect` and `expectAll` are used test predicates against the input
+-- `expectM`, `expect` and `expectAll` are used to test predicates against the input
 -- data, and log errors if the predicates don't hold. Unlike the [Validation type](https://hackage.haskell.org/package/validation), the result is not forgotten
 -- in the presence of errors, so you can decompose your validation logic
 -- into smaller more manageable components.
