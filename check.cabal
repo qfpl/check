@@ -1,9 +1,7 @@
 name:                check
 version:             0.1.0.0
-synopsis:            Combinators for Arrow based data validation
-description:
-  "Check" aims to abstract common patterns in data validation. It uses Arrow
-  combinators to create powerful, flexible and composable validation pipelines.
+synopsis:            Combinators for data validation
+description:	     `Check` abstracts common patterns in data validation. 
 homepage:            https://github.com/lightandlight/haskell-arrow-validation#readme
 license:             BSD3
 license-file:        LICENSE

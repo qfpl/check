@@ -15,6 +15,7 @@ let
         buildDepends = (drv.buildDepends or []) ++
           [ (haskellPackages.hoogleLocal {
               packages =
+	        [ "check" ] ++
                 drv.libraryHaskellDepends or [] ++
                 drv.executableHaskellDepends or [];
               })

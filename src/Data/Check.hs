@@ -6,10 +6,10 @@
 --
 -- This is done by building a `CheckT` computation, which contains all the rules that some data
 -- should satisfy, then using `checkT` to run it with some input. If errors occurred
--- they are accumulated and returned, and an output may also be returned if those errors
+-- then they are accumulated and returned. An output may also be returned if those errors
 -- were not considered "fatal".
 --
--- Here's a simple example:
+-- Here's an example:
 --
 -- > {-# language Arrows #-}
 -- >
@@ -47,7 +47,7 @@
 -- into smaller more manageable components.
 --
 -- You can also build a `CheckT` using a monadic interface. For simple cases,
--- the translation from Arrow syntax is nearly identical. Here's the above
+-- the translation from Category/Arrow style is nearly identical. Here's the above
 -- example re-written using do-notation.
 --
 -- > validateUser :: CheckT IO [UserError] User User
