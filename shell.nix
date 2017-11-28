@@ -10,7 +10,7 @@ let
 
   drv =
     pkgs.haskell.lib.overrideCabal
-      (import ./default.nix { inherit nixpkgs compiler; })
+      (import ./default.nix { inherit compiler; })
       (drv: {
         buildDepends = (drv.buildDepends or []) ++
           [ (haskellPackages.hoogleLocal {

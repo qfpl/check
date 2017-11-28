@@ -1,16 +1,20 @@
 name:                check
-version:             0.1.0.0
-synopsis:            Combinators for data validation
-description:	     `Check` abstracts common patterns in data validation. 
-homepage:            https://github.com/lightandlight/haskell-arrow-validation#readme
+version:             1.0.0.0
+synopsis:            Generalised data validation
+description:	       `Check` abstracts common patterns in data validation. See `Data.Check`
+                     for a usage example.
+homepage:            https://github.com/qfpl/check
 license:             BSD3
-license-file:        LICENSE
-author:              Isaac Elliott
-maintainer:          isaace71295@gmail.com
+license-file:        LICENCE
+author:              Queensland Functional Programming Lab <oᴉ˙ldɟb@llǝʞsɐɥ>
+maintainer:          Queensland Functional Programming Lab <oᴉ˙ldɟb@llǝʞsɐɥ>
 category:            Data
 build-type:          Simple
 extra-source-files:  README.md
 cabal-version:       >=1.10
+tested-with:         GHC == 8.0.2
+	                 , GHC == 7.10.3
+	                 , GHC == 7.10.2
 
 library
   hs-source-dirs:      src
@@ -42,4 +46,4 @@ test-suite check-test
 
 source-repository head
   type:     git
-  location: https://github.com/lightandlight/haskell-arrow-validation
+  location: https://github.com/qfpl/check
