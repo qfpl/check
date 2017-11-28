@@ -11,15 +11,13 @@ let
   hedgehog = import ./nix/hedgehog.nix;
 
   overrides = 
-	  self: super:
-	    {
-	      attoparsec = super.attoparsec_0_13_2_0;
-	      hedgehog = self.callPackage hedgehog {};
-	      these = super.these_0_7_4;
-            } //
-	    (if compiler == "ghc7103" || compiler == "ghc7102"
-	      then { transformers = super.transformers_0_5_5_0; }
-	      else {});
+    self: super:
+    {
+      hedgehog = self.callPackage hedgehog {};
+    } //
+      (if compiler == "ghc7103" || compiler == "ghc7102"
+      then { transformers = super.transformers_0_5_5_0; }
+      else {});
 
   config = {
     packageOverrides = pkgs:
