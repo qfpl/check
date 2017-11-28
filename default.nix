@@ -1,8 +1,7 @@
-{ compiler ? "default" }:
+{ nixpkgs ? import <nixpkgs> {}, compiler ? "default" }:
 
 let
-  _nixpkgs = import <nixpkgs> {};
-  unstable = _nixpkgs.fetchFromGitHub {
+  unstable = nixpkgs.fetchFromGitHub {
     owner = "NixOS"; 
     repo = "nixpkgs";
     rev = "7a87f165ebb0ff7a662654b2c5a3820feedd54ab";
@@ -39,14 +38,14 @@ let
         };
   };
 
-  nixpkgs = import unstable { inherit config; };
+  unstableNixpkgs = import unstable { inherit config; };
 
   f = import ./check.nix;
 
   haskellPackages =
     if compiler == "default"
-      then nixpkgs.haskellPackages
-      else nixpkgs.haskell.packages.${compiler};
+      then unstableNixpkgs.haskellPackages
+      else unstableNixpkgs.haskell.packages.${compiler};
 in
   haskellPackages.callPackage f {}
 
