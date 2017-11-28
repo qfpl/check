@@ -22,7 +22,7 @@ let
             compiler = configuration.compiler; 
             system = configuration.system; 
             nixpkgs = { pkgs = pkgsFor system; };
-            check = import ../default.nix { inherit nixpkgs compiler; };
+            check = import ../default.nix { inherit compiler; };
           in
             check
       ) configurations;
