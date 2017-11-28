@@ -1,0 +1,24 @@
+{
+    "enabled": 1,
+    "hidden": false,
+    "description": "jobsets",
+    "nixexprinput": "check",
+    "nixexprpath": "ci/jobsets.nix",
+    "checkinterval": 300,
+    "schedulingshares": 1,
+    "enableemail": false,
+    "emailoverride": "",
+    "keepnr": 5,
+    "inputs": {
+        "check": {
+            "type": "git",
+            "value": "https://github.com/qfpl/check",
+            "emailresponsible": false
+        },
+        "nixpkgs": {
+            "type": "git",
+            "value": "https://github.com/NixOS/nixpkgs.git release-17.09",
+            "emailresponsible": false
+        }
+    }
+}
