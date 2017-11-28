@@ -1,4 +1,4 @@
-[Data61 logo](http://i.imgur.com/uZnp9ke.png)
+![Data61 logo](http://i.imgur.com/uZnp9ke.png)
 
 Generalised data validation.
 
