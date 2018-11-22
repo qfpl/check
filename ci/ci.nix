@@ -1,5 +1,5 @@
 { supportedSystems ? ["x86_64-linux"]
-, supportedCompilers ? [ "ghc7102" "ghc7103" "ghc802" ] 
+, supportedCompilers ? [ "ghc802" "ghc822" "ghc844" ] 
 }:
 
 with (import <nixpkgs/pkgs/top-level/release-lib.nix> { inherit supportedSystems; });
@@ -11,7 +11,7 @@ let
     pkgs.lib.listToAttrs (
       pkgs.lib.concatMap (compiler: 
         pkgs.lib.concatMap (system: 
-          [{name = "haskell.packages." + compiler + ".check." + system ; value = {inherit compiler system;};}]
+          [{name = "haskell-packages-" + compiler + "-check-" + system ; value = {inherit compiler system;};}]
         ) supportedSystems
       ) supportedCompilers
     );
