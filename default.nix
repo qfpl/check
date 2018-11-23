@@ -1,44 +1,21 @@
 { nixpkgs ? import <nixpkgs> {}, compiler ? "default" }:
 
 let
-  hedgehog = import ./nix/hedgehog.nix;
-
-  overrides = 
-    self: super:
-    {
-      hedgehog = self.callPackage hedgehog {};
-    } //
-      (if compiler == "ghc7103" || compiler == "ghc7102"
-      then {
-        transformers = super.transformers_0_5_4_0;
-        }
-      else {});
-
-  config = {
-    packageOverrides = pkgs:
-      if compiler == "default"
-        then {
-          haskellPackages = pkgs.haskellPackages.override {
-            inherit overrides;
-          };
-        }
-        else {
-          haskell = pkgs.haskell // {
-            packages = pkgs.haskell.packages // {
-              ${compiler} = pkgs.haskell.packages.${compiler}.override { inherit overrides; };
-            };
-          };
-        };
-  };
-
-  nixpkgs = import <nixpkgs> { inherit config; };
-
-  f = import ./check.nix;
+  inherit (nixpkgs) pkgs;
 
   haskellPackages =
     if compiler == "default"
-      then nixpkgs.haskellPackages
-      else nixpkgs.haskell.packages.${compiler};
+      then pkgs.haskellPackages
+      else pkgs.haskell.packages.${compiler};
+
+  modifiedHaskellPackages = haskellPackages.override {
+    overrides = self: super: {
+      hedgehog       = self.callHackage "hedgehog" "0.6" {};
+      tasty-hedgehog = self.callHackage "tasty-hedgehog" "0.2.0.0" {};
+      concurrent-output = pkgs.haskell.lib.doJailbreak super.concurrent-output;
+    };
+  };
+
 in
-  haskellPackages.callPackage f {}
+  modifiedHaskellPackages.callPackage ./check.nix {}
 
